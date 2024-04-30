@@ -24,3 +24,28 @@ Welcome to Memento Marine, a unique adventure set within the bizarre and hauntin
 ### How to Play
 1. **Navigating the World:** Use arrow keys/WASD to move Skelly through the game's levels.
 2. **Interacting:** Press [Enter/Space] to interact with objects and NPCs.
+
+---
+
+### Credits
+#### Programmers:
+- [Sam Lui](https://github.com/Hamsu-dev)
+- [William Sukjaem](https://github.com/Willsu00)
+
+#### Artists:
+- [Anabel](https://www.instagram.com/anabunw/)
+- [Thesanya Lakdivdas](https://www.instagram.com/damsi_lak/)
+- [Zho](https://www.instagram.com/zhoartu/)
+
+#### Writers:
+- [Paige](https://www.instagram.com/paig_does_it?igsh=OHA2cGV5OTQ1OGNk)
+- [Shyamal Swamy](https://www.instagram.com/shy.s.s/)
+
+#### SFX:
+- [Shyamal Swamy](https://www.instagram.com/shy.s.s/)
+
+#### Music:
+- [Allyson Francisco](https://www.instagram.com/allysonmfrancisco/?igsh=MTlvbm9qa3FjbTA4MQ%3D%3D&utm_source=qr)
+- [Anna](https://www.instagram.com/aucklandceramics/)
+
+---

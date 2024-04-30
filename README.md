@@ -19,13 +19,8 @@ Welcome to Memento Marine, a unique adventure set within the bizarre and hauntin
 ### How to Play
 1. **Navigating the World:** Use arrow keys/WASD to move Skelly through the game's levels.
 2. **Interacting:** Press [Enter/Space] to interact with objects and NPCs.
-3. **Combat:** Engage in combat with simple click/button mechanics.
 
 ---
 
-### Installation
-Clone this repository and run the game executable:
-```bash
-git clone [Repository URL]
-cd [Game Directory]
-./start_game  # or whatever your start script is
+### Play Here
+[Play Memento Marine on Itch.io](https://hamsu-dev.itch.io/memento-marine)

@@ -15,14 +15,18 @@ Welcome to Memento Marine, a unique adventure set within the bizarre and hauntin
 
 ### Screenshots
 
-#### Prologue
-![Prologue](https://github.com/Hamsu-dev/Memento_Marine/blob/main/Screenshot/Prologue.png?raw=true "Prologue Scene")
-
-#### Clocktower
-![Clocktower](https://github.com/Hamsu-dev/Memento_Marine/blob/main/Screenshot/ClockTower.png?raw=true "Clocktower Scene")
-
-#### Ice Rink
-![Ice Rink](https://github.com/Hamsu-dev/Memento_Marine/blob/main/Screenshot/IceRink.png?raw=true "Ice Rink Scene")
+<table>
+  <tr>
+    <td><img src="https://github.com/Hamsu-dev/Memento_Marine/blob/main/Screenshot/Prologue.png?raw=true" alt="Prologue" width="300"/></td>
+    <td><img src="https://github.com/Hamsu-dev/Memento_Marine/blob/main/Screenshot/ClockTower.png?raw=true" alt="Clocktower" width="300"/></td>
+    <td><img src="https://github.com/Hamsu-dev/Memento_Marine/blob/main/Screenshot/IceRink.png?raw=true" alt="Ice Rink" width="300"/></td>
+  </tr>
+  <tr>
+    <td align="center">Prologue</td>
+    <td align="center">Clocktower</td>
+    <td align="center">Ice Rink</td>
+  </tr>
+</table>
 
 ---
 

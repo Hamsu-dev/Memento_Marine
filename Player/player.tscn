@@ -1,15 +1,21 @@
-[gd_scene load_steps=29 format=3 uid="uid://b2kioq0ibvkx8"]
+[gd_scene load_steps=35 format=3 uid="uid://b2kioq0ibvkx8"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_hdvfq"]
 [ext_resource type="Texture2D" uid="uid://crwa7dkdc1c33" path="res://Assets/Player/Chick/Fall/Warrior_Fall_1.png" id="2_j1ir8"]
+[ext_resource type="Texture2D" uid="uid://du38kjpisvi4e" path="res://Assets/Player/Chick/Crouch/Warrior_Crouch_1.png" id="2_mfxu1"]
 [ext_resource type="Texture2D" uid="uid://mbk8i231xucf" path="res://Assets/Player/Chick/idle/Warrior_Idle_1.png" id="2_vb1d7"]
 [ext_resource type="Texture2D" uid="uid://dc2hfwc1g3on2" path="res://Assets/Player/Chick/idle/Warrior_Idle_2.png" id="3_lyiud"]
 [ext_resource type="Texture2D" uid="uid://dba0dbwssbkks" path="res://Assets/Player/Chick/Fall/Warrior_Fall_2.png" id="3_pvtlr"]
+[ext_resource type="Texture2D" uid="uid://b3yqq2n48dc4r" path="res://Assets/Player/Chick/Crouch/Warrior_Crouch_2.png" id="3_xev1p"]
 [ext_resource type="Texture2D" uid="uid://bgudbp0ex0ars" path="res://Assets/Player/Chick/Fall/Warrior_Fall_3.png" id="4_2af2n"]
 [ext_resource type="Texture2D" uid="uid://dopwsdcsh1nin" path="res://Assets/Player/Chick/idle/Warrior_Idle_3.png" id="4_g15mk"]
+[ext_resource type="Texture2D" uid="uid://b133c5gbycyva" path="res://Assets/Player/Chick/Crouch/Warrior_Crouch_3.png" id="4_nmftq"]
+[ext_resource type="Texture2D" uid="uid://chovbmggctd81" path="res://Assets/Player/Chick/Crouch/Warrior_Crouch_4.png" id="5_6dwvp"]
 [ext_resource type="Texture2D" uid="uid://c1mt6ihcrc300" path="res://Assets/Player/Chick/idle/Warrior_Idle_4.png" id="5_ibj3f"]
 [ext_resource type="Texture2D" uid="uid://vetav88k5y4l" path="res://Assets/Player/Chick/idle/Warrior_Idle_5.png" id="6_cdwxm"]
+[ext_resource type="Texture2D" uid="uid://dxwi8w2d863di" path="res://Assets/Player/Chick/Crouch/Warrior_Crouch_5.png" id="6_laxb0"]
 [ext_resource type="Texture2D" uid="uid://bbgy6r1dbov3w" path="res://Assets/Player/Chick/idle/Warrior_Idle_6.png" id="7_83tlj"]
+[ext_resource type="Texture2D" uid="uid://co0st1c0d13l8" path="res://Assets/Player/Chick/Crouch/Warrior_Crouch_6.png" id="7_lyqs0"]
 [ext_resource type="Texture2D" uid="uid://chsyk5b3iagjx" path="res://Assets/Player/Chick/Jump/Warrior_Jump_1.png" id="8_cxxfw"]
 [ext_resource type="Texture2D" uid="uid://d0iom0oxuxhfl" path="res://Assets/Player/Chick/Jump/Warrior_Jump_2.png" id="9_pydm4"]
 [ext_resource type="Texture2D" uid="uid://blxl1cb40kin1" path="res://Assets/Player/Chick/Jump/Warrior_Jump_3.png" id="10_ua1tl"]
@@ -29,6 +35,29 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bcbir"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mfxu1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xev1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nmftq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6dwvp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_laxb0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_lyqs0")
+}],
+"loop": true,
+"name": &"crouch",
+"speed": 8.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_j1ir8")
@@ -107,7 +136,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 8.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -140,19 +169,21 @@ floor_snap_length = 2.0
 script = ExtResource("1_hdvfq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1, -17)
+position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_bcbir")
-animation = &"slide"
+animation = &"crouch"
 autoplay = "idle"
+frame = 3
+frame_progress = 0.942922
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, -14)
 shape = SubResource("CapsuleShape2D_tejjw")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(0, -50)
 zoom = Vector2(3.115, 3.115)
+position_smoothing_enabled = true
 
 [node name="CoyoteJumpTimer" type="Timer" parent="."]
 wait_time = 0.2

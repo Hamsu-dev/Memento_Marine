@@ -13,23 +13,9 @@ extends CharacterBody2D
 @onready var coyote_jump_timer = $CoyoteJumpTimer
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var slide_timer = $SlideTimer
+@onready var speed_label = $SpeedLabel
 
 var sliding = false
-
-#func _physics_process(delta):
-	#apply_gravity(delta)
-	#var input_axis = Input.get_axis("left", "right")
-	#if is_moving(input_axis):
-		#apply_acceleration(delta, input_axis)
-	#else:
-		#apply_friction(delta)
-	#jump_check()
-	#update_animations(input_axis)
-	#var was_on_floor = is_on_floor()
-	#move_and_slide()
-	#var just_left_edge = was_on_floor and not is_on_floor()
-	#if just_left_edge:
-		#coyote_jump_timer.start()
 
 func _physics_process(delta):
 	apply_gravity(delta)
@@ -48,13 +34,29 @@ func _physics_process(delta):
 	if just_left_edge:
 		coyote_jump_timer.start()
 	handle_slide_input(delta)  # Call to handle slide input
+	update_speed_display()
 
 func apply_slide(delta):
-	if animated_sprite_2d.flip_h:
-		velocity.x = -slide_speed
+	# Calculate the initial sliding speed, considering current velocity and slide_speed.
+	var effective_slide_speed = slide_speed
+	
+	# Check if the current speed is greater than the base slide speed
+	if abs(velocity.x) > slide_speed:
+		# Increase the speed by 20% if current speed is greater
+		effective_slide_speed = abs(velocity.x) * 2.0
 	else:
-		velocity.x = slide_speed
-	velocity.y += gravity * delta  # Apply gravity even when sliding if needed
+		# Otherwise, use the base slide speed
+		effective_slide_speed = slide_speed
+
+	if not is_on_floor():  # If in air, you might want to use a different logic or same speed.
+		effective_slide_speed = max(abs(velocity.x), slide_speed)
+
+	# Apply the slide direction based on the character's facing direction.
+	velocity.x = effective_slide_speed * (-1 if animated_sprite_2d.flip_h else 1)
+
+	# Apply gravity only once.
+	velocity.y += gravity * delta
+
 
 
 func is_moving(input_axis):
@@ -80,7 +82,6 @@ func jump_check():
 
 func handle_slide_input(delta):
 	if Input.is_action_just_pressed("slide") and is_on_floor() and not sliding:
-		print("clicked shift")
 		start_slide()
 
 func start_slide():
@@ -121,3 +122,10 @@ func update_animations(input_axis):
 
 func _on_slide_timer_timeout():
 	stop_slide()
+
+
+func update_speed_display():
+	# Calculate the current speed magnitude
+	var current_speed = velocity.length()
+	# Update the Label's text to show the current speed
+	speed_label.text = "Speed: " + str(current_speed)

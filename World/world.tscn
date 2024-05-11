@@ -7,8 +7,13 @@
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(-3, -4, -1, 645, 1158, 646, 1151, -9, 1105, -10, 1104, 598, 682, 594, 519, 532, 344, 527, 181, 600, 73, 603, 63, 6)
+polygon = PackedVector2Array(-4, 10, 4, 648, 5716, 648, 5716, -8, 5595, -4, 5595, 537, 4444, 537, 3777, 306, 2580, 316, 1803, 516, 257, 552, 239, 459, 71, 445, 50, -11)
 
 [node name="Player" parent="." instance=ExtResource("1_4jjqy")]
 position = Vector2(386, 461)
-friction = 1000
+
+[node name="SpeedLabel" type="Label" parent="Player"]
+offset_left = -176.0
+offset_top = -148.0
+offset_right = -136.0
+offset_bottom = -125.0

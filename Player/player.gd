@@ -4,10 +4,13 @@ extends CharacterBody2D
 @export var max_speed = 250  # Increased for faster gameplay
 @export var friction = 1000  # Increased for quick stops
 @export var gravity = 500  # Reduced for lighter, longer jumps
-@export var jump_force = 200  # Increased for higher jumps
+@export var jump_force = 300  # Increased for higher jumps
 @export var max_fall_velocity = 500  # Increased for more realistic falls
 @export var slide_speed = 400  # Speed during sliding
 @export var slide_duration = 0.5  # Duration of the slide in seconds
+@export var drop_force = 600  # The downward force applied when crouching in air
+@export var bounce_multiplier = 1.2  # Multiplier for bounce height
+var is_dropping = false
 
 
 @onready var coyote_jump_timer = $CoyoteJumpTimer
@@ -33,6 +36,8 @@ func _physics_process(delta):
 	var just_left_edge = was_on_floor and not is_on_floor()
 	if just_left_edge:
 		coyote_jump_timer.start()
+	if is_on_floor() and is_dropping:
+		bounce()
 	handle_slide_input(delta)  # Call to handle slide input
 	update_speed_display()
 
@@ -58,7 +63,6 @@ func apply_slide(delta):
 	velocity.y += gravity * delta
 
 
-
 func is_moving(input_axis):
 	return input_axis != 0
 
@@ -76,9 +80,23 @@ func jump_check():
 	if is_on_floor() or coyote_jump_timer.time_left > 0.0:
 		if Input.is_action_just_pressed("up"):
 			velocity.y = -jump_force
-	if not is_on_floor():
+		if Input.is_action_just_pressed("down") and not is_on_floor():
+			start_drop()
+	elif not is_on_floor():
 		if Input.is_action_just_released("up") and velocity.y < -jump_force / 2:
 			velocity.y = -jump_force / 2
+		if Input.is_action_just_pressed("down"):
+			start_drop()
+
+func start_drop():
+	if is_on_floor():
+		# Crouch if on the ground
+		animated_sprite_2d.play("crouch")
+	else:
+		# Drop down fast if in the air
+		velocity.y = drop_force
+		is_dropping = true
+		animated_sprite_2d.play("crouch")  # Assume this is your falling fast animation
 
 func handle_slide_input(delta):
 	if Input.is_action_just_pressed("slide") and is_on_floor() and not sliding:
@@ -91,31 +109,33 @@ func start_slide():
 func stop_slide():
 	sliding = false
 	slide_timer.stop()
-	
+
+func bounce():
+	velocity.y = -jump_force * bounce_multiplier
+	is_dropping = false
+
 func update_animations(input_axis):
 	var on_ground = is_on_floor()
-	
+
 	if input_axis > 0:
 		animated_sprite_2d.flip_h = false
 	elif input_axis < 0:
 		animated_sprite_2d.flip_h = true
-		
+
 	if sliding:
-		# If sliding, maintain the slide animation and do not change it
 		if animated_sprite_2d.animation != "slide":
 			animated_sprite_2d.play("slide")
+	elif is_dropping:
+		if animated_sprite_2d.animation != "crouch":
+			animated_sprite_2d.play("crouch")
 	elif not on_ground:
-		# If moving upwards
 		if velocity.y < 0:
 			animated_sprite_2d.play("jump")
-		# If moving downwards
 		else:
 			animated_sprite_2d.play("fall")
 	else:
-		# If on the ground and moving
 		if is_moving(input_axis):
 			animated_sprite_2d.play("run")
-		# If on the ground and not moving
 		else:
 			animated_sprite_2d.play("idle")
 

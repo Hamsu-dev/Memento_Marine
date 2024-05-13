@@ -1,19 +1,32 @@
-[gd_scene load_steps=2 format=3 uid="uid://bid3m2t7vjvfx"]
+[gd_scene load_steps=3 format=3 uid="uid://bid3m2t7vjvfx"]
 
 [ext_resource type="PackedScene" uid="uid://b2kioq0ibvkx8" path="res://Player/player.tscn" id="1_4jjqy"]
+[ext_resource type="PackedScene" uid="uid://d0aoahb3jj4kc" path="res://Platforms/platforms.tscn" id="2_ww101"]
 
 [node name="World" type="Node2D"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="LevelFloorCollision" type="StaticBody2D" parent="."]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelFloorCollision"]
 polygon = PackedVector2Array(-4, 10, 4, 648, 5716, 648, 5716, -8, 5595, -4, 5595, 537, 4444, 537, 3777, 306, 2580, 316, 1803, 516, 257, 552, 239, 459, 71, 445, 50, -11)
 
 [node name="Player" parent="." instance=ExtResource("1_4jjqy")]
-position = Vector2(386, 461)
+position = Vector2(1404, 337)
 
 [node name="SpeedLabel" type="Label" parent="Player"]
 offset_left = -176.0
 offset_top = -148.0
 offset_right = -136.0
 offset_bottom = -125.0
+
+[node name="Platforms" parent="." instance=ExtResource("2_ww101")]
+position = Vector2(1442, 430)
+
+[node name="Platforms2" parent="." instance=ExtResource("2_ww101")]
+position = Vector2(1722, 368)
+
+[node name="Platforms3" parent="." instance=ExtResource("2_ww101")]
+position = Vector2(2008, 303)
+
+[node name="Platforms4" parent="." instance=ExtResource("2_ww101")]
+position = Vector2(2274, 263)

@@ -15,6 +15,10 @@ run/main_scene="res://World/world.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://Screenshot/Memento_title_red.png"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [file_customization]
 
 folder_colors={

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0aoahb3jj4kc"]
+
+[ext_resource type="Texture2D" uid="uid://b2at63rn5t8hw" path="res://EnviroSprites/Platforms/platformdropshadow.png" id="1_u422x"]
+
+[node name="Platforms" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_u422x")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-67, -25, -77, -12, -68, -2, -67, 14, -64, 18, -64, 22, -59, 27, -28, 26, -21, 24, -17, 27, 69, 27, 69, 18, 72, 14, 72, -4, 77, -13, 76, -20, 73, -26)

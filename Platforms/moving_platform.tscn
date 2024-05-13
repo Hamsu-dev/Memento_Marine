@@ -1,5 +1,12 @@
-[gd_scene format=3 uid="uid://dtn3e440x0422"]
+[gd_scene load_steps=2 format=3 uid="uid://dtn3e440x0422"]
+
+[ext_resource type="Texture2D" uid="uid://b2at63rn5t8hw" path="res://EnviroSprites/Platforms/platformdropshadow.png" id="1_iqffj"]
 
 [node name="MovingPlatform" type="Node2D"]
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_iqffj")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]

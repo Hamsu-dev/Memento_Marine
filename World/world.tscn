@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bid3m2t7vjvfx"]
+[gd_scene load_steps=5 format=3 uid="uid://bid3m2t7vjvfx"]
 
 [ext_resource type="PackedScene" uid="uid://b2kioq0ibvkx8" path="res://Player/player.tscn" id="1_4jjqy"]
 [ext_resource type="PackedScene" uid="uid://d0aoahb3jj4kc" path="res://Platforms/platforms.tscn" id="2_ww101"]
+[ext_resource type="PackedScene" uid="uid://dtn3e440x0422" path="res://Platforms/moving_platform.tscn" id="3_raxbo"]
+[ext_resource type="Curve2D" uid="uid://djw5gx3eg2vxy" path="res://Platforms/MovingPlatformsRoutes/Positive_x_10Meters.tres" id="4_4syw7"]
 
 [node name="World" type="Node2D"]
 
@@ -33,3 +35,11 @@ position = Vector2(1788, 362)
 
 [node name="Platform5" parent="." instance=ExtResource("2_ww101")]
 position = Vector2(1905, 323)
+
+[node name="MovingPlatform" parent="." instance=ExtResource("3_raxbo")]
+position = Vector2(971, 251)
+
+[node name="Path2D" parent="MovingPlatform" index="2"]
+curve = ExtResource("4_4syw7")
+
+[editable path="MovingPlatform"]

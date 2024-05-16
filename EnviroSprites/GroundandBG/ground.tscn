@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjyikkfta6ce3"]
+
+[ext_resource type="Texture2D" uid="uid://bb4yd74dfyaht" path="res://EnviroSprites/GroundandBG/ground.png" id="1_q42iq"]
+
+[node name="Ground" type="Node2D"]
+
+[node name="Ground" type="Sprite2D" parent="."]
+position = Vector2(483, 600)
+scale = Vector2(0.240847, 0.240847)
+texture = ExtResource("1_q42iq")
+
+[node name="Ground2" type="Sprite2D" parent="."]
+position = Vector2(944, 600)
+scale = Vector2(0.240847, 0.240847)
+texture = ExtResource("1_q42iq")
+
+[node name="Ground3" type="Sprite2D" parent="."]
+position = Vector2(1404, 600)
+scale = Vector2(0.240847, 0.240847)
+texture = ExtResource("1_q42iq")
+
+[node name="Ground4" type="Sprite2D" parent="."]
+position = Vector2(1865, 600)
+scale = Vector2(0.240847, 0.240847)
+texture = ExtResource("1_q42iq")
+
+[node name="Ground5" type="Sprite2D" parent="."]
+position = Vector2(2327.21, 599.625)
+scale = Vector2(0.240847, 0.240847)
+texture = ExtResource("1_q42iq")
+
+[node name="Ground6" type="Sprite2D" parent="."]
+position = Vector2(2788.21, 599.625)
+scale = Vector2(0.240847, 0.240847)
+texture = ExtResource("1_q42iq")
+
+[node name="Ground7" type="Sprite2D" parent="."]
+position = Vector2(3248.21, 599.625)
+scale = Vector2(0.240847, 0.240847)
+texture = ExtResource("1_q42iq")
+
+[node name="Ground8" type="Sprite2D" parent="."]
+position = Vector2(3709.21, 599.625)
+scale = Vector2(0.240847, 0.240847)
+texture = ExtResource("1_q42iq")
+
+[node name="Ground9" type="Sprite2D" parent="."]
+position = Vector2(4167.21, 599.625)
+scale = Vector2(0.240847, 0.240847)
+texture = ExtResource("1_q42iq")

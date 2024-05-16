@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://b2kioq0ibvkx8"]
+[gd_scene load_steps=36 format=3 uid="uid://b2kioq0ibvkx8"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_hdvfq"]
 [ext_resource type="Texture2D" uid="uid://crwa7dkdc1c33" path="res://Assets/Player/Chick/Fall/Warrior_Fall_1.png" id="2_j1ir8"]
@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://sikhahxlfi85" path="res://Assets/Player/Chick/Slide/Warrior-Slide_3.png" id="24_1jp17"]
 [ext_resource type="Texture2D" uid="uid://c3yf74en8o71u" path="res://Assets/Player/Chick/Slide/Warrior-Slide_4.png" id="25_c610p"]
 [ext_resource type="Texture2D" uid="uid://8raleahjeo4p" path="res://Assets/Player/Chick/Slide/Warrior-Slide_5.png" id="26_usrkl"]
+[ext_resource type="Texture2D" uid="uid://cqy11qk3mjrve" path="res://EnviroSprites/GroundandBG/gradient.jpg" id="33_a6hl7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bcbir"]
 animations = [{
@@ -170,7 +171,15 @@ collision_mask = 5
 floor_snap_length = 2.0
 script = ExtResource("1_hdvfq")
 
+[node name="OverallGradient" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.356863)
+z_index = 50
+position = Vector2(0, -97)
+scale = Vector2(0.377778, 0.377778)
+texture = ExtResource("33_a6hl7")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 99
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_bcbir")
 animation = &"crouch"
@@ -183,9 +192,18 @@ position = Vector2(0, -14)
 shape = SubResource("CapsuleShape2D_tejjw")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(0, -50)
-zoom = Vector2(2.495, 2.495)
+
+offset = Vector2(0, -25)
+zoom = Vector2(3.115, 3.115)
+
 position_smoothing_enabled = true
+position_smoothing_speed = 8.0
+
+[node name="Gradient" type="Sprite2D" parent="Camera2D"]
+z_index = -100
+position = Vector2(0, -46)
+scale = Vector2(0.377778, 0.377778)
+texture = ExtResource("33_a6hl7")
 
 [node name="CoyoteJumpTimer" type="Timer" parent="."]
 wait_time = 0.2

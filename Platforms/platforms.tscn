@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b2at63rn5t8hw" path="res://EnviroSprites/Platforms/platformdropshadow.png" id="1_u422x"]
 
 [node name="Platform" type="Sprite2D"]
+z_index = 98
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_u422x")
 
@@ -10,3 +11,4 @@ texture = ExtResource("1_u422x")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(-67, -25, -77, -12, -68, -2, -67, 14, -64, 18, -64, 22, -59, 27, -28, 26, -21, 24, -17, 27, 69, 27, 69, 18, 72, 14, 72, -4, 77, -13, 76, -20, 73, -26)
+one_way_collision = true

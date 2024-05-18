@@ -49,7 +49,7 @@ polygon = PackedVector2Array(-4, 10, 4, 648, 2226, 641, 2232, 5, 2147, 6, 2146, 
 
 [node name="Player" parent="." instance=ExtResource("1_4jjqy")]
 z_index = 10
-position = Vector2(352, 482)
+position = Vector2(279, 536)
 
 [node name="SpeedLabel" type="Label" parent="Player"]
 offset_left = -176.0
@@ -1333,12 +1333,10 @@ texture = ExtResource("10_kg6af")
 
 [node name="TileRoofLeft" type="Sprite2D" parent="Small Building4"]
 position = Vector2(-10, 135)
-scale = Vector2(1, 1)
 texture = ExtResource("11_lrxje")
 
 [node name="TileRoofRight" type="Sprite2D" parent="Small Building4"]
 position = Vector2(-205, 135)
-scale = Vector2(1, 1)
 texture = ExtResource("12_ksuo7")
 
 [node name="RectangleWindow2" type="Sprite2D" parent="Small Building4"]
@@ -1443,12 +1441,10 @@ texture = ExtResource("33_6oa8c")
 
 [node name="Balustrade3" type="Sprite2D" parent="Balustrade2"]
 position = Vector2(515.56, 0)
-scale = Vector2(1, 1)
 texture = ExtResource("33_6oa8c")
 
 [node name="Balustrade4" type="Sprite2D" parent="Balustrade2"]
 position = Vector2(702.299, 0)
-scale = Vector2(1, 1)
 texture = ExtResource("33_6oa8c")
 
 [node name="Balustrade3" type="Sprite2D" parent="."]
@@ -1587,71 +1583,59 @@ texture = ExtResource("39_5b5dx")
 [node name="Ocean2" type="Sprite2D" parent="Ocean"]
 z_index = 100
 position = Vector2(1919.64, 0)
-scale = Vector2(1, 1)
 texture = ExtResource("39_5b5dx")
 
 [node name="Ocean13" type="Sprite2D" parent="Ocean"]
 z_index = 100
 position = Vector2(-1901.85, 0)
-scale = Vector2(1, 1)
 texture = ExtResource("39_5b5dx")
 
 [node name="Ocean3" type="Sprite2D" parent="Ocean"]
 z_index = 100
 position = Vector2(3839.28, 0)
-scale = Vector2(1, 1)
 texture = ExtResource("39_5b5dx")
 
 [node name="Ocean4" type="Sprite2D" parent="Ocean"]
 z_index = 100
 position = Vector2(5755.6, 0)
-scale = Vector2(1, 1)
 texture = ExtResource("39_5b5dx")
 
 [node name="Ocean5" type="Sprite2D" parent="Ocean"]
 z_index = 100
 position = Vector2(7675.24, 0)
-scale = Vector2(1, 1)
 texture = ExtResource("39_5b5dx")
 
 [node name="Ocean6" type="Sprite2D" parent="Ocean"]
 z_index = 100
 position = Vector2(9587.9, 0)
-scale = Vector2(1, 1)
 texture = ExtResource("39_5b5dx")
 
 [node name="Ocean7" type="Sprite2D" parent="Ocean"]
 z_index = 100
 position = Vector2(11507.5, 0)
-scale = Vector2(1, 1)
 texture = ExtResource("39_5b5dx")
 
 [node name="Ocean8" type="Sprite2D" parent="Ocean"]
 z_index = 100
 position = Vector2(13423.9, 0)
-scale = Vector2(1, 1)
 texture = ExtResource("39_5b5dx")
 
 [node name="Ocean9" type="Sprite2D" parent="Ocean"]
 z_index = 100
 position = Vector2(15343.5, 0)
-scale = Vector2(1, 1)
 texture = ExtResource("39_5b5dx")
 
 [node name="Ocean10" type="Sprite2D" parent="Ocean"]
 z_index = 100
 position = Vector2(17257.6, 0)
-scale = Vector2(1, 1)
 texture = ExtResource("39_5b5dx")
 
 [node name="Ocean11" type="Sprite2D" parent="Ocean"]
 z_index = 100
 position = Vector2(19177, 0)
-scale = Vector2(1, 1)
 texture = ExtResource("39_5b5dx")
 
 [node name="Ocean12" type="Sprite2D" parent="Ocean"]
 z_index = 100
 position = Vector2(21087.7, 0)
-scale = Vector2(1, 1)
 texture = ExtResource("39_5b5dx")

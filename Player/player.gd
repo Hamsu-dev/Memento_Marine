@@ -4,14 +4,12 @@ extends CharacterBody2D
 @export var max_speed = 250  # Increased for faster gameplay
 @export var friction = 1000  # Increased for quick stops
 @export var gravity = 500  # Reduced for lighter, longer jumps
-@export var jump_force = 300  # Increased for higher jumps
+@export var jump_force = 250  # Increased for higher jumps
 @export var max_fall_velocity = 500  # Increased for more realistic falls
 @export var slide_speed = 400  # Speed during sliding
 @export var slide_duration = 0.5  # Duration of the slide in seconds
 @export var drop_force = 600  # The downward force applied when crouching in air
 @export var bounce_multiplier = 1.2  # Multiplier for bounce height
-var is_dropping = false
-
 
 @onready var coyote_jump_timer = $CoyoteJumpTimer
 @onready var animated_sprite_2d = $AnimatedSprite2D
@@ -19,6 +17,7 @@ var is_dropping = false
 @onready var speed_label = $SpeedLabel
 
 var sliding = false
+var is_dropping = false
 
 func _physics_process(delta):
 	apply_gravity(delta)
@@ -68,7 +67,7 @@ func is_moving(input_axis):
 
 func apply_gravity(delta):
 	if not is_on_floor():
-		velocity.y = move_toward(velocity.y, max_fall_velocity, gravity * delta)
+		velocity.y = min(velocity.y + gravity * delta, max_fall_velocity)
 
 func apply_acceleration(delta, input_axis):
 	velocity.x = move_toward(velocity.x, input_axis * max_speed, acceleration * delta)
@@ -77,16 +76,13 @@ func apply_friction(delta):
 	velocity.x = move_toward(velocity.x,  0, friction * delta)
 
 func jump_check():
-	if is_on_floor() or coyote_jump_timer.time_left > 0.0:
-		if Input.is_action_just_pressed("up"):
-			velocity.y = -jump_force
-		if Input.is_action_just_pressed("down") and not is_on_floor():
-			start_drop()
-	elif not is_on_floor():
-		if Input.is_action_just_released("up") and velocity.y < -jump_force / 2:
-			velocity.y = -jump_force / 2
-		if Input.is_action_just_pressed("down"):
-			start_drop()
+	if (is_on_floor() or coyote_jump_timer.time_left > 0.0) and Input.is_action_just_pressed("up"):
+		velocity.y = -jump_force
+		coyote_jump_timer.stop()  # Stop the coyote timer on jump
+	if Input.is_action_just_pressed("down") and not is_on_floor():
+		start_drop()
+	if Input.is_action_just_released("up") and velocity.y < -jump_force / 2:
+		velocity.y = -jump_force / 2
 
 func start_drop():
 	if is_on_floor():

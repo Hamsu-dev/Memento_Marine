@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjc6xqqhnartl"
-path="res://.godot/imported/platform extended.png-e394ea3bd34816a7a276465d398a4d33.ctex"
+uid="uid://dtae6rwvr8wuv"
+path="res://.godot/imported/PLATFORM 1.png-922e7ddd412014499a71e9bf28907ac1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://EnviroSprites/Platforms/platform extended.png"
-dest_files=["res://.godot/imported/platform extended.png-e394ea3bd34816a7a276465d398a4d33.ctex"]
+source_file="res://EnviroSprites/Landmarks/PLATFORM 1.png"
+dest_files=["res://.godot/imported/PLATFORM 1.png-922e7ddd412014499a71e9bf28907ac1.ctex"]
 
 [params]
 

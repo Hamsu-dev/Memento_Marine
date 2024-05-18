@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bf4ldidd5sglr"]
+
+[ext_resource type="Texture2D" uid="uid://bpyew2rr8q42v" path="res://EnviroSprites/Platforms/platformextenddropshadow.png" id="1_w3dfw"]
+
+[node name="Platform" type="Sprite2D"]
+z_index = 98
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_w3dfw")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 7
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+scale = Vector2(2.76, 1)
+polygon = PackedVector2Array(-78.2609, -20, -81.1594, -12, -78.2609, 0, -72.4638, 12, -69.5652, 20, -68.1159, 32, -59.4203, 32, 72.4638, 28, 72.4638, 20, 73.913, 12, 72.4638, 4, 75.3623, -4, 75.3623, -16, 73.913, -20)
+one_way_collision = true

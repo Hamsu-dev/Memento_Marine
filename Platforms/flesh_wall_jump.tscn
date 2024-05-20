@@ -3,16 +3,17 @@
 [ext_resource type="Texture2D" uid="uid://c7lfd8r8tlr6i" path="res://EnviroSprites/Platforms/flesh wall jump.png" id="1_er7g1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rtxug"]
-radius = 5.0
-height = 64.0
+radius = 4.0
+height = 62.0
 
 [node name="Flesh Wall" type="StaticBody2D" groups=["wall_jumpable"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-19, 6)
+position = Vector2(-3, 0)
 shape = SubResource("CapsuleShape2D_rtxug")
 
 [node name="FleshWallJump" type="Sprite2D" parent="."]
 z_index = 1
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_er7g1")
+offset = Vector2(-9.5, 1)

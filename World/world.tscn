@@ -58,7 +58,7 @@ shape = SubResource("RectangleShape2D_5ifhr")
 
 [node name="Player" parent="." instance=ExtResource("1_4jjqy")]
 z_index = 10
-position = Vector2(1864, 485)
+position = Vector2(1856, 534)
 friction = 2000
 
 [node name="Ground" parent="." instance=ExtResource("3_sce0f")]

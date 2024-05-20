@@ -260,11 +260,60 @@ texture = ExtResource("8_m4o8q")
 position = Vector2(402, 388)
 
 [node name="Flesh Wall" parent="FleshWalls" instance=ExtResource("8_ms4s2")]
+position = Vector2(-18, 4)
 
 [node name="Flesh Wall2" parent="FleshWalls" instance=ExtResource("8_ms4s2")]
-position = Vector2(-36, -117)
+position = Vector2(-54, -109)
+
+[node name="Flesh Wall4" parent="FleshWalls" instance=ExtResource("8_ms4s2")]
+position = Vector2(-16, -246)
+
+[node name="Flesh Wall5" parent="FleshWalls" instance=ExtResource("8_ms4s2")]
+position = Vector2(-16, -246)
+
+[node name="Flesh Wall13" parent="FleshWalls" instance=ExtResource("8_ms4s2")]
+position = Vector2(-274, -241)
+
+[node name="Flesh Wall14" parent="FleshWalls" instance=ExtResource("8_ms4s2")]
+position = Vector2(-273, -341)
+
+[node name="Flesh Wall6" parent="FleshWalls" instance=ExtResource("8_ms4s2")]
+position = Vector2(-16, -246)
+
+[node name="Flesh Wall7" parent="FleshWalls" instance=ExtResource("8_ms4s2")]
+position = Vector2(-172, -251)
+
+[node name="Flesh Wall9" parent="FleshWalls" instance=ExtResource("8_ms4s2")]
+position = Vector2(-172, -251)
+
+[node name="Flesh Wall8" parent="FleshWalls" instance=ExtResource("8_ms4s2")]
+position = Vector2(-172, -155)
 
 [node name="Flesh Wall3" parent="FleshWalls" instance=ExtResource("8_ms4s2")]
-position = Vector2(-36, -117)
+position = Vector2(-151, -166)
+
+[node name="FleshWallJump" parent="FleshWalls/Flesh Wall3" index="1"]
+flip_h = true
+
+[node name="Flesh Wall10" parent="FleshWalls" instance=ExtResource("8_ms4s2")]
+position = Vector2(-152, -264)
+
+[node name="FleshWallJump" parent="FleshWalls/Flesh Wall10" index="1"]
+flip_h = true
+
+[node name="Flesh Wall11" parent="FleshWalls" instance=ExtResource("8_ms4s2")]
+position = Vector2(-339, -178)
+
+[node name="FleshWallJump" parent="FleshWalls/Flesh Wall11" index="1"]
+flip_h = true
+
+[node name="Flesh Wall12" parent="FleshWalls" instance=ExtResource("8_ms4s2")]
+position = Vector2(-338, -297)
+
+[node name="FleshWallJump" parent="FleshWalls/Flesh Wall12" index="1"]
+flip_h = true
 
 [editable path="FleshWalls/Flesh Wall3"]
+[editable path="FleshWalls/Flesh Wall10"]
+[editable path="FleshWalls/Flesh Wall11"]
+[editable path="FleshWalls/Flesh Wall12"]

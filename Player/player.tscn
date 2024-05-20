@@ -182,7 +182,7 @@ texture = ExtResource("33_a6hl7")
 z_index = 99
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_bcbir")
-animation = &"walljump"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

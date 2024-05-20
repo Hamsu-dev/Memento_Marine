@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://b2kioq0ibvkx8"]
+[gd_scene load_steps=39 format=3 uid="uid://b2kioq0ibvkx8"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_hdvfq"]
 [ext_resource type="Texture2D" uid="uid://crwa7dkdc1c33" path="res://Assets/Player/Chick/Fall/Warrior_Fall_1.png" id="2_j1ir8"]
@@ -33,6 +33,9 @@
 [ext_resource type="Texture2D" uid="uid://c3yf74en8o71u" path="res://Assets/Player/Chick/Slide/Warrior-Slide_4.png" id="25_c610p"]
 [ext_resource type="Texture2D" uid="uid://8raleahjeo4p" path="res://Assets/Player/Chick/Slide/Warrior-Slide_5.png" id="26_usrkl"]
 [ext_resource type="Texture2D" uid="uid://cqy11qk3mjrve" path="res://EnviroSprites/GroundandBG/gradient.jpg" id="33_a6hl7"]
+[ext_resource type="Texture2D" uid="uid://cc3jaunbswnfm" path="res://Assets/Player/Chick/WallSlide/Warrior_WallSlide_1.png" id="34_3hahs"]
+[ext_resource type="Texture2D" uid="uid://c8difxae3t1sb" path="res://Assets/Player/Chick/WallSlide/Warrior_WallSlide_2.png" id="35_wy6iv"]
+[ext_resource type="Texture2D" uid="uid://dwu3yktrsg80t" path="res://Assets/Player/Chick/WallSlide/Warrior_WallSlide_3.png" id="36_ghtg1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bcbir"]
 animations = [{
@@ -158,6 +161,20 @@ animations = [{
 "loop": false,
 "name": &"slide",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_3hahs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_wy6iv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_ghtg1")
+}],
+"loop": true,
+"name": &"wallslide",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tejjw"]
@@ -182,10 +199,8 @@ texture = ExtResource("33_a6hl7")
 z_index = 99
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_bcbir")
-animation = &"crouch"
+animation = &"wallslide"
 autoplay = "idle"
-frame = 3
-frame_progress = 0.942922
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -14)
@@ -210,5 +225,21 @@ one_shot = true
 [node name="SlideTimer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+
+[node name="Raycast" type="Node2D" parent="."]
+
+[node name="TopRight" type="RayCast2D" parent="Raycast"]
+position = Vector2(0, -30)
+target_position = Vector2(13, 0)
+
+[node name="BottomRight" type="RayCast2D" parent="Raycast"]
+target_position = Vector2(13, 0)
+
+[node name="TopLeft" type="RayCast2D" parent="Raycast"]
+position = Vector2(0, -30)
+target_position = Vector2(-13, 0)
+
+[node name="BottomLeft" type="RayCast2D" parent="Raycast"]
+target_position = Vector2(-13, 0)
 
 [connection signal="timeout" from="SlideTimer" to="." method="_on_slide_timer_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://bid3m2t7vjvfx"]
+[gd_scene load_steps=43 format=3 uid="uid://bid3m2t7vjvfx"]
 
 [ext_resource type="PackedScene" uid="uid://b2kioq0ibvkx8" path="res://Player/player.tscn" id="1_4jjqy"]
 [ext_resource type="PackedScene" uid="uid://d0aoahb3jj4kc" path="res://Platforms/platforms.tscn" id="2_ww101"]
@@ -42,6 +42,9 @@
 [ext_resource type="PackedScene" uid="uid://dtn3e440x0422" path="res://Platforms/moving_platform.tscn" id="40_8tdds"]
 [ext_resource type="Curve2D" uid="uid://m4852hfy6mfw" path="res://Platforms/MovingPlatformsRoutes/Positive_y_10Meters.tres" id="41_p03gt"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ifhr"]
+size = Vector2(87, 488.5)
+
 [node name="World" type="Node2D"]
 
 [node name="LevelFloorCollision" type="StaticBody2D" parent="."]
@@ -49,9 +52,25 @@
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelFloorCollision"]
 polygon = PackedVector2Array(-4, 10, 4, 648, 2226, 641, 2232, 5, 2147, 6, 2146, 553, 1984, 553, 1969.15, 547, 248, 547, 233, 554, 75, 554, 73, 30)
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelFloorCollision"]
+position = Vector2(2048, 248)
+shape = SubResource("RectangleShape2D_5ifhr")
+
 [node name="Player" parent="." instance=ExtResource("1_4jjqy")]
 z_index = 10
-position = Vector2(279, 536)
+position = Vector2(1864, 485)
+acceleration = 400
+max_speed = 250
+friction = 2000
+gravity = 500
+jump_force = 250
+max_fall_velocity = 500
+slide_speed = 400
+slide_duration = 0.5
+drop_force = 600
+bounce_multiplier = 1.2
+wall_jump_force = 250
+wall_jump_push_force = 200
 
 [node name="SpeedLabel" type="Label" parent="Player"]
 offset_left = -176.0

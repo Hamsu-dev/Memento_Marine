@@ -119,6 +119,10 @@ texture = ExtResource("3_3blgw")
 position = Vector2(588, -1508)
 texture = ExtResource("3_3blgw")
 
+[node name="Platformextenddropshadow6" type="Sprite2D" parent="Platformextenddropshadow"]
+position = Vector2(-648, -452)
+texture = ExtResource("3_3blgw")
+
 [node name="Platform6" parent="." instance=ExtResource("5_hgx0w")]
 position = Vector2(265, 268)
 

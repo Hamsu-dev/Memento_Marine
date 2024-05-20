@@ -59,24 +59,7 @@ shape = SubResource("RectangleShape2D_5ifhr")
 [node name="Player" parent="." instance=ExtResource("1_4jjqy")]
 z_index = 10
 position = Vector2(1864, 485)
-acceleration = 400
-max_speed = 250
 friction = 2000
-gravity = 500
-jump_force = 250
-max_fall_velocity = 500
-slide_speed = 400
-slide_duration = 0.5
-drop_force = 600
-bounce_multiplier = 1.2
-wall_jump_force = 250
-wall_jump_push_force = 200
-
-[node name="SpeedLabel" type="Label" parent="Player"]
-offset_left = -176.0
-offset_top = -148.0
-offset_right = -136.0
-offset_bottom = -125.0
 
 [node name="Ground" parent="." instance=ExtResource("3_sce0f")]
 z_index = 90

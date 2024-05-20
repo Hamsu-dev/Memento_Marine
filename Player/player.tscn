@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://b2kioq0ibvkx8"]
+[gd_scene load_steps=34 format=3 uid="uid://b2kioq0ibvkx8"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_hdvfq"]
 [ext_resource type="Texture2D" uid="uid://crwa7dkdc1c33" path="res://Assets/Player/Chick/Fall/Warrior_Fall_1.png" id="2_j1ir8"]
@@ -27,11 +27,6 @@
 [ext_resource type="Texture2D" uid="uid://ce5ael2dmg7vd" path="res://Assets/Player/Chick/Run/Warrior_Run_6.png" id="16_ako8q"]
 [ext_resource type="Texture2D" uid="uid://dap1rhpn0g7we" path="res://Assets/Player/Chick/Run/Warrior_Run_7.png" id="17_c0b64"]
 [ext_resource type="Texture2D" uid="uid://b3px51ywf3m7e" path="res://Assets/Player/Chick/Run/Warrior_Run_8.png" id="18_625ek"]
-[ext_resource type="Texture2D" uid="uid://cgkpyop36ibd1" path="res://Assets/Player/Chick/Slide/Warrior-Slide_1.png" id="22_n5ai5"]
-[ext_resource type="Texture2D" uid="uid://b3hsgqhbyfn4p" path="res://Assets/Player/Chick/Slide/Warrior-Slide_2.png" id="23_dly20"]
-[ext_resource type="Texture2D" uid="uid://sikhahxlfi85" path="res://Assets/Player/Chick/Slide/Warrior-Slide_3.png" id="24_1jp17"]
-[ext_resource type="Texture2D" uid="uid://c3yf74en8o71u" path="res://Assets/Player/Chick/Slide/Warrior-Slide_4.png" id="25_c610p"]
-[ext_resource type="Texture2D" uid="uid://8raleahjeo4p" path="res://Assets/Player/Chick/Slide/Warrior-Slide_5.png" id="26_usrkl"]
 [ext_resource type="Texture2D" uid="uid://cqy11qk3mjrve" path="res://EnviroSprites/GroundandBG/gradient.jpg" id="33_a6hl7"]
 [ext_resource type="Texture2D" uid="uid://cc3jaunbswnfm" path="res://Assets/Player/Chick/WallSlide/Warrior_WallSlide_1.png" id="34_3hahs"]
 [ext_resource type="Texture2D" uid="uid://c8difxae3t1sb" path="res://Assets/Player/Chick/WallSlide/Warrior_WallSlide_2.png" id="35_wy6iv"]
@@ -144,23 +139,11 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("22_n5ai5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_dly20")
-}, {
-"duration": 1.0,
-"texture": ExtResource("24_1jp17")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_c610p")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_usrkl")
+"texture": ExtResource("11_b7lke")
 }],
-"loop": false,
-"name": &"slide",
-"speed": 8.0
+"loop": true,
+"name": &"walljump",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -199,7 +182,7 @@ texture = ExtResource("33_a6hl7")
 z_index = 99
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_bcbir")
-animation = &"wallslide"
+animation = &"walljump"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -222,10 +205,6 @@ texture = ExtResource("33_a6hl7")
 wait_time = 0.2
 one_shot = true
 
-[node name="SlideTimer" type="Timer" parent="."]
-wait_time = 0.5
-one_shot = true
-
 [node name="Raycast" type="Node2D" parent="."]
 
 [node name="TopRight" type="RayCast2D" parent="Raycast"]
@@ -241,5 +220,3 @@ target_position = Vector2(-13, 0)
 
 [node name="BottomLeft" type="RayCast2D" parent="Raycast"]
 target_position = Vector2(-13, 0)
-
-[connection signal="timeout" from="SlideTimer" to="." method="_on_slide_timer_timeout"]

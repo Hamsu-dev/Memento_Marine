@@ -9,7 +9,8 @@ height = 62.0
 [node name="Flesh Wall" type="StaticBody2D" groups=["wall_jumpable"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3, 0)
+z_index = 2
+position = Vector2(-1, 0)
 shape = SubResource("CapsuleShape2D_rtxug")
 
 [node name="FleshWallJump" type="Sprite2D" parent="."]

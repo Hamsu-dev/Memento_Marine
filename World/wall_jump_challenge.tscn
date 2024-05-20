@@ -12,7 +12,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qo3ao"]
 size = Vector2(30.25, 319.413)
 
-[node name="WallJumpChallenge" type="Node2D"]
+[node name="WallJumpChallenge2" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_jmrf2")]
 z_index = 0
@@ -126,9 +126,6 @@ texture = ExtResource("3_3blgw")
 
 [node name="Platform6" parent="." instance=ExtResource("5_hgx0w")]
 position = Vector2(265, 268)
-
-[node name="Platform7" parent="." instance=ExtResource("5_hgx0w")]
-position = Vector2(161, 188)
 
 [node name="ColumnTextured" type="Sprite2D" parent="."]
 position = Vector2(238, 131)
@@ -264,16 +261,13 @@ texture = ExtResource("8_m4o8q")
 position = Vector2(402, 388)
 
 [node name="Flesh Wall" parent="FleshWalls" instance=ExtResource("8_ms4s2")]
-position = Vector2(-18, 4)
+position = Vector2(-15, 4)
 
 [node name="Flesh Wall2" parent="FleshWalls" instance=ExtResource("8_ms4s2")]
-position = Vector2(-54, -109)
+position = Vector2(-52, -109)
 
 [node name="Flesh Wall4" parent="FleshWalls" instance=ExtResource("8_ms4s2")]
-position = Vector2(-16, -246)
-
-[node name="Flesh Wall5" parent="FleshWalls" instance=ExtResource("8_ms4s2")]
-position = Vector2(-16, -246)
+position = Vector2(-15, -279)
 
 [node name="Flesh Wall13" parent="FleshWalls" instance=ExtResource("8_ms4s2")]
 position = Vector2(-274, -241)
@@ -284,32 +278,26 @@ position = Vector2(-273, -341)
 [node name="Flesh Wall15" parent="FleshWalls" instance=ExtResource("8_ms4s2")]
 position = Vector2(-273, -341)
 
-[node name="Flesh Wall6" parent="FleshWalls" instance=ExtResource("8_ms4s2")]
-position = Vector2(-16, -246)
-
 [node name="Flesh Wall7" parent="FleshWalls" instance=ExtResource("8_ms4s2")]
-position = Vector2(-172, -251)
-
-[node name="Flesh Wall9" parent="FleshWalls" instance=ExtResource("8_ms4s2")]
-position = Vector2(-172, -251)
+position = Vector2(-172, -203)
 
 [node name="Flesh Wall8" parent="FleshWalls" instance=ExtResource("8_ms4s2")]
-position = Vector2(-172, -155)
+position = Vector2(-172, -140)
 
 [node name="Flesh Wall3" parent="FleshWalls" instance=ExtResource("8_ms4s2")]
-position = Vector2(-151, -166)
+position = Vector2(-151, -209)
+
+[node name="CollisionShape2D" parent="FleshWalls/Flesh Wall3" index="0"]
+position = Vector2(-3, 0)
 
 [node name="FleshWallJump" parent="FleshWalls/Flesh Wall3" index="1"]
 flip_h = true
 
-[node name="Flesh Wall10" parent="FleshWalls" instance=ExtResource("8_ms4s2")]
-position = Vector2(-152, -264)
-
-[node name="FleshWallJump" parent="FleshWalls/Flesh Wall10" index="1"]
-flip_h = true
-
 [node name="Flesh Wall11" parent="FleshWalls" instance=ExtResource("8_ms4s2")]
 position = Vector2(-339, -178)
+
+[node name="CollisionShape2D" parent="FleshWalls/Flesh Wall11" index="0"]
+position = Vector2(-3, 0)
 
 [node name="FleshWallJump" parent="FleshWalls/Flesh Wall11" index="1"]
 flip_h = true
@@ -317,17 +305,42 @@ flip_h = true
 [node name="Flesh Wall12" parent="FleshWalls" instance=ExtResource("8_ms4s2")]
 position = Vector2(-338, -297)
 
+[node name="CollisionShape2D" parent="FleshWalls/Flesh Wall12" index="0"]
+position = Vector2(-3, 0)
+
 [node name="FleshWallJump" parent="FleshWalls/Flesh Wall12" index="1"]
 flip_h = true
 
 [node name="Flesh Wall16" parent="FleshWalls" instance=ExtResource("8_ms4s2")]
 position = Vector2(-339, -403)
 
+[node name="CollisionShape2D" parent="FleshWalls/Flesh Wall16" index="0"]
+position = Vector2(-3, 0)
+
 [node name="FleshWallJump" parent="FleshWalls/Flesh Wall16" index="1"]
 flip_h = true
 
+[node name="Flesh Wall5" parent="FleshWalls" instance=ExtResource("8_ms4s2")]
+position = Vector2(-254, -294)
+
+[node name="CollisionShape2D" parent="FleshWalls/Flesh Wall5" index="0"]
+position = Vector2(-3, 0)
+
+[node name="FleshWallJump" parent="FleshWalls/Flesh Wall5" index="1"]
+flip_h = true
+
+[node name="Flesh Wall6" parent="FleshWalls" instance=ExtResource("8_ms4s2")]
+position = Vector2(-254, -232)
+
+[node name="CollisionShape2D" parent="FleshWalls/Flesh Wall6" index="0"]
+position = Vector2(-3, 0)
+
+[node name="FleshWallJump" parent="FleshWalls/Flesh Wall6" index="1"]
+flip_h = true
+
 [editable path="FleshWalls/Flesh Wall3"]
-[editable path="FleshWalls/Flesh Wall10"]
 [editable path="FleshWalls/Flesh Wall11"]
 [editable path="FleshWalls/Flesh Wall12"]
 [editable path="FleshWalls/Flesh Wall16"]
+[editable path="FleshWalls/Flesh Wall5"]
+[editable path="FleshWalls/Flesh Wall6"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://bid3m2t7vjvfx"]
+[gd_scene load_steps=42 format=3 uid="uid://bid3m2t7vjvfx"]
 
 [ext_resource type="PackedScene" uid="uid://b2kioq0ibvkx8" path="res://Player/player.tscn" id="1_4jjqy"]
 [ext_resource type="PackedScene" uid="uid://d0aoahb3jj4kc" path="res://Platforms/platforms.tscn" id="2_ww101"]
@@ -39,6 +39,8 @@
 [ext_resource type="Texture2D" uid="uid://dtae6rwvr8wuv" path="res://EnviroSprites/Landmarks/PLATFORM 1.png" id="36_o7j24"]
 [ext_resource type="Texture2D" uid="uid://c5ber1duh2vba" path="res://EnviroSprites/Landmarks/PLATFORM 2.png" id="37_ypxlr"]
 [ext_resource type="Texture2D" uid="uid://v3q7u1hq2qcd" path="res://EnviroSprites/GroundandBG/ocean.png" id="39_5b5dx"]
+[ext_resource type="PackedScene" uid="uid://dtn3e440x0422" path="res://Platforms/moving_platform.tscn" id="40_8tdds"]
+[ext_resource type="Curve2D" uid="uid://m4852hfy6mfw" path="res://Platforms/MovingPlatformsRoutes/Positive_y_10Meters.tres" id="41_p03gt"]
 
 [node name="World" type="Node2D"]
 
@@ -2035,11 +2037,6 @@ z_index = 1
 position = Vector2(-1164, -808)
 scale = Vector2(0.736765, 0.736765)
 
-[node name="Platform4" parent="PlatformFolder/Platform2" instance=ExtResource("2_ww101")]
-z_index = 1
-position = Vector2(-1688, -1400)
-scale = Vector2(1.14968, 1.14968)
-
 [node name="Platform5" parent="PlatformFolder/Platform2" instance=ExtResource("2_ww101")]
 position = Vector2(-2124, -708)
 scale = Vector2(1.14968, 1.14968)
@@ -2187,3 +2184,16 @@ offset_bottom = 22.0
 text = "Wall Climb 
 mementos
 Here"
+
+[node name="MovingPlatform" parent="." instance=ExtResource("40_8tdds")]
+position = Vector2(616, 136)
+scale = Vector2(0.184, 0.184)
+
+[node name="AnimatableBody2D" parent="MovingPlatform" index="0"]
+position = Vector2(0, 163.043)
+
+[node name="Path2D" parent="MovingPlatform" index="2"]
+position = Vector2(0, 163.043)
+curve = ExtResource("41_p03gt")
+
+[editable path="MovingPlatform"]

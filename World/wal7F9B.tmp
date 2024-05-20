@@ -17,7 +17,6 @@ size = Vector2(30.25, 319.413)
 [node name="Player" parent="." instance=ExtResource("1_jmrf2")]
 z_index = 0
 position = Vector2(335, 439)
-wall_jump_push_force = 300
 
 [node name="Ceiling" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 1)
@@ -127,11 +126,8 @@ texture = ExtResource("3_3blgw")
 [node name="Platform6" parent="." instance=ExtResource("5_hgx0w")]
 position = Vector2(265, 268)
 
-[node name="Platform7" parent="." instance=ExtResource("5_hgx0w")]
-position = Vector2(161, 188)
-
 [node name="ColumnTextured" type="Sprite2D" parent="."]
-position = Vector2(238, 131)
+position = Vector2(237, 131)
 scale = Vector2(0.260192, 0.260192)
 texture = ExtResource("6_bxnni")
 
@@ -281,9 +277,6 @@ position = Vector2(-274, -241)
 [node name="Flesh Wall14" parent="FleshWalls" instance=ExtResource("8_ms4s2")]
 position = Vector2(-273, -341)
 
-[node name="Flesh Wall15" parent="FleshWalls" instance=ExtResource("8_ms4s2")]
-position = Vector2(-273, -341)
-
 [node name="Flesh Wall6" parent="FleshWalls" instance=ExtResource("8_ms4s2")]
 position = Vector2(-16, -246)
 
@@ -320,14 +313,7 @@ position = Vector2(-338, -297)
 [node name="FleshWallJump" parent="FleshWalls/Flesh Wall12" index="1"]
 flip_h = true
 
-[node name="Flesh Wall16" parent="FleshWalls" instance=ExtResource("8_ms4s2")]
-position = Vector2(-339, -403)
-
-[node name="FleshWallJump" parent="FleshWalls/Flesh Wall16" index="1"]
-flip_h = true
-
 [editable path="FleshWalls/Flesh Wall3"]
 [editable path="FleshWalls/Flesh Wall10"]
 [editable path="FleshWalls/Flesh Wall11"]
 [editable path="FleshWalls/Flesh Wall12"]
-[editable path="FleshWalls/Flesh Wall16"]

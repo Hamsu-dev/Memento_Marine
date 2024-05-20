@@ -3,17 +3,21 @@ extends CharacterBody2D
 # Export Variables
 @export var acceleration = 400  # Slightly lower for smoother acceleration
 @export var air_acceleration = 200  # Lower acceleration for air control
+@export var wall_jump_air_acceleration = 100  # Lower acceleration for air control during wall jump
 @export var max_speed = 250  # Increased for faster gameplay
+# Friction
 @export var friction = 1000  # Increased for quick stops
-@export var air_friction = 500  # Friction applied in the air for more control
+@export var air_friction = 5000  # Friction applied in the air for more control
+@export var slide_friction = 0.8  # Friction applied to slow down wall sliding
 @export var gravity = 500  # Reduced for lighter, longer jumps
 @export var jump_force = 250  # Increased for higher jumps
 @export var max_fall_velocity = 500  # Increased for more realistic falls
 @export var drop_force = 600  # The downward force applied when crouching in air
 @export var bounce_multiplier = 1.2  # Multiplier for bounce height
 @export var wall_jump_force = 250  # Force applied during wall jump
-@export var wall_jump_push_force = 300  # Force pushing away from the wall during wall jump
-@export var wall_slide_gravity = 50  # Reduced gravity when sliding down a wall
+@export var wall_jump_push_force = 200  # Force pushing away from the wall during wall jump
+@export var wall_slide_gravity = 500  # Reduced gravity when sliding down a wall
+
 
 # Onready variables
 @onready var coyote_jump_timer = $CoyoteJumpTimer
@@ -68,7 +72,8 @@ func check_wall_collision():
 
 func apply_wall_slide(delta):
 	if wall_sliding and not Input.is_action_pressed("up"):  # Only slide down if not pressing jump
-		velocity.y = min(velocity.y + wall_slide_gravity * delta, max_fall_velocity)
+		velocity.y += wall_slide_gravity * delta
+		velocity.y *= slide_friction  # Apply friction to slow down the slide
 		velocity.x = 0  # Prevent horizontal movement while wall sliding
 
 func is_moving(input_axis):
@@ -82,7 +87,8 @@ func apply_acceleration(delta, input_axis):
 	if is_on_floor():
 		velocity.x = move_toward(velocity.x, input_axis * max_speed, acceleration * delta)
 	else:
-		velocity.x = move_toward(velocity.x, input_axis * max_speed, air_acceleration * delta)
+		velocity.x = move_toward(velocity.x, input_axis * max_speed, wall_jump_air_acceleration * delta if wall_jumping else air_acceleration * delta)
+
 
 func apply_friction(delta):
 	if is_on_floor():

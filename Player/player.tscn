@@ -209,14 +209,14 @@ one_shot = true
 
 [node name="TopRight" type="RayCast2D" parent="Raycast"]
 position = Vector2(0, -30)
-target_position = Vector2(13, 0)
+target_position = Vector2(10, 0)
 
 [node name="BottomRight" type="RayCast2D" parent="Raycast"]
-target_position = Vector2(13, 0)
+target_position = Vector2(10, 0)
 
 [node name="TopLeft" type="RayCast2D" parent="Raycast"]
 position = Vector2(0, -30)
-target_position = Vector2(-13, 0)
+target_position = Vector2(-10, 0)
 
 [node name="BottomLeft" type="RayCast2D" parent="Raycast"]
-target_position = Vector2(-13, 0)
+target_position = Vector2(-10, 0)

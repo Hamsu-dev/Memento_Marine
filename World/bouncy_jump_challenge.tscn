@@ -10,13 +10,13 @@
 [ext_resource type="PackedScene" uid="uid://bsm4p2xpdjlod" path="res://Platforms/flesh_wall_jump.tscn" id="8_15obb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qo3ao"]
-size = Vector2(30.25, 227.848)
+size = Vector2(34.859, 227.848)
 
 [node name="WallJumpChallenge" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_k5ioo")]
 z_index = 0
-position = Vector2(148, 322)
+position = Vector2(156, 27)
 bounce_multiplier = 1.5
 
 [node name="Ceiling" type="Sprite2D" parent="."]
@@ -89,7 +89,7 @@ scale = Vector2(0.56601, 0.415555)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelFloorCollision"]
 position = Vector2(4.91405, 36.0364)
-polygon = PackedVector2Array(-886.524, -305.556, -861.79, 1123.86, 681, 1083.68, 678, -43, 614, -42.5885, 613.913, 353.124, 461.509, 353.804, 464.362, 746.682, 411.142, 746.051, 410.799, 978.847, 182.362, 979.474, 181.476, 521.218, -478.404, 521.218, -480.171, -332.026)
+polygon = PackedVector2Array(-886.524, -305.556, -861.79, 1123.86, 681, 1083.68, 678, -43, 614, -42.5885, 613.913, 353.124, 461.509, 353.804, 464.362, 746.682, 411.142, 746.051, 410.799, 978.847, 182.362, 979.474, 181.476, 521.218, -283.34, 521.218, -266.394, 209.419, -480.171, 209.419, -480.171, -332.026)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelFloorCollision"]
 position = Vector2(270.313, 329.68)
@@ -107,14 +107,12 @@ scale = Vector2(0.805756, 1)
 shape = SubResource("RectangleShape2D_qo3ao")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="LevelFloorCollision"]
-position = Vector2(-74.2037, 459.627)
-rotation = 0.0388521
+position = Vector2(-68.8133, 459.627)
 scale = Vector2(0.805756, 1)
 shape = SubResource("RectangleShape2D_qo3ao")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="LevelFloorCollision"]
-position = Vector2(-273.847, 411.498)
-rotation = -0.0460497
+position = Vector2(-279.147, 409.092)
 scale = Vector2(1.14135, 1.4165)
 shape = SubResource("RectangleShape2D_qo3ao")
 
@@ -125,7 +123,7 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("3_y88mf")
 
 [node name="Platformextenddropshadow2" type="Sprite2D" parent="Platformextenddropshadow"]
-position = Vector2(-1700, -756)
+position = Vector2(-1612, -1272)
 texture = ExtResource("3_y88mf")
 
 [node name="Platformextenddropshadow3" type="Sprite2D" parent="Platformextenddropshadow"]
@@ -148,15 +146,23 @@ texture = ExtResource("3_y88mf")
 position = Vector2(252, 332)
 
 [node name="Platform7" parent="Platform6" instance=ExtResource("4_w8ghy")]
-position = Vector2(-1476, -1220)
+position = Vector2(-1460, -1400)
 scale = Vector2(1, 1)
 
 [node name="Platform8" parent="Platform6" instance=ExtResource("4_w8ghy")]
-position = Vector2(-832, -1216)
+position = Vector2(-1168, -1228)
 scale = Vector2(1, 1)
 
 [node name="Platform9" parent="Platform6" instance=ExtResource("4_w8ghy")]
-position = Vector2(40, -984)
+position = Vector2(-392, -992)
+scale = Vector2(1, 1)
+
+[node name="Platform10" parent="Platform6" instance=ExtResource("4_w8ghy")]
+position = Vector2(148, -920)
+scale = Vector2(1, 1)
+
+[node name="Platform11" parent="Platform6" instance=ExtResource("4_w8ghy")]
+position = Vector2(-852, -1228)
 scale = Vector2(1, 1)
 
 [node name="ColumnTextured" type="Sprite2D" parent="."]
@@ -175,9 +181,9 @@ position = Vector2(-4.80643, -911.531)
 texture = ExtResource("5_5dnbt")
 
 [node name="ColumnTextured4" type="Sprite2D" parent="ColumnTextured"]
-position = Vector2(-753.29, 211.382)
+position = Vector2(-749.447, 211.382)
 rotation = 0.050018
-scale = Vector2(0.997002, 1.00753)
+scale = Vector2(0.835777, 1.00753)
 texture = ExtResource("5_5dnbt")
 
 [node name="WallPlainTextured" type="Sprite2D" parent="."]

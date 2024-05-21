@@ -17,5 +17,6 @@ func change_levels(door : Door):
 	var doors = get_tree().get_nodes_in_group("doors")
 	for found_door in doors:
 		if found_door == door: continue
+		if found_door.connection != door.connection: continue
 		player.global_position = found_door.global_position
 		

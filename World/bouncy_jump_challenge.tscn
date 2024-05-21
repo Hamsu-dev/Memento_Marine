@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dtpl1ls1c40fk"]
+[gd_scene load_steps=18 format=3 uid="uid://dtpl1ls1c40fk"]
 
 [ext_resource type="Texture2D" uid="uid://bwcpxbx5n3br3" path="res://EnviroSprites/GroundandBG/ceiling.png" id="2_jlrms"]
 [ext_resource type="Texture2D" uid="uid://bpyew2rr8q42v" path="res://EnviroSprites/Platforms/platformextenddropshadow.png" id="3_y88mf"]
@@ -12,7 +12,10 @@
 [ext_resource type="Texture2D" uid="uid://dyvl05d3eayk" path="res://EnviroSprites/Buildings/Windows/rectangle window 2.png" id="11_8cuin"]
 [ext_resource type="Texture2D" uid="uid://bv3x2wyhiqk7q" path="res://EnviroSprites/Buildings/Windows/big arch.png" id="11_wpthn"]
 [ext_resource type="Texture2D" uid="uid://pdk6rv3xc122" path="res://EnviroSprites/Buildings/Walls/WallStriped.png" id="12_fs45t"]
+[ext_resource type="PackedScene" uid="uid://ckiyh57un5obs" path="res://Assets/Interactables/door.tscn" id="14_ndd3x"]
 [ext_resource type="Texture2D" uid="uid://bs1djgvqxfwrj" path="res://Menu/diagrams/bounce jump.png" id="14_sq4oy"]
+[ext_resource type="Resource" uid="uid://dht2524qto2og" path="res://World/ClockTowerTwo_BouncyOne.tres" id="15_1yql1"]
+[ext_resource type="Resource" uid="uid://kxhbt7itf83s" path="res://World/Bouncyone_ClockTowerTwo.tres" id="16_0nc8o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qo3ao"]
 size = Vector2(34.859, 227.848)
@@ -759,5 +762,15 @@ position = Vector2(292.3, 1982.05)
 rotation = 5.34072
 scale = Vector2(0.683399, 0.755813)
 texture = ExtResource("2_jlrms")
+
+[node name="Door" parent="." instance=ExtResource("14_ndd3x")]
+position = Vector2(120, 422)
+new_level_path = "res://World/wall_jump_challenge.tscn"
+connection = ExtResource("15_1yql1")
+
+[node name="Door2" parent="." instance=ExtResource("14_ndd3x")]
+position = Vector2(462, -91)
+new_level_path = "res://World/clock_tower_level_two.tscn"
+connection = ExtResource("16_0nc8o")
 
 [editable path="FleshWalls/Flesh Wall12"]

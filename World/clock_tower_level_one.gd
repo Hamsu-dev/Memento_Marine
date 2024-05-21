@@ -17,7 +17,7 @@ func show_cutscene():
 		world_camera.make_current()  # Activate world camera
 	# Disable player controls during the cutscene
 	if player:
-		player.set_process(false)  # Disable the player's processing
+		player.disable()
 	animation_player.play("cutscene")
 
 func _on_animation_player_animation_finished(anim_name):
@@ -26,7 +26,5 @@ func _on_animation_player_animation_finished(anim_name):
 		# Switch back to the player camera
 		if player_camera:
 			player_camera.make_current()  # Activate player camera
-		
-		# Re-enable player controls
-		if player:
-			player.set_process(true)
+	if player:
+		player.enable()

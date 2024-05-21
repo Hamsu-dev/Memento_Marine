@@ -22,7 +22,7 @@ extends CharacterBody2D
 # Jump
 @export var wall_jump_force = 250  # Force applied during wall jump
 @export var wall_jump_push_force = 200  # Force pushing away from the wall during wall jump
-@export var bounce_multiplier = 1.2  # Multiplier for bounce height
+@export var bounce_multiplier = 1.4  # Multiplier for bounce height
 
 # Onready variables
 @onready var coyote_jump_timer = $CoyoteJumpTimer

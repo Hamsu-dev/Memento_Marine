@@ -2286,6 +2286,7 @@ offset_bottom = 665.0
 [node name="God Ray" type="Node" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="God Ray"]
+visible = false
 material = SubResource("ShaderMaterial_rauk0")
 offset_left = 998.0
 offset_top = -432.0

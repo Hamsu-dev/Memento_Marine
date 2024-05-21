@@ -21,7 +21,6 @@ func show_cutscene():
 	animation_player.play("cutscene")
 
 func _on_animation_player_animation_finished(anim_name):
-	print("working")
 	if anim_name == "cutscene":
 		# Switch back to the player camera
 		if player_camera:

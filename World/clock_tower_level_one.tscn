@@ -2245,11 +2245,15 @@ position = Vector2(616, 136)
 scale = Vector2(0.184, 0.184)
 
 [node name="AnimatableBody2D" parent="MovingPlatform" index="0"]
-position = Vector2(0, 163.043)
+position = Vector2(0, -28.957)
 
 [node name="Path2D" parent="MovingPlatform" index="2"]
 position = Vector2(0, 163.043)
 curve = ExtResource("42_pd5yb")
+
+[node name="PathFollow2D" parent="MovingPlatform/Path2D" index="0"]
+position = Vector2(0, -192)
+progress = 192.0
 
 [node name="_Timer_19059" type="Timer" parent="MovingPlatform/Path2D/PathFollow2D" index="1"]
 wait_time = 0.2
@@ -2295,7 +2299,7 @@ libraries = {
 }
 
 [node name="Door" parent="." instance=ExtResource("43_dq7q6")]
-position = Vector2(1984, 193)
+position = Vector2(2121, 554)
 new_level_path = "res://World/wall_jump_challenge.tscn"
 connection = ExtResource("48_3mcgq")
 

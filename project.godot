@@ -17,8 +17,8 @@ config/icon="res://Screenshot/Memento_title_red.png"
 
 [autoload]
 
-MainInstances="*res://Singleton/MainInstances.gd"
 Events="*res://Singleton/Events.gd"
+MainInstances="*res://Singleton/MainInstances.gd"
 
 [display]
 

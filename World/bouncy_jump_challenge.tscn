@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dtpl1ls1c40fk"]
+[gd_scene load_steps=11 format=3 uid="uid://dtpl1ls1c40fk"]
 
 [ext_resource type="PackedScene" uid="uid://b2kioq0ibvkx8" path="res://Player/player.tscn" id="1_k5ioo"]
 [ext_resource type="Texture2D" uid="uid://bwcpxbx5n3br3" path="res://EnviroSprites/GroundandBG/ceiling.png" id="2_jlrms"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c7v6foq5t3k2q" path="res://EnviroSprites/Buildings/Walls/WallBricked.png" id="6_7py3l"]
 [ext_resource type="Texture2D" uid="uid://b5bvgf4dtsmg8" path="res://EnviroSprites/Buildings/Walls/WallPlainTextured.png" id="7_l8mfs"]
 [ext_resource type="PackedScene" uid="uid://bsm4p2xpdjlod" path="res://Platforms/flesh_wall_jump.tscn" id="8_15obb"]
+[ext_resource type="FontFile" uid="uid://mwq4pd7yj8if" path="res://Menu/Lora-VariableFont_wght.ttf" id="9_skba2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qo3ao"]
 size = Vector2(34.859, 227.848)
@@ -354,6 +355,16 @@ position = Vector2(-339, -178)
 
 [node name="FleshWallJump" parent="FleshWalls/Flesh Wall11" index="1"]
 flip_h = true
+
+[node name="TestLabel" type="Label" parent="."]
+offset_left = 113.0
+offset_top = 205.0
+offset_right = 962.0
+offset_bottom = 334.0
+scale = Vector2(0.215, 0.215)
+theme_override_fonts/font = ExtResource("9_skba2")
+theme_override_font_sizes/font_size = 80
+text = "This is a test label."
 
 [editable path="FleshWalls/Flesh Wall12"]
 [editable path="FleshWalls/Flesh Wall3"]

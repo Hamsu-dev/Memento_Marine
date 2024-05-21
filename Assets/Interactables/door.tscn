@@ -9,6 +9,32 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_dmsb3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_u4cul")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_dmsb3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_u4cul")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_dmsb3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_u4cul")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_dmsb3")
+}],
+"loop": false,
+"name": &"close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dmsb3")
 }],
 "loop": true,
 "name": &"default",
@@ -29,16 +55,28 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bvm01"]
 size = Vector2(269, 371)
 
-[node name="Door" type="Area2D"]
+[node name="Door" type="Area2D" groups=["doors"]]
+scale = Vector2(0.11, 0.11)
+collision_layer = 8
+collision_mask = 2
 script = ExtResource("1_e1xfs")
+new_level_path = "<null>"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -182)
 sprite_frames = SubResource("SpriteFrames_y0bga")
-animation = &"open"
-frame = 1
+animation = &"close"
+frame = 6
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -186)
 shape = SubResource("RectangleShape2D_bvm01")
+
+[node name="RightCast" type="RayCast2D" parent="."]
+position = Vector2(0, -181.818)
+target_position = Vector2(200, 0)
+
+[node name="LeftCast" type="RayCast2D" parent="."]
+position = Vector2(0, -181.818)
+target_position = Vector2(-200, 0)

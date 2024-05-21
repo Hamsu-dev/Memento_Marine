@@ -1,39 +1,21 @@
-extends Node
+extends Node2D
 
-@onready var animation_player = $AnimationPlayer
-@onready var button = $Button
-@onready var player = $Player
-@onready var player_camera = $Player/Camera2D
-@onready var world_camera = $WorldCamera
-@onready var door = $Door
-@onready var animated_sprite_2d = $Door/AnimatedSprite2D
 
+@onready var level: = $ClockTowerLevel
 
 func _ready():
-	# Connect the button's signal to the function
-	button.button_pressed.connect(_on_Button_pressed)
+	Events.door_entered.connect(change_levels)
 
-func _on_Button_pressed():
-	show_cutscene()
-	
-func show_cutscene():
-	if world_camera:
-		world_camera.make_current()
-	
-	animation_player.play("cutscene")
-	
-	# Optionally, disable player controls during the cutscene
-	if player:
-		player.disable() # Disable the player's processing
 
-	# You can also use a timer or signals to re-enable controls after the cutscene
-
-func _on_animation_player_animation_finished(anim_name):
-	if anim_name == "cutscene":
-		# Switch back to the player camera
-		if player_camera:
-			player_camera.make_current()  # Make the player camera current again
+func change_levels(door : Door):
+	var player = MainInstances.player as Player
+	if not player is Player: return
+	level.queue_free()
+	var new_level = load(door.new_level_path).instantiate()
+	add_child(new_level)
+	level = new_level
+	var doors = get_tree().get_nodes_in_group("doors")
+	for found_door in doors:
+		if found_door == door: continue
+		player.global_position = found_door.global_position
 		
-		# Re-enable player controls
-		if player:
-			player.enable()

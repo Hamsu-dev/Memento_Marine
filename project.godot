@@ -15,6 +15,11 @@ run/main_scene="res://World/world.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://Screenshot/Memento_title_red.png"
 
+[autoload]
+
+MainInstances="*res://Singleton/MainInstances.gd"
+Events="*res://Singleton/Events.gd"
+
 [display]
 
 window/stretch/mode="canvas_items"

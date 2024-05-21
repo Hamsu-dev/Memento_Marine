@@ -1,6 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://pfrm2qy1gfkx"]
+[gd_scene load_steps=11 format=3 uid="uid://pfrm2qy1gfkx"]
 
-[ext_resource type="PackedScene" uid="uid://b2kioq0ibvkx8" path="res://Player/player.tscn" id="1_jmrf2"]
+[ext_resource type="Script" path="res://World/wall_jump_challenge.gd" id="1_5hl64"]
 [ext_resource type="Texture2D" uid="uid://bwcpxbx5n3br3" path="res://EnviroSprites/GroundandBG/ceiling.png" id="2_3yykw"]
 [ext_resource type="Texture2D" uid="uid://c7v6foq5t3k2q" path="res://EnviroSprites/Buildings/Walls/WallBricked.png" id="2_fi8vh"]
 [ext_resource type="Texture2D" uid="uid://bpyew2rr8q42v" path="res://EnviroSprites/Platforms/platformextenddropshadow.png" id="3_3blgw"]
@@ -8,16 +8,13 @@
 [ext_resource type="Texture2D" uid="uid://deyjc7f8qbxlh" path="res://EnviroSprites/Buildings/ColumnsEtc/ColumnTextured.png" id="6_bxnni"]
 [ext_resource type="Texture2D" uid="uid://b5bvgf4dtsmg8" path="res://EnviroSprites/Buildings/Walls/WallPlainTextured.png" id="8_m4o8q"]
 [ext_resource type="PackedScene" uid="uid://bsm4p2xpdjlod" path="res://Platforms/flesh_wall_jump.tscn" id="8_ms4s2"]
+[ext_resource type="PackedScene" uid="uid://ckiyh57un5obs" path="res://Assets/Interactables/door.tscn" id="9_dbq51"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qo3ao"]
 size = Vector2(30.25, 319.413)
 
 [node name="WallJumpChallenge2" type="Node2D"]
-
-[node name="Player" parent="." instance=ExtResource("1_jmrf2")]
-z_index = 0
-position = Vector2(335, 439)
-wall_jump_push_force = 300
+script = ExtResource("1_5hl64")
 
 [node name="Ceiling" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 1)
@@ -338,9 +335,21 @@ position = Vector2(-3, 0)
 [node name="FleshWallJump" parent="FleshWalls/Flesh Wall6" index="1"]
 flip_h = true
 
+[node name="Door" parent="." instance=ExtResource("9_dbq51")]
+position = Vector2(301, 462)
+new_level_path = "res://World/world.tscn"
+
+[node name="AnimatedSprite2D" parent="Door" index="0"]
+animation = &"default"
+frame = 0
+frame_progress = 0.0
+
+[connection signal="animation_finished" from="Door/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+
 [editable path="FleshWalls/Flesh Wall3"]
 [editable path="FleshWalls/Flesh Wall11"]
 [editable path="FleshWalls/Flesh Wall12"]
 [editable path="FleshWalls/Flesh Wall16"]
 [editable path="FleshWalls/Flesh Wall5"]
 [editable path="FleshWalls/Flesh Wall6"]
+[editable path="Door"]

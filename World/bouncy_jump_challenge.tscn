@@ -1,6 +1,5 @@
-[gd_scene load_steps=16 format=3 uid="uid://dtpl1ls1c40fk"]
+[gd_scene load_steps=15 format=3 uid="uid://dtpl1ls1c40fk"]
 
-[ext_resource type="PackedScene" uid="uid://b2kioq0ibvkx8" path="res://Player/player.tscn" id="1_k5ioo"]
 [ext_resource type="Texture2D" uid="uid://bwcpxbx5n3br3" path="res://EnviroSprites/GroundandBG/ceiling.png" id="2_jlrms"]
 [ext_resource type="Texture2D" uid="uid://bpyew2rr8q42v" path="res://EnviroSprites/Platforms/platformextenddropshadow.png" id="3_y88mf"]
 [ext_resource type="PackedScene" uid="uid://d0aoahb3jj4kc" path="res://Platforms/platforms.tscn" id="4_w8ghy"]
@@ -38,17 +37,6 @@ bounce jump"
 position = Vector2(175, 367)
 scale = Vector2(0.292072, 0.292072)
 texture = ExtResource("14_sq4oy")
-
-[node name="Player" parent="." instance=ExtResource("1_k5ioo")]
-z_index = 0
-position = Vector2(138, 369)
-bounce_multiplier = 1.5
-
-[node name="OverallGradient" parent="Player" index="0"]
-modulate = Color(0.57, 0.813667, 1, 0.356863)
-
-[node name="Gradient" parent="Player/Camera2D" index="0"]
-modulate = Color(0.57, 0.813667, 1, 0.356863)
 
 [node name="WallBack" type="Node2D" parent="."]
 z_index = -2
@@ -772,5 +760,4 @@ rotation = 5.34072
 scale = Vector2(0.683399, 0.755813)
 texture = ExtResource("2_jlrms")
 
-[editable path="Player"]
 [editable path="FleshWalls/Flesh Wall12"]

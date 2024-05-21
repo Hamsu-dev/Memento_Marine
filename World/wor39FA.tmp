@@ -1,15 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://bid3m2t7vjvfx"]
+[gd_scene load_steps=4 format=3 uid="uid://bid3m2t7vjvfx"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_eeowi"]
-[ext_resource type="PackedScene" uid="uid://dhwsckm1ag60" path="res://World/clock_tower_level_one.tscn" id="2_lq4b1"]
+[ext_resource type="PackedScene" uid="uid://dhwsckm1ag60" path="res://World/clock_tower_level.tscn" id="2_lq4b1"]
 [ext_resource type="PackedScene" uid="uid://b2kioq0ibvkx8" path="res://Player/player.tscn" id="2_qkquh"]
-[ext_resource type="PackedScene" uid="uid://brnd5o5qwcj2y" path="res://World/world_camera.tscn" id="4_3jlew"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_eeowi")
 
 [node name="Player" parent="." instance=ExtResource("2_qkquh")]
-position = Vector2(1141, 3)
+position = Vector2(1556, 435)
 
 [node name="OverallGradient" parent="Player" index="0"]
 visible = false
@@ -17,19 +16,13 @@ visible = false
 [node name="Gradient" parent="Player/Camera2D" index="0"]
 visible = false
 
-[node name="WorldCamera" parent="." instance=ExtResource("4_3jlew")]
-position = Vector2(2134, 459)
-
 [node name="ClockTowerLevel" parent="." instance=ExtResource("2_lq4b1")]
 
-[node name="Door" parent="ClockTowerLevel" index="50"]
-position = Vector2(2122, 553)
-
-[node name="RightCast" parent="ClockTowerLevel/Door" index="2"]
-target_position = Vector2(400, 0)
+[node name="Door" parent="ClockTowerLevel" index="51"]
+collision_layer = 0
+new_level_path = "res://World/wall_jump_challenge.tscn"
 
 [editable path="Player"]
 [editable path="ClockTowerLevel"]
 [editable path="ClockTowerLevel/Button"]
 [editable path="ClockTowerLevel/MovingPlatform"]
-[editable path="ClockTowerLevel/Door"]

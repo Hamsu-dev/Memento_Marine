@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://brnd5o5qwcj2y"]
+
+[node name="WorldCamera" type="Camera2D"]
+position = Vector2(1934, 490)
+zoom = Vector2(3.115, 3.115)
+position_smoothing_speed = 2.0

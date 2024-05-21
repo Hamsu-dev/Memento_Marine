@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody2D
 
 # Acceleration
@@ -42,6 +43,9 @@ var is_bouncing = false
 var is_disabled = false
 
 # Functions
+func _enter_tree():
+	MainInstances.player = self
+
 func _physics_process(delta):
 	if is_disabled:
 		return
@@ -75,6 +79,9 @@ func _physics_process(delta):
 
 	check_wall_collision()
 	apply_wall_slide(delta)
+
+func _exit_tree():
+	MainInstances.player = null
 
 func disable():
 	is_disabled = true

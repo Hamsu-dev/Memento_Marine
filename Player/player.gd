@@ -39,9 +39,13 @@ var wall_sliding = false
 var wall_jumping = false
 var bounce_used = false
 var is_bouncing = false 
+var is_disabled = false
 
 # Functions
 func _physics_process(delta):
+	if is_disabled:
+		return
+		
 	apply_gravity(delta)
 	var input_axis = Input.get_axis("left", "right")
 	if is_moving(input_axis):
@@ -72,6 +76,12 @@ func _physics_process(delta):
 	check_wall_collision()
 	apply_wall_slide(delta)
 
+func disable():
+	is_disabled = true
+
+func enable():
+	is_disabled = false
+	
 func check_wall_collision():
 	on_wall = false
 	wall_direction = 0

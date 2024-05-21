@@ -39,3 +39,4 @@ sprite_frames = SubResource("SpriteFrames_o5m8v")
 polygon = PackedVector2Array(-57, -118, 50, -119, 51, -90, 72, -89, 85, -30, 98, -29, 97, -3, -96, -2, -96, -27, -86, -27, -77, -88, -59, -88)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

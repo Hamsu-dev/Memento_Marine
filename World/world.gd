@@ -24,8 +24,7 @@ func show_cutscene():
 	
 	# Optionally, disable player controls during the cutscene
 	if player:
-		print("turned off")
-		player.set_process(false)  # Disable the player's processing
+		player.disable() # Disable the player's processing
 
 	# You can also use a timer or signals to re-enable controls after the cutscene
 
@@ -37,4 +36,4 @@ func _on_animation_player_animation_finished(anim_name):
 		
 		# Re-enable player controls
 		if player:
-			player.set_process(true)
+			player.enable()

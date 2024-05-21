@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://ckiyh57un5obs"]
+[gd_scene load_steps=6 format=3 uid="uid://ckiyh57un5obs"]
 
 [ext_resource type="Texture2D" uid="uid://pon2mr8wog36" path="res://Assets/Interactables/doorclose.png" id="1_dmsb3"]
+[ext_resource type="Script" path="res://Assets/Interactables/door.gd" id="1_e1xfs"]
 [ext_resource type="Texture2D" uid="uid://g48tomj40shg" path="res://Assets/Interactables/dooropen.png" id="2_u4cul"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y0bga"]
@@ -29,6 +30,7 @@ animations = [{
 size = Vector2(269, 371)
 
 [node name="Door" type="Area2D"]
+script = ExtResource("1_e1xfs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -182)

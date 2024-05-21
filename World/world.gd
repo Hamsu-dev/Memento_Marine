@@ -5,6 +5,9 @@ extends Node
 @onready var player = $Player
 @onready var player_camera = $Player/Camera2D
 @onready var world_camera = $WorldCamera
+@onready var door = $Door
+@onready var animated_sprite_2d = $Door/AnimatedSprite2D
+
 
 func _ready():
 	# Connect the button's signal to the function
@@ -12,16 +15,16 @@ func _ready():
 
 func _on_Button_pressed():
 	show_cutscene()
-
+	
 func show_cutscene():
 	if world_camera:
 		world_camera.make_current()
 	
 	animation_player.play("cutscene")
-	print("playing")
 	
 	# Optionally, disable player controls during the cutscene
 	if player:
+		print("turned off")
 		player.set_process(false)  # Disable the player's processing
 
 	# You can also use a timer or signals to re-enable controls after the cutscene

@@ -100,14 +100,16 @@ _data = {
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_qb4ny"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_orwfr"]
+seamless = true
+seamless_blend_skirt = 0.735
 noise = SubResource("FastNoiseLite_qb4ny")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8ay4a"]
 shader = ExtResource("45_donq4")
 shader_parameter/refraction_stretch = Vector2(1, 1)
-shader_parameter/refraction_strength = 0.02
-shader_parameter/water_tint = Color(0.2, 0.6, 1, 0.1)
-shader_parameter/speed = 0.1
+shader_parameter/refraction_strength = 0.037
+shader_parameter/water_tint = Color(0.2, 0.6, 1, 0)
+shader_parameter/speed = 0.05
 shader_parameter/refraction_map = SubResource("NoiseTexture2D_orwfr")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_aptt4"]
@@ -117,7 +119,7 @@ noise = SubResource("FastNoiseLite_aptt4")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_t5d48"]
 shader = ExtResource("47_04vpa")
-shader_parameter/color = null
+shader_parameter/color = Color(1, 0.0705882, 0.0470588, 0.654902)
 shader_parameter/OCTAVES = 4
 shader_parameter/enable_pixelation = false
 shader_parameter/pixelation_amount = 150
@@ -146,7 +148,7 @@ visible = false
 limit_left = 0
 limit_top = -200
 limit_right = 2520
-limit_bottom = 600
+limit_bottom = 623
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
@@ -2262,23 +2264,26 @@ scale = Vector2(0.1, 0.1)
 [node name="Water Shader" type="Node" parent="."]
 
 [node name="Water_Shader" type="ColorRect" parent="Water Shader"]
+z_index = 100
 material = SubResource("ShaderMaterial_8ay4a")
-offset_left = 1983.0
-offset_top = 553.0
+offset_left = 4.0
+offset_top = 564.0
 offset_right = 2520.0
-offset_bottom = 640.0
+offset_bottom = 651.0
 
 [node name="Water" type="Sprite2D" parent="Water Shader"]
-z_index = -2
-position = Vector2(1260.08, 599.587)
+z_index = 99
+position = Vector2(1260.08, 610.587)
 scale = Vector2(1.31242, 0.143037)
 texture = ExtResource("39_5b5dx")
 
 [node name="Water_Shader2" type="ColorRect" parent="Water Shader"]
+visible = false
+z_index = 100
 material = SubResource("ShaderMaterial_8ay4a")
-offset_top = 554.0
+offset_top = 565.0
 offset_right = 258.0
-offset_bottom = 646.0
+offset_bottom = 657.0
 
 [node name="Fog" type="Node" parent="."]
 

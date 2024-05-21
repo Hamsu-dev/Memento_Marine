@@ -1,18 +1,45 @@
-[gd_scene load_steps=5 format=3 uid="uid://bid3m2t7vjvfx"]
+[gd_scene load_steps=7 format=3 uid="uid://bid3m2t7vjvfx"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_eeowi"]
-[ext_resource type="PackedScene" uid="uid://dhwsckm1ag60" path="res://World/clock_tower_level_one.tscn" id="2_lq4b1"]
 [ext_resource type="PackedScene" uid="uid://b2kioq0ibvkx8" path="res://Player/player.tscn" id="2_qkquh"]
+[ext_resource type="PackedScene" uid="uid://rg46wxqtfopg" path="res://World/prologue.tscn" id="4_0ltqj"]
 [ext_resource type="PackedScene" uid="uid://brnd5o5qwcj2y" path="res://World/world_camera.tscn" id="4_3jlew"]
+[ext_resource type="PackedScene" uid="uid://ckiyh57un5obs" path="res://Assets/Interactables/door.tscn" id="5_0kljm"]
+[ext_resource type="Resource" uid="uid://dfqdx0vvh2u6v" path="res://World/Prolouge_ClockTowerOne.tres" id="6_d4f8u"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_eeowi")
 
 [node name="Player" parent="." instance=ExtResource("2_qkquh")]
-position = Vector2(1141, 3)
+position = Vector2(97, 259)
+acceleration = 400
+air_acceleration = 200
+wall_jump_air_acceleration = 100
+max_speed = 250
+friction = 1000
+air_friction = 5000
+slide_friction = 0.8
+gravity = 500
+jump_force = 250
+max_fall_velocity = 500
+drop_force = 600
+wall_slide_gravity = 500
+wall_jump_force = 250
+wall_jump_push_force = 200
+bounce_multiplier = 1.4
 
 [node name="OverallGradient" parent="Player" index="0"]
 visible = false
+
+[node name="Camera2D" parent="Player" index="3"]
+limit_left = 4
+limit_top = 0
+limit_right = 1800
+limit_bottom = 329
+limit_smoothed = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+editor_draw_limits = true
 
 [node name="Gradient" parent="Player/Camera2D" index="0"]
 visible = false
@@ -20,16 +47,16 @@ visible = false
 [node name="WorldCamera" parent="." instance=ExtResource("4_3jlew")]
 position = Vector2(2134, 459)
 
-[node name="ClockTowerLevel" parent="." instance=ExtResource("2_lq4b1")]
+[node name="Prologue" parent="." instance=ExtResource("4_0ltqj")]
 
-[node name="Door" parent="ClockTowerLevel" index="50"]
-position = Vector2(2122, 553)
+[node name="Door" parent="Prologue" instance=ExtResource("5_0kljm")]
+position = Vector2(1562, 277)
+new_level_path = "res://World/clock_tower_level_one.tscn"
+connection = ExtResource("6_d4f8u")
 
-[node name="RightCast" parent="ClockTowerLevel/Door" index="2"]
-target_position = Vector2(400, 0)
+[node name="AnimatedSprite2D" parent="Prologue/Door" index="0"]
+visible = false
 
 [editable path="Player"]
-[editable path="ClockTowerLevel"]
-[editable path="ClockTowerLevel/Button"]
-[editable path="ClockTowerLevel/MovingPlatform"]
-[editable path="ClockTowerLevel/Door"]
+[editable path="Prologue"]
+[editable path="Prologue/Door"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://cuk8i5xir27pw"]
+[gd_scene load_steps=64 format=3 uid="uid://cuk8i5xir27pw"]
 
 [ext_resource type="Script" path="res://World/clock_tower_level_two.gd" id="1_07jn3"]
 [ext_resource type="PackedScene" uid="uid://cyhg841lp1wjc" path="res://Assets/Interactables/button.tscn" id="2_1y41u"]
@@ -50,6 +50,7 @@
 [ext_resource type="Resource" uid="uid://dk34tbggomtho" path="res://World/WallJumpOne_ClockTowerTwo.tres" id="48_ejuso"]
 [ext_resource type="PackedScene" uid="uid://brnd5o5qwcj2y" path="res://World/world_camera.tscn" id="49_nrwmj"]
 [ext_resource type="Resource" uid="uid://dht2524qto2og" path="res://World/ClockTowerTwo_BouncyOne.tres" id="50_m4lao"]
+[ext_resource type="PackedScene" uid="uid://c8pfinyhx3py8" path="res://World/camera_limits.tscn" id="51_w04xk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a2w3v"]
 shader = ExtResource("3_ueu4c")
@@ -2339,6 +2340,16 @@ z_index = 2
 position = Vector2(758, 546)
 new_level_path = "res://World/bouncy_jump_challenge.tscn"
 connection = ExtResource("50_m4lao")
+
+[node name="CameraLimits" parent="." instance=ExtResource("51_w04xk")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_top = -350.0
+offset_right = 2215.0
+offset_bottom = 656.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 

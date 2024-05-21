@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dadokrixht645" path="res://EnviroSprites/Prologue/HOLYMOLY.png" id="1_cykqh"]
 [ext_resource type="Texture2D" uid="uid://brye54prqkhqg" path="res://EnviroSprites/Prologue/skeleton.png" id="2_ireh2"]
-[ext_resource type="PackedScene" uid="uid://b2kioq0ibvkx8" path="res://Player/player.tscn" id="2_rjlyp"]
+[ext_resource type="PackedScene" uid="uid://c8pfinyhx3py8" path="res://World/camera_limits.tscn" id="3_f5x03"]
 
 [node name="Prologue" type="Node2D"]
 
@@ -22,5 +22,8 @@ position = Vector2(1059, 222)
 scale = Vector2(0.159817, 0.159817)
 texture = ExtResource("2_ireh2")
 
-[node name="Player" parent="." instance=ExtResource("2_rjlyp")]
-position = Vector2(205, 60)
+[node name="CameraLimits" parent="." instance=ExtResource("3_f5x03")]
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 1801.0
+offset_bottom = 326.0

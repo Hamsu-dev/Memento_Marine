@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://dhwsckm1ag60"]
+[gd_scene load_steps=62 format=3 uid="uid://dhwsckm1ag60"]
 
 [ext_resource type="PackedScene" uid="uid://cyhg841lp1wjc" path="res://Assets/Interactables/button.tscn" id="1_3nmw7"]
 [ext_resource type="Script" path="res://World/clock_tower_level_one.gd" id="1_257nd"]
@@ -48,6 +48,8 @@
 [ext_resource type="Shader" path="res://World/fog.gdshader" id="46_2q6js"]
 [ext_resource type="Shader" path="res://World/GodRay.gdshader" id="47_dpbcb"]
 [ext_resource type="Resource" uid="uid://b6xxg0hnhnfik" path="res://World/ClockTower_WallJump.tres" id="48_3mcgq"]
+[ext_resource type="Resource" uid="uid://dfqdx0vvh2u6v" path="res://World/Prolouge_ClockTowerOne.tres" id="49_nqkmm"]
+[ext_resource type="PackedScene" uid="uid://c8pfinyhx3py8" path="res://World/camera_limits.tscn" id="50_k35hs"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a2w3v"]
 shader = ExtResource("2_v5ris")
@@ -2303,6 +2305,24 @@ libraries = {
 position = Vector2(2121, 554)
 new_level_path = "res://World/wall_jump_challenge.tscn"
 connection = ExtResource("48_3mcgq")
+
+[node name="CollisionShape2D" parent="Door" index="1"]
+position = Vector2(0.000427246, -181.818)
+
+[node name="Door2" parent="." instance=ExtResource("43_dq7q6")]
+position = Vector2(96, 554)
+new_level_path = "res://World/prologue.tscn"
+connection = ExtResource("49_nqkmm")
+
+[node name="CameraLimits" parent="." instance=ExtResource("50_k35hs")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_top = -344.0
+offset_right = 2231.0
+offset_bottom = 649.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 

@@ -1,7 +1,6 @@
 extends Node2D
 
-
-@onready var level: = $ClockTowerLevel
+@onready var level = $Prologue
 
 func _ready():
 	Events.door_entered.connect(change_levels)
@@ -18,5 +17,6 @@ func change_levels(door : Door):
 	for found_door in doors:
 		if found_door == door: continue
 		if found_door.connection != door.connection: continue
-		player.global_position = found_door.global_position
+		var yoffset = player.global_position.y - door.global_position.y
+		player.global_position = found_door.global_position + Vector2(0, yoffset)
 		

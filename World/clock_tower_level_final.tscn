@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://ddj6xpgoad76s"]
+[gd_scene load_steps=63 format=3 uid="uid://ddj6xpgoad76s"]
 
 [ext_resource type="Script" path="res://World/clock_tower_level_final.gd" id="1_mcs3i"]
 [ext_resource type="PackedScene" uid="uid://cyhg841lp1wjc" path="res://Assets/Interactables/button.tscn" id="2_m05qi"]
@@ -49,6 +49,7 @@
 [ext_resource type="PackedScene" uid="uid://brnd5o5qwcj2y" path="res://World/world_camera.tscn" id="47_nvp4u"]
 [ext_resource type="Resource" uid="uid://bwn3blrbvj2ah" path="res://World/BouncyOne_Final.tres" id="48_ijbuy"]
 [ext_resource type="PackedScene" uid="uid://ckiyh57un5obs" path="res://Assets/Interactables/door.tscn" id="48_t4jjd"]
+[ext_resource type="PackedScene" uid="uid://c8pfinyhx3py8" path="res://World/camera_limits.tscn" id="50_0ofth"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a2w3v"]
 shader = ExtResource("3_x07wd")
@@ -2319,7 +2320,21 @@ position = Vector2(427, 47)
 new_level_path = "res://World/bouncy_jump_challenge.tscn"
 connection = ExtResource("48_ijbuy")
 
+[node name="RightCast" parent="Door" index="2"]
+target_position = Vector2(150, 0)
+
+[node name="CameraLimits" parent="." instance=ExtResource("50_0ofth")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_top = -929.0
+offset_right = 2238.0
+offset_bottom = 650.0
+grow_horizontal = 1
+grow_vertical = 1
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 
 [editable path="Button"]
 [editable path="MovingPlatform"]
+[editable path="Door"]

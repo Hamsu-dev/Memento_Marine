@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8pfinyhx3py8"]
+
+[ext_resource type="Script" path="res://World/camera_limits.gd" id="1_buggn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rjh7t"]
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0.8, 0.8, 1)
+
+[node name="CameraLimits" type="Panel"]
+custom_minimum_size = Vector2(320, 180)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rjh7t")
+script = ExtResource("1_buggn")

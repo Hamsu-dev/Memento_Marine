@@ -50,7 +50,7 @@ signal camera_disabled
 func _enter_tree():
 	MainInstances.player = self
 	MainInstances.player_camera = player_camera
-	print("Player entered tree with camera: ", player_camera)
+
 func _physics_process(delta):
 	if is_disabled:
 		return
@@ -88,7 +88,7 @@ func _physics_process(delta):
 func _exit_tree():
 	MainInstances.player = null
 	MainInstances.player_camera = null
-	print("Player exited tree")
+
 func disable():
 	is_disabled = true
 	camera_disabled.emit()

@@ -52,8 +52,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bvm01"]
-size = Vector2(269, 371)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7x17v"]
+size = Vector2(263.636, 359.455)
 
 [node name="Door" type="Area2D" groups=["doors"]]
 scale = Vector2(0.11, 0.11)
@@ -70,8 +70,8 @@ frame = 6
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -186)
-shape = SubResource("RectangleShape2D_bvm01")
+position = Vector2(0, -183.909)
+shape = SubResource("RectangleShape2D_7x17v")
 
 [node name="RightCast" type="RayCast2D" parent="."]
 position = Vector2(0, -181.818)

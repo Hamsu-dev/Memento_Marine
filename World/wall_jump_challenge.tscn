@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://pfrm2qy1gfkx"]
+[gd_scene load_steps=14 format=3 uid="uid://pfrm2qy1gfkx"]
 
 [ext_resource type="Script" path="res://World/wall_jump_challenge.gd" id="1_5hl64"]
 [ext_resource type="Texture2D" uid="uid://bwcpxbx5n3br3" path="res://EnviroSprites/GroundandBG/ceiling.png" id="2_3yykw"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ckiyh57un5obs" path="res://Assets/Interactables/door.tscn" id="9_dbq51"]
 [ext_resource type="Resource" uid="uid://b6xxg0hnhnfik" path="res://World/ClockTower_WallJump.tres" id="10_7iktv"]
 [ext_resource type="Resource" uid="uid://dk34tbggomtho" path="res://World/WallJumpOne_ClockTowerTwo.tres" id="11_l3x3a"]
+[ext_resource type="PackedScene" uid="uid://c8pfinyhx3py8" path="res://World/camera_limits.tscn" id="12_llkxt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qo3ao"]
 size = Vector2(30.25, 319.413)
@@ -351,6 +352,17 @@ frame_progress = 0.0
 position = Vector2(407, -2)
 new_level_path = "res://World/clock_tower_level_two.tscn"
 connection = ExtResource("11_l3x3a")
+
+[node name="CameraLimits" parent="." instance=ExtResource("12_llkxt")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -92.0
+offset_top = -212.0
+offset_right = 594.0
+offset_bottom = 569.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [connection signal="animation_finished" from="Door/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://b2kioq0ibvkx8"]
+[gd_scene load_steps=35 format=3 uid="uid://b2kioq0ibvkx8"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_hdvfq"]
 [ext_resource type="Texture2D" uid="uid://crwa7dkdc1c33" path="res://Assets/Player/Chick/Fall/Warrior_Fall_1.png" id="2_j1ir8"]
@@ -27,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://ce5ael2dmg7vd" path="res://Assets/Player/Chick/Run/Warrior_Run_6.png" id="16_ako8q"]
 [ext_resource type="Texture2D" uid="uid://dap1rhpn0g7we" path="res://Assets/Player/Chick/Run/Warrior_Run_7.png" id="17_c0b64"]
 [ext_resource type="Texture2D" uid="uid://b3px51ywf3m7e" path="res://Assets/Player/Chick/Run/Warrior_Run_8.png" id="18_625ek"]
+[ext_resource type="Script" path="res://Player/Camera2D.gd" id="32_7qmes"]
 [ext_resource type="Texture2D" uid="uid://cqy11qk3mjrve" path="res://EnviroSprites/GroundandBG/gradient.jpg" id="33_a6hl7"]
 [ext_resource type="Texture2D" uid="uid://cc3jaunbswnfm" path="res://Assets/Player/Chick/WallSlide/Warrior_WallSlide_1.png" id="34_3hahs"]
 [ext_resource type="Texture2D" uid="uid://c8difxae3t1sb" path="res://Assets/Player/Chick/WallSlide/Warrior_WallSlide_2.png" id="35_wy6iv"]
@@ -192,8 +193,10 @@ shape = SubResource("CapsuleShape2D_tejjw")
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(0, -25)
 zoom = Vector2(3.115, 3.115)
+limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
+script = ExtResource("32_7qmes")
 
 [node name="Gradient" type="Sprite2D" parent="Camera2D"]
 z_index = -100

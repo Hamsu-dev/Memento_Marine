@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://cyhg841lp1wjc"]
+
+[ext_resource type="Script" path="res://Assets/Interactables/button.gd" id="1_7l8sf"]
+[ext_resource type="Texture2D" uid="uid://7d1hf5jsm3kb" path="res://Assets/Interactables/buttonup.png" id="1_ym1y3"]
+[ext_resource type="Texture2D" uid="uid://co4vw8mdg8v1e" path="res://Assets/Interactables/buttondown.png" id="2_6amke"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o5m8v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ym1y3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6amke")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_ym1y3")
+}],
+"loop": false,
+"name": &"pressed",
+"speed": 5.0
+}]
+
+[node name="Button" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_7l8sf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -62)
+sprite_frames = SubResource("SpriteFrames_o5m8v")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-57, -118, 50, -119, 51, -90, 72, -89, 85, -30, 98, -29, 97, -3, -96, -2, -96, -27, -86, -27, -77, -88, -59, -88)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

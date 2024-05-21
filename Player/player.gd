@@ -89,10 +89,10 @@ func check_wall_collision():
 		wall_sliding = false
 
 func apply_wall_slide(delta):
-	if wall_sliding and not Input.is_action_pressed("up"):  # Only slide down if not pressing jump
+	if wall_sliding and not Input.is_action_pressed("up"):  #
 		velocity.y += wall_slide_gravity * delta
-		velocity.y *= slide_friction  # Apply friction to slow down the slide
-		velocity.x = 0  # Prevent horizontal movement while wall sliding
+		velocity.y *= slide_friction 
+		velocity.x = 0  
 
 func is_moving(input_axis):
 	return input_axis != 0
@@ -116,15 +116,15 @@ func apply_friction(delta):
 func jump_check():
 	if (is_on_floor() or coyote_jump_timer.time_left > 0.0) and Input.is_action_just_pressed("up"):
 		velocity.y = -jump_force
-		coyote_jump_timer.stop()  # Stop the coyote timer on jump
+		coyote_jump_timer.stop() 
 	elif on_wall and Input.is_action_just_pressed("up"):
 		velocity.y = -wall_jump_force
-		velocity.x = wall_jump_push_force * wall_direction  # Push away from the wall
-		animated_sprite_2d.flip_h = wall_direction < 0  # Face away from the wall during wall jump
-		wall_jumping = true  # Set wall_jumping to true when wall jumping
-		wall_sliding = false  # Stop wall sliding when jumping off the wall
+		velocity.x = wall_jump_push_force * wall_direction  
+		animated_sprite_2d.flip_h = wall_direction < 0  
+		wall_jumping = true  
+		wall_sliding = false  
 	else:
-		wall_jumping = false  # Set wall_jumping to false when not wall jumping
+		wall_jumping = false 
 	if Input.is_action_just_pressed("down") and not is_on_floor():
 		start_drop()
 	if Input.is_action_just_released("up") and velocity.y < -jump_force / 2:
@@ -153,14 +153,14 @@ func update_animations(input_axis):
 	elif input_axis < 0:
 		animated_sprite_2d.flip_h = true
 
-	if wall_jumping:  # Added wall jump animation handling
+	if wall_jumping:  
 		if animated_sprite_2d.animation != "walljump":
 			animated_sprite_2d.play("walljump")
-		animated_sprite_2d.flip_h = wall_direction < 0  # Face away from the wall during wall jump
-	elif wall_sliding and not Input.is_action_pressed("up"):  # Only play slide animation if not pressing jump
+		animated_sprite_2d.flip_h = wall_direction < 0 
+	elif wall_sliding and not Input.is_action_pressed("up"): 
 		if animated_sprite_2d.animation != "wallslide":
 			animated_sprite_2d.play("wallslide")
-		animated_sprite_2d.flip_h = wall_direction > 0  # Face away from the wall during slide
+		animated_sprite_2d.flip_h = wall_direction > 0  
 	elif is_dropping:
 		if animated_sprite_2d.animation != "crouch":
 			animated_sprite_2d.play("crouch")

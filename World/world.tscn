@@ -119,10 +119,10 @@ noise = SubResource("FastNoiseLite_aptt4")
 shader = ExtResource("47_04vpa")
 shader_parameter/color = null
 shader_parameter/OCTAVES = 4
-shader_parameter/enable_pixelation = true
+shader_parameter/enable_pixelation = false
 shader_parameter/pixelation_amount = 150
 shader_parameter/fog_direction = Vector2(1, 1)
-shader_parameter/scroll_noise_tex = false
+shader_parameter/scroll_noise_tex = true
 shader_parameter/noise_scroll_direction = Vector2(1, 0)
 shader_parameter/fog_mask = SubResource("NoiseTexture2D_kjbvm")
 

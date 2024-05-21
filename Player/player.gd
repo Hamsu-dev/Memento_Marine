@@ -1,23 +1,27 @@
 extends CharacterBody2D
 
-# Export Variables
+# Acceleration
 @export var acceleration = 400  # Slightly lower for smoother acceleration
 @export var air_acceleration = 200  # Lower acceleration for air control
 @export var wall_jump_air_acceleration = 100  # Lower acceleration for air control during wall jump
 @export var max_speed = 250  # Increased for faster gameplay
+
 # Friction
 @export var friction = 1000  # Increased for quick stops
 @export var air_friction = 5000  # Friction applied in the air for more control
 @export var slide_friction = 0.8  # Friction applied to slow down wall sliding
+
+# Gravity
 @export var gravity = 500  # Reduced for lighter, longer jumps
 @export var jump_force = 250  # Increased for higher jumps
 @export var max_fall_velocity = 500  # Increased for more realistic falls
 @export var drop_force = 600  # The downward force applied when crouching in air
-@export var bounce_multiplier = 1.2  # Multiplier for bounce height
-@export var wall_jump_force = 250  # Force applied during wall jump
-@export var wall_jump_push_force = 200  # Force pushing away from the wall during wall jump
 @export var wall_slide_gravity = 500  # Reduced gravity when sliding down a wall
 
+# Jump
+@export var wall_jump_force = 250  # Force applied during wall jump
+@export var wall_jump_push_force = 200  # Force pushing away from the wall during wall jump
+@export var bounce_multiplier = 1.2  # Multiplier for bounce height
 
 # Onready variables
 @onready var coyote_jump_timer = $CoyoteJumpTimer
@@ -33,6 +37,8 @@ var on_wall = false
 var wall_direction = 0
 var wall_sliding = false
 var wall_jumping = false
+var bounce_used = false
+var is_bouncing = false 
 
 # Functions
 func _physics_process(delta):
@@ -49,8 +55,20 @@ func _physics_process(delta):
 	var just_left_edge = was_on_floor and not is_on_floor()
 	if just_left_edge:
 		coyote_jump_timer.start()
+
+	# Check if player is dropping and on the floor to bounce
 	if is_on_floor() and is_dropping:
 		bounce()
+
+	# Reset is_dropping and bounce_used variables when landing on the floor
+	if is_on_floor():
+		if is_dropping:
+			is_dropping = false
+		if not is_bouncing:
+			bounce_used = false
+		else:
+			is_bouncing = false
+
 	check_wall_collision()
 	apply_wall_slide(delta)
 
@@ -89,7 +107,6 @@ func apply_acceleration(delta, input_axis):
 	else:
 		velocity.x = move_toward(velocity.x, input_axis * max_speed, wall_jump_air_acceleration * delta if wall_jumping else air_acceleration * delta)
 
-
 func apply_friction(delta):
 	if is_on_floor():
 		velocity.x = move_toward(velocity.x, 0, friction * delta)
@@ -122,8 +139,11 @@ func start_drop():
 		animated_sprite_2d.play("crouch")  # Assume this is your falling fast animation
 
 func bounce():
-	velocity.y = -jump_force * bounce_multiplier
-	is_dropping = false
+	if not bounce_used:
+		velocity.y = -jump_force * bounce_multiplier
+		is_dropping = false
+		bounce_used = true
+		is_bouncing = true
 
 func update_animations(input_axis):
 	var on_ground = is_on_floor()

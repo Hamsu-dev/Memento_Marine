@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://bid3m2t7vjvfx"]
+[gd_scene load_steps=56 format=3 uid="uid://bid3m2t7vjvfx"]
 
 [ext_resource type="PackedScene" uid="uid://b2kioq0ibvkx8" path="res://Player/player.tscn" id="1_4jjqy"]
 [ext_resource type="Script" path="res://World/world.gd" id="1_eeowi"]
@@ -45,7 +45,6 @@
 [ext_resource type="PackedScene" uid="uid://ckiyh57un5obs" path="res://Assets/Interactables/door.tscn" id="43_eb35y"]
 [ext_resource type="PackedScene" uid="uid://cyhg841lp1wjc" path="res://Assets/Interactables/button.tscn" id="43_r82ln"]
 [ext_resource type="Shader" path="res://World/water.gdshader" id="45_donq4"]
-[ext_resource type="Texture2D" uid="uid://boydmdu08ymf7" path="res://EnviroSprites/GroundandBG/water.jpg" id="46_qir7y"]
 [ext_resource type="Shader" path="res://World/fog.gdshader" id="47_04vpa"]
 
 [sub_resource type="Animation" id="Animation_1m3v4"]
@@ -2195,72 +2194,6 @@ position = Vector2(152, 285)
 [node name="Platform13" parent="PlatformFolder" instance=ExtResource("3_vsewr")]
 position = Vector2(1332, 136)
 
-[node name="Ocean" type="Sprite2D" parent="."]
-z_index = 100
-position = Vector2(16, 630)
-scale = Vector2(0.113573, 0.113573)
-texture = ExtResource("39_5b5dx")
-
-[node name="Ocean2" type="Sprite2D" parent="Ocean"]
-z_index = 100
-position = Vector2(1919.64, 0)
-texture = ExtResource("39_5b5dx")
-
-[node name="Ocean13" type="Sprite2D" parent="Ocean"]
-z_index = 100
-position = Vector2(-1901.85, 0)
-texture = ExtResource("39_5b5dx")
-
-[node name="Ocean3" type="Sprite2D" parent="Ocean"]
-z_index = 100
-position = Vector2(3839.28, 0)
-texture = ExtResource("39_5b5dx")
-
-[node name="Ocean4" type="Sprite2D" parent="Ocean"]
-z_index = 100
-position = Vector2(5755.6, 0)
-texture = ExtResource("39_5b5dx")
-
-[node name="Ocean5" type="Sprite2D" parent="Ocean"]
-z_index = 100
-position = Vector2(7675.24, 0)
-texture = ExtResource("39_5b5dx")
-
-[node name="Ocean6" type="Sprite2D" parent="Ocean"]
-z_index = 100
-position = Vector2(9587.9, 0)
-texture = ExtResource("39_5b5dx")
-
-[node name="Ocean7" type="Sprite2D" parent="Ocean"]
-z_index = 100
-position = Vector2(11507.5, 0)
-texture = ExtResource("39_5b5dx")
-
-[node name="Ocean8" type="Sprite2D" parent="Ocean"]
-z_index = 100
-position = Vector2(13423.9, 0)
-texture = ExtResource("39_5b5dx")
-
-[node name="Ocean9" type="Sprite2D" parent="Ocean"]
-z_index = 100
-position = Vector2(15343.5, 0)
-texture = ExtResource("39_5b5dx")
-
-[node name="Ocean10" type="Sprite2D" parent="Ocean"]
-z_index = 100
-position = Vector2(17257.6, 0)
-texture = ExtResource("39_5b5dx")
-
-[node name="Ocean11" type="Sprite2D" parent="Ocean"]
-z_index = 100
-position = Vector2(19177, 0)
-texture = ExtResource("39_5b5dx")
-
-[node name="Ocean12" type="Sprite2D" parent="Ocean"]
-z_index = 100
-position = Vector2(21087.7, 0)
-texture = ExtResource("39_5b5dx")
-
 [node name="Label" type="Label" parent="."]
 offset_left = 618.0
 offset_top = 39.0
@@ -2333,26 +2266,19 @@ material = SubResource("ShaderMaterial_8ay4a")
 offset_left = 1983.0
 offset_top = 553.0
 offset_right = 2520.0
-offset_bottom = 596.0
+offset_bottom = 640.0
 
 [node name="Water" type="Sprite2D" parent="Water Shader"]
 z_index = -2
-position = Vector2(2183, 592)
-scale = Vector2(1.054, 0.212)
-texture = ExtResource("46_qir7y")
+position = Vector2(1260.08, 599.587)
+scale = Vector2(1.31242, 0.143037)
+texture = ExtResource("39_5b5dx")
 
 [node name="Water_Shader2" type="ColorRect" parent="Water Shader"]
 material = SubResource("ShaderMaterial_8ay4a")
-offset_left = -2.0
 offset_top = 554.0
 offset_right = 258.0
-offset_bottom = 594.0
-
-[node name="Water2" type="Sprite2D" parent="Water Shader"]
-z_index = -2
-position = Vector2(106, 607)
-scale = Vector2(1.054, 0.212)
-texture = ExtResource("46_qir7y")
+offset_bottom = 646.0
 
 [node name="Fog" type="Node" parent="."]
 

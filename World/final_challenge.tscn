@@ -1,0 +1,320 @@
+[gd_scene load_steps=13 format=3 uid="uid://bm6vcax6e2g0b"]
+
+[ext_resource type="PackedScene" uid="uid://b2kioq0ibvkx8" path="res://Player/player.tscn" id="1_iihlp"]
+[ext_resource type="Texture2D" uid="uid://dw8gm7hqp7bug" path="res://EnviroSprites/Buildings/ColumnsEtc/Separator.png" id="2_ipswc"]
+[ext_resource type="PackedScene" uid="uid://bf4ldidd5sglr" path="res://Platforms/platformlong.tscn" id="3_d4w6b"]
+[ext_resource type="PackedScene" uid="uid://d0aoahb3jj4kc" path="res://Platforms/platforms.tscn" id="4_waipe"]
+[ext_resource type="PackedScene" uid="uid://bsm4p2xpdjlod" path="res://Platforms/flesh_wall_jump.tscn" id="5_2lx2e"]
+[ext_resource type="Texture2D" uid="uid://bwcpxbx5n3br3" path="res://EnviroSprites/GroundandBG/ceiling.png" id="6_jg8re"]
+[ext_resource type="Texture2D" uid="uid://deyjc7f8qbxlh" path="res://EnviroSprites/Buildings/ColumnsEtc/ColumnTextured.png" id="6_lwrlf"]
+[ext_resource type="Texture2D" uid="uid://crs352d5ysm2g" path="res://EnviroSprites/Buildings/Decorative/mast.png" id="7_4a7ko"]
+[ext_resource type="Texture2D" uid="uid://qmxdbjuc566i" path="res://EnviroSprites/Buildings/Decorative/statue.png" id="8_mpcmx"]
+[ext_resource type="Texture2D" uid="uid://dw01h5bf51lm7" path="res://EnviroSprites/Buildings/Decorative/barnacles.png" id="9_jyxi5"]
+[ext_resource type="Texture2D" uid="uid://c4e5a5v6370qw" path="res://EnviroSprites/Buildings/Decorative/marker thing.png" id="10_5aiep"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o3mbq"]
+size = Vector2(98.5585, 4215.46)
+
+[node name="FinalChallenge" type="Node2D"]
+
+[node name="LevelFloorCollision" type="StaticBody2D" parent="."]
+z_index = 3
+scale = Vector2(0.56601, 0.415555)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelFloorCollision"]
+position = Vector2(40.6353, 1334.15)
+scale = Vector2(0.805756, 1)
+shape = SubResource("RectangleShape2D_o3mbq")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="LevelFloorCollision"]
+position = Vector2(572.428, 1334.15)
+scale = Vector2(0.805756, 1)
+shape = SubResource("RectangleShape2D_o3mbq")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="LevelFloorCollision"]
+position = Vector2(316.249, 2685.56)
+rotation = 1.5708
+scale = Vector2(0.805756, 0.229945)
+shape = SubResource("RectangleShape2D_o3mbq")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="LevelFloorCollision"]
+position = Vector2(323.316, 1896.26)
+rotation = 1.5708
+scale = Vector2(0.386763, 0.0141169)
+shape = SubResource("RectangleShape2D_o3mbq")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelFloorCollision"]
+z_index = 1
+position = Vector2(1095.39, 1369.25)
+polygon = PackedVector2Array(-19.4343, 38.5028, -91.8712, 117.915, -118.372, 187.701, -118.372, 344.118, 72.4369, 341.712, 70.6701, 9.62573)
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="LevelFloorCollision"]
+position = Vector2(825.074, 1222.46)
+rotation = 1.5708
+scale = Vector2(0.386763, 0.0650776)
+shape = SubResource("RectangleShape2D_o3mbq")
+
+[node name="Player" parent="." instance=ExtResource("1_iihlp")]
+z_index = 50
+position = Vector2(170, 1073)
+
+[node name="Separator" type="Sprite2D" parent="."]
+position = Vector2(307, 1018)
+rotation = 1.5708
+scale = Vector2(0.347139, 0.347139)
+texture = ExtResource("2_ipswc")
+
+[node name="Separator2" type="Sprite2D" parent="Separator"]
+position = Vector2(0, 769.144)
+texture = ExtResource("2_ipswc")
+
+[node name="Separator4" type="Sprite2D" parent="Separator"]
+position = Vector2(-572.087, 769.144)
+texture = ExtResource("2_ipswc")
+
+[node name="Separator3" type="Sprite2D" parent="Separator"]
+position = Vector2(-572.087, 2.50067e-05)
+texture = ExtResource("2_ipswc")
+
+[node name="Separator5" type="Sprite2D" parent="Separator"]
+position = Vector2(-1145.34, 769.144)
+texture = ExtResource("2_ipswc")
+
+[node name="Separator6" type="Sprite2D" parent="Separator"]
+position = Vector2(-1145.34, 5.00646e-05)
+texture = ExtResource("2_ipswc")
+
+[node name="Separator7" type="Sprite2D" parent="Separator"]
+position = Vector2(-1715.72, 769.144)
+texture = ExtResource("2_ipswc")
+
+[node name="Separator8" type="Sprite2D" parent="Separator"]
+position = Vector2(-1715.72, 7.49965e-05)
+texture = ExtResource("2_ipswc")
+
+[node name="Separator9" type="Sprite2D" parent="Separator"]
+position = Vector2(-2283.22, 769.144)
+texture = ExtResource("2_ipswc")
+
+[node name="Separator10" type="Sprite2D" parent="Separator"]
+position = Vector2(-2283.22, 9.98026e-05)
+texture = ExtResource("2_ipswc")
+
+[node name="Separator11" type="Sprite2D" parent="Separator"]
+position = Vector2(-2859.35, 769.144)
+texture = ExtResource("2_ipswc")
+
+[node name="Separator12" type="Sprite2D" parent="Separator"]
+position = Vector2(-2859.35, 0.000124986)
+texture = ExtResource("2_ipswc")
+
+[node name="Separator13" type="Sprite2D" parent="Separator"]
+position = Vector2(-3435.49, 769.144)
+texture = ExtResource("2_ipswc")
+
+[node name="Separator14" type="Sprite2D" parent="Separator"]
+position = Vector2(-3435.49, 0.00015017)
+texture = ExtResource("2_ipswc")
+
+[node name="LongPlatformssss" type="Node2D" parent="."]
+position = Vector2(262, 1105)
+scale = Vector2(0.25, 0.25)
+
+[node name="Platform3" parent="LongPlatformssss" instance=ExtResource("3_d4w6b")]
+position = Vector2(-724, 0)
+scale = Vector2(1, 1)
+
+[node name="Platform" parent="LongPlatformssss" instance=ExtResource("3_d4w6b")]
+position = Vector2(-376, 0)
+scale = Vector2(1, 1)
+
+[node name="Platform2" parent="LongPlatformssss" instance=ExtResource("3_d4w6b")]
+position = Vector2(-368, -384)
+scale = Vector2(1, 1)
+
+[node name="LongPlatforms" parent="LongPlatformssss" instance=ExtResource("3_d4w6b")]
+scale = Vector2(1, 1)
+
+[node name="LongPlatforms2" parent="LongPlatformssss" instance=ExtResource("3_d4w6b")]
+position = Vector2(-820, -1516)
+scale = Vector2(1, 1)
+
+[node name="LongPlatforms3" parent="LongPlatformssss" instance=ExtResource("3_d4w6b")]
+position = Vector2(-12, -2980)
+scale = Vector2(1, 1)
+
+[node name="LongPlatforms4" parent="LongPlatformssss" instance=ExtResource("3_d4w6b")]
+position = Vector2(8, -4760)
+scale = Vector2(1, 1)
+
+[node name="LongPlatforms5" parent="LongPlatformssss" instance=ExtResource("3_d4w6b")]
+position = Vector2(-560, -4924)
+scale = Vector2(1, 1)
+
+[node name="LongPlatforms6" parent="LongPlatformssss" instance=ExtResource("3_d4w6b")]
+position = Vector2(-276, -5552)
+scale = Vector2(1, 1)
+
+[node name="ShortPlatforms" type="Node2D" parent="."]
+position = Vector2(262, 1105)
+scale = Vector2(0.25, 0.25)
+
+[node name="Small Platforms" parent="ShortPlatforms" instance=ExtResource("4_waipe")]
+position = Vector2(-104, -704)
+scale = Vector2(1, 1)
+
+[node name="Small Platforms2" parent="ShortPlatforms" instance=ExtResource("4_waipe")]
+position = Vector2(-336, -936)
+scale = Vector2(1, 1)
+
+[node name="Small Platforms3" parent="ShortPlatforms" instance=ExtResource("4_waipe")]
+position = Vector2(-640, -616)
+scale = Vector2(1, 1)
+
+[node name="Small Platforms4" parent="ShortPlatforms" instance=ExtResource("4_waipe")]
+position = Vector2(-808, -1776)
+scale = Vector2(1, 1)
+
+[node name="Small Platforms6" parent="ShortPlatforms" instance=ExtResource("4_waipe")]
+position = Vector2(-144, -1844)
+scale = Vector2(1, 1)
+
+[node name="Small Platforms7" parent="ShortPlatforms" instance=ExtResource("4_waipe")]
+position = Vector2(-600, -2664)
+scale = Vector2(1, 1)
+
+[node name="Small Platforms8" parent="ShortPlatforms" instance=ExtResource("4_waipe")]
+position = Vector2(12, -3168)
+scale = Vector2(1, 1)
+
+[node name="Small Platforms9" parent="ShortPlatforms" instance=ExtResource("4_waipe")]
+position = Vector2(-168, -3348)
+scale = Vector2(1, 1)
+
+[node name="Small Platforms10" parent="ShortPlatforms" instance=ExtResource("4_waipe")]
+position = Vector2(0, -3536)
+scale = Vector2(1, 1)
+
+[node name="Small Platforms11" parent="ShortPlatforms" instance=ExtResource("4_waipe")]
+position = Vector2(-320, -3644)
+scale = Vector2(1, 1)
+
+[node name="Small Platforms12" parent="ShortPlatforms" instance=ExtResource("4_waipe")]
+position = Vector2(-624, -3788)
+scale = Vector2(1, 1)
+
+[node name="Small Platforms13" parent="ShortPlatforms" instance=ExtResource("4_waipe")]
+position = Vector2(-340, -4272)
+scale = Vector2(1, 1)
+
+[node name="Small Platforms14" parent="ShortPlatforms" instance=ExtResource("4_waipe")]
+position = Vector2(-540, -3504)
+scale = Vector2(1, 1)
+
+[node name="Small Platforms15" parent="ShortPlatforms" instance=ExtResource("4_waipe")]
+position = Vector2(-808, -4324)
+scale = Vector2(1, 1)
+
+[node name="Small Platforms16" parent="ShortPlatforms" instance=ExtResource("4_waipe")]
+position = Vector2(92, -4340)
+scale = Vector2(1, 1)
+
+[node name="FleshWalls" type="Node2D" parent="."]
+position = Vector2(46, 811)
+rotation = 3.14159
+
+[node name="Flesh Wall" parent="FleshWalls" instance=ExtResource("5_2lx2e")]
+position = Vector2(-1, 14)
+
+[node name="Flesh Wall2" parent="FleshWalls" instance=ExtResource("5_2lx2e")]
+position = Vector2(-149, 65)
+scale = Vector2(-1, -1)
+
+[node name="Flesh Wall3" parent="FleshWalls" instance=ExtResource("5_2lx2e")]
+position = Vector2(-33, 165)
+
+[node name="Flesh Wall4" parent="FleshWalls" instance=ExtResource("5_2lx2e")]
+position = Vector2(-254, 276)
+scale = Vector2(-1, -1)
+
+[node name="Flesh Wall5" parent="FleshWalls" instance=ExtResource("5_2lx2e")]
+position = Vector2(-105, 335)
+
+[node name="Flesh Wall6" parent="FleshWalls" instance=ExtResource("5_2lx2e")]
+position = Vector2(-254, 398)
+scale = Vector2(-1, -1)
+
+[node name="Flesh Wall7" parent="FleshWalls" instance=ExtResource("5_2lx2e")]
+position = Vector2(-52, 448)
+
+[node name="Flesh Wall8" parent="FleshWalls" instance=ExtResource("5_2lx2e")]
+position = Vector2(-1, 1070)
+
+[node name="Decor" type="Node2D" parent="."]
+
+[node name="ColumnTextured" type="Sprite2D" parent="Decor"]
+position = Vector2(202, 785)
+rotation = -1.65971
+scale = Vector2(0.193926, 0.193926)
+texture = ExtResource("6_lwrlf")
+
+[node name="Ceiling" type="Sprite2D" parent="Decor"]
+position = Vector2(267, 808)
+rotation = 0.52383
+scale = Vector2(0.100251, 0.100251)
+texture = ExtResource("6_jg8re")
+
+[node name="Ceiling2" type="Sprite2D" parent="Decor"]
+position = Vector2(273, 704)
+rotation = 2.07034
+scale = Vector2(0.100251, 0.100251)
+texture = ExtResource("6_jg8re")
+
+[node name="Ceiling4" type="Sprite2D" parent="Decor"]
+position = Vector2(241, 703)
+rotation = -1.23313
+scale = Vector2(0.0669927, 0.115233)
+texture = ExtResource("6_jg8re")
+
+[node name="Mast" type="Sprite2D" parent="Decor"]
+position = Vector2(221, 668)
+rotation = -0.230186
+scale = Vector2(0.286194, 0.286194)
+texture = ExtResource("7_4a7ko")
+
+[node name="Statue" type="Sprite2D" parent="Decor"]
+position = Vector2(253, 790)
+rotation = -0.710289
+scale = Vector2(0.231152, 0.231152)
+texture = ExtResource("8_mpcmx")
+
+[node name="Ceiling3" type="Sprite2D" parent="Decor"]
+modulate = Color(0.741385, 0.741385, 0.741385, 1)
+position = Vector2(297, 737)
+rotation = -1.76745
+scale = Vector2(0.0669927, 0.162276)
+texture = ExtResource("6_jg8re")
+
+[node name="Barnacles2" type="Sprite2D" parent="Decor"]
+position = Vector2(271, 728)
+rotation = 0.522654
+scale = Vector2(0.253788, 0.253788)
+texture = ExtResource("9_jyxi5")
+
+[node name="Barnacles" type="Sprite2D" parent="Decor"]
+position = Vector2(277, 771)
+rotation = -0.172983
+scale = Vector2(0.413764, 0.413764)
+texture = ExtResource("9_jyxi5")
+
+[node name="Ceiling5" type="Sprite2D" parent="Decor"]
+position = Vector2(96, 509)
+rotation = 2.86962
+scale = Vector2(0.0695256, 0.0811135)
+texture = ExtResource("6_jg8re")
+
+[node name="MarkerThing" type="Sprite2D" parent="."]
+position = Vector2(212, 705)
+rotation = -0.429587
+scale = Vector2(0.235838, 0.235838)
+texture = ExtResource("10_5aiep")

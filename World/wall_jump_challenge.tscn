@@ -353,6 +353,10 @@ position = Vector2(407, -2)
 new_level_path = "res://World/clock_tower_level_two.tscn"
 connection = ExtResource("11_l3x3a")
 
+[node name="LeftCast" parent="Door2" index="3"]
+scale = Vector2(260, 260)
+target_position = Vector2(-2, 0)
+
 [node name="CameraLimits" parent="." instance=ExtResource("12_llkxt")]
 anchors_preset = 0
 anchor_right = 0.0
@@ -364,6 +368,7 @@ offset_bottom = 569.0
 grow_horizontal = 1
 grow_vertical = 1
 
+[connection signal="body_entered" from="Door" to="." method="_on_door_body_entered"]
 [connection signal="animation_finished" from="Door/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 
 [editable path="FleshWalls/Flesh Wall3"]
@@ -373,3 +378,4 @@ grow_vertical = 1
 [editable path="FleshWalls/Flesh Wall5"]
 [editable path="FleshWalls/Flesh Wall6"]
 [editable path="Door"]
+[editable path="Door2"]

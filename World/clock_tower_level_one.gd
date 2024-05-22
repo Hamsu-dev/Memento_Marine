@@ -33,7 +33,7 @@ func _on_animation_player_animation_finished(anim_name):
 	if player:
 		player.enable()
 
-func _on_door_2_body_entered(body):
-	if body.is_in_group("Player"):
-		animated_sprite_2d.play("close")
-		door_2.queue_free()
+func _on_animated_sprite_2d_animation_finished():
+	animated_sprite_2d.play("close")
+	collision_shape_2d.disabled = true
+	door_2.visible = false

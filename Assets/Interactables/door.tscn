@@ -53,7 +53,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7x17v"]
-size = Vector2(263.636, 359.455)
+size = Vector2(263.636, 1377.64)
 
 [node name="Door" type="Area2D" groups=["doors"]]
 scale = Vector2(0.11, 0.11)

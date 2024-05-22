@@ -4,10 +4,14 @@ extends Node
 @onready var world_camera = $WorldCamera
 @onready var animation_player = $AnimationPlayer
 @onready var player_camera = $"../Player/Camera2D"
+@onready var animated_sprite_2d = $Door/AnimatedSprite2D
+@onready var collision_shape_2d = $Door/CollisionShape2D
+@onready var door = $Door
 
 func _ready():
 	button.button_pressed.connect(_on_Button_pressed)
-	# Connect signals from the player
+	animated_sprite_2d.play("close")
+
 	var player = MainInstances.player as Player
 	if player:
 		player.camera_disabled.connect(_on_camera_disabled)
@@ -39,3 +43,8 @@ func _on_camera_enabled():
 		player_camera.make_current()  # Activate player camera
 	#if world_camera:
 		#world_camera.current = false  # Deactivate world camera
+
+func _on_door_body_entered(body):
+	if body.is_in_group("Player"):
+		animated_sprite_2d.play("close")
+		door.queue_free()

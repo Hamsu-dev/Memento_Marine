@@ -108,7 +108,7 @@ func check_wall_collision():
 		on_wall = true
 		wall_direction = -1
 	else:
-		return
+		wall_sliding = false
 
 	if on_wall and not is_on_floor():
 		wall_sliding = true

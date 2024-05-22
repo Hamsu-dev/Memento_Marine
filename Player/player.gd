@@ -101,10 +101,12 @@ func check_wall_collision():
 	on_wall = false
 	wall_direction = 0
 	
-	if (top_left.is_colliding() and top_left.get_collider().is_in_group("wall_jumpable")) or (bottom_left.is_colliding() and bottom_left.get_collider().is_in_group("wall_jumpable")):
+	if ((top_left.is_colliding() and top_left.get_collider() != null and top_left.get_collider().is_in_group("wall_jumpable")) or 
+		(bottom_left.is_colliding() and bottom_left.get_collider() != null and bottom_left.get_collider().is_in_group("wall_jumpable"))):
 		on_wall = true
 		wall_direction = 1
-	elif (top_right.is_colliding() and top_right.get_collider().is_in_group("wall_jumpable")) or (bottom_right.is_colliding() and bottom_right.get_collider().is_in_group("wall_jumpable")):
+	elif ((top_right.is_colliding() and top_right.get_collider() != null and top_right.get_collider().is_in_group("wall_jumpable")) or 
+		  (bottom_right.is_colliding() and bottom_right.get_collider() != null and bottom_right.get_collider().is_in_group("wall_jumpable"))):
 		on_wall = true
 		wall_direction = -1
 	else:

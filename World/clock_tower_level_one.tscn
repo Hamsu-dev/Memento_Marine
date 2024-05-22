@@ -133,7 +133,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1142, -24), Vector2(2134, 459)]
+"values": [Vector2(1142, -24), Vector2(1941, 547)]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -2247,7 +2247,7 @@ position = Vector2(616, 136)
 scale = Vector2(0.184, 0.184)
 
 [node name="AnimatableBody2D" parent="MovingPlatform" index="0"]
-position = Vector2(0, -28.957)
+position = Vector2(0, 163.043)
 
 [node name="Path2D" parent="MovingPlatform" index="2"]
 position = Vector2(0, 163.043)
@@ -2298,7 +2298,8 @@ libraries = {
 }
 
 [node name="Door" parent="." instance=ExtResource("43_dq7q6")]
-position = Vector2(2121, 554)
+position = Vector2(1941, 547)
+door_state = 0
 new_level_path = "res://World/wall_jump_challenge.tscn"
 connection = ExtResource("48_3mcgq")
 
@@ -2310,7 +2311,7 @@ scale = Vector2(260, 260)
 target_position = Vector2(-2, 0)
 
 [node name="Door2" parent="." instance=ExtResource("43_dq7q6")]
-position = Vector2(96, 554)
+position = Vector2(96, 555)
 new_level_path = "res://World/prologue.tscn"
 connection = ExtResource("49_nqkmm")
 

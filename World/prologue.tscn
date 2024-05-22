@@ -10,7 +10,11 @@
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelFloorCollision"]
 z_index = 1
-polygon = PackedVector2Array(-4, 10, 3, 327, 1802, 326, 1801, 1, 1735, 1, 1736, 280, 1631, 288, 1574, 281, 1493, 282, 1414, 291, 1330, 295, 1246, 288, 1118, 278, 1049, 268, 978, 267, 915, 275, 805, 289, 462, 294, 70, 289, 73, 30)
+polygon = PackedVector2Array(-4, 10, 3, 327, 1802, 326, 1801, 1, 1735, 1, 1736, 325, 1575, 325, 1576, 280, 1493, 282, 1414, 291, 1330, 295, 1246, 288, 1118, 278, 1049, 268, 978, 267, 915, 275, 805, 289, 462, 294, 70, 289, 73, 30)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="LevelFloorCollision"]
+z_index = 1
+polygon = PackedVector2Array(1621, 288, 1735, 277, 1736, 289)
 
 [node name="Holymoly" type="Sprite2D" parent="."]
 position = Vector2(869, 163)

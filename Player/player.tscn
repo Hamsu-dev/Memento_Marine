@@ -1,57 +1,81 @@
-[gd_scene load_steps=34 format=3 uid="uid://b2kioq0ibvkx8"]
+[gd_scene load_steps=25 format=3 uid="uid://b2kioq0ibvkx8"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_hdvfq"]
-[ext_resource type="Texture2D" uid="uid://crwa7dkdc1c33" path="res://Assets/Player/Chick/Fall/Warrior_Fall_1.png" id="2_j1ir8"]
-[ext_resource type="Texture2D" uid="uid://du38kjpisvi4e" path="res://Assets/Player/Chick/Crouch/Warrior_Crouch_1.png" id="2_mfxu1"]
-[ext_resource type="Texture2D" uid="uid://mbk8i231xucf" path="res://Assets/Player/Chick/idle/Warrior_Idle_1.png" id="2_vb1d7"]
-[ext_resource type="Texture2D" uid="uid://dc2hfwc1g3on2" path="res://Assets/Player/Chick/idle/Warrior_Idle_2.png" id="3_lyiud"]
-[ext_resource type="Texture2D" uid="uid://dba0dbwssbkks" path="res://Assets/Player/Chick/Fall/Warrior_Fall_2.png" id="3_pvtlr"]
-[ext_resource type="Texture2D" uid="uid://b3yqq2n48dc4r" path="res://Assets/Player/Chick/Crouch/Warrior_Crouch_2.png" id="3_xev1p"]
-[ext_resource type="Texture2D" uid="uid://bgudbp0ex0ars" path="res://Assets/Player/Chick/Fall/Warrior_Fall_3.png" id="4_2af2n"]
-[ext_resource type="Texture2D" uid="uid://dopwsdcsh1nin" path="res://Assets/Player/Chick/idle/Warrior_Idle_3.png" id="4_g15mk"]
-[ext_resource type="Texture2D" uid="uid://b133c5gbycyva" path="res://Assets/Player/Chick/Crouch/Warrior_Crouch_3.png" id="4_nmftq"]
-[ext_resource type="Texture2D" uid="uid://chovbmggctd81" path="res://Assets/Player/Chick/Crouch/Warrior_Crouch_4.png" id="5_6dwvp"]
-[ext_resource type="Texture2D" uid="uid://c1mt6ihcrc300" path="res://Assets/Player/Chick/idle/Warrior_Idle_4.png" id="5_ibj3f"]
-[ext_resource type="Texture2D" uid="uid://vetav88k5y4l" path="res://Assets/Player/Chick/idle/Warrior_Idle_5.png" id="6_cdwxm"]
-[ext_resource type="Texture2D" uid="uid://dxwi8w2d863di" path="res://Assets/Player/Chick/Crouch/Warrior_Crouch_5.png" id="6_laxb0"]
-[ext_resource type="Texture2D" uid="uid://bbgy6r1dbov3w" path="res://Assets/Player/Chick/idle/Warrior_Idle_6.png" id="7_83tlj"]
-[ext_resource type="Texture2D" uid="uid://co0st1c0d13l8" path="res://Assets/Player/Chick/Crouch/Warrior_Crouch_6.png" id="7_lyqs0"]
-[ext_resource type="Texture2D" uid="uid://chsyk5b3iagjx" path="res://Assets/Player/Chick/Jump/Warrior_Jump_1.png" id="8_cxxfw"]
-[ext_resource type="Texture2D" uid="uid://d0iom0oxuxhfl" path="res://Assets/Player/Chick/Jump/Warrior_Jump_2.png" id="9_pydm4"]
-[ext_resource type="Texture2D" uid="uid://blxl1cb40kin1" path="res://Assets/Player/Chick/Jump/Warrior_Jump_3.png" id="10_ua1tl"]
-[ext_resource type="Texture2D" uid="uid://cousadtyu5pdu" path="res://Assets/Player/Chick/Run/Warrior_Run_1.png" id="11_b7lke"]
-[ext_resource type="Texture2D" uid="uid://bmo8jupayrurp" path="res://Assets/Player/Chick/Run/Warrior_Run_2.png" id="12_pan4w"]
-[ext_resource type="Texture2D" uid="uid://1e6dgww3j4vt" path="res://Assets/Player/Chick/Run/Warrior_Run_3.png" id="13_lgbwt"]
-[ext_resource type="Texture2D" uid="uid://cwd5u3xlqmhty" path="res://Assets/Player/Chick/Run/Warrior_Run_4.png" id="14_8unxk"]
-[ext_resource type="Texture2D" uid="uid://doneke7guxp6a" path="res://Assets/Player/Chick/Run/Warrior_Run_5.png" id="15_yprko"]
-[ext_resource type="Texture2D" uid="uid://ce5ael2dmg7vd" path="res://Assets/Player/Chick/Run/Warrior_Run_6.png" id="16_ako8q"]
-[ext_resource type="Texture2D" uid="uid://dap1rhpn0g7we" path="res://Assets/Player/Chick/Run/Warrior_Run_7.png" id="17_c0b64"]
-[ext_resource type="Texture2D" uid="uid://b3px51ywf3m7e" path="res://Assets/Player/Chick/Run/Warrior_Run_8.png" id="18_625ek"]
+[ext_resource type="Texture2D" uid="uid://rnj2e2ixtqrg" path="res://Assets/Player/Skelly/fall_anim_skele.png" id="2_fkidp"]
+[ext_resource type="Texture2D" uid="uid://df6a23n1648bh" path="res://Assets/Player/Skelly/idle_anim_skele.png" id="3_gug4i"]
+[ext_resource type="Texture2D" uid="uid://cqcdldlcrsbxv" path="res://Assets/Player/Skelly/jump_anim_skele.png" id="4_x54et"]
+[ext_resource type="Texture2D" uid="uid://c0jwcpq0xqqu7" path="res://Assets/Player/Skelly/run_anim_skele.png" id="5_ksjwf"]
 [ext_resource type="Script" path="res://Player/Camera2D.gd" id="32_7qmes"]
-[ext_resource type="Texture2D" uid="uid://cc3jaunbswnfm" path="res://Assets/Player/Chick/WallSlide/Warrior_WallSlide_1.png" id="34_3hahs"]
-[ext_resource type="Texture2D" uid="uid://c8difxae3t1sb" path="res://Assets/Player/Chick/WallSlide/Warrior_WallSlide_2.png" id="35_wy6iv"]
-[ext_resource type="Texture2D" uid="uid://dwu3yktrsg80t" path="res://Assets/Player/Chick/WallSlide/Warrior_WallSlide_3.png" id="36_ghtg1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5ml1"]
+atlas = ExtResource("2_fkidp")
+region = Rect2(0, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0u8sa"]
+atlas = ExtResource("2_fkidp")
+region = Rect2(0, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffw0t"]
+atlas = ExtResource("3_gug4i")
+region = Rect2(0, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7rk1"]
+atlas = ExtResource("3_gug4i")
+region = Rect2(1000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfina"]
+atlas = ExtResource("3_gug4i")
+region = Rect2(2000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0bwf"]
+atlas = ExtResource("3_gug4i")
+region = Rect2(3000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kaosa"]
+atlas = ExtResource("4_x54et")
+region = Rect2(0, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwo2k"]
+atlas = ExtResource("5_ksjwf")
+region = Rect2(0, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ogln"]
+atlas = ExtResource("5_ksjwf")
+region = Rect2(1000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2md7"]
+atlas = ExtResource("5_ksjwf")
+region = Rect2(2000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xo0kh"]
+atlas = ExtResource("5_ksjwf")
+region = Rect2(3000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47wlf"]
+atlas = ExtResource("5_ksjwf")
+region = Rect2(4000, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8fcd5"]
+atlas = ExtResource("5_ksjwf")
+region = Rect2(0, 1000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qal4d"]
+atlas = ExtResource("5_ksjwf")
+region = Rect2(1000, 1000, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vpavd"]
+atlas = ExtResource("4_x54et")
+region = Rect2(0, 0, 1000, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6yta"]
+atlas = ExtResource("2_fkidp")
+region = Rect2(0, 0, 1000, 1000)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bcbir"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_mfxu1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_xev1p")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_nmftq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_6dwvp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_laxb0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_lyqs0")
+"texture": SubResource("AtlasTexture_p5ml1")
 }],
 "loop": false,
 "name": &"crouch",
@@ -59,13 +83,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_j1ir8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_pvtlr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_2af2n")
+"texture": SubResource("AtlasTexture_0u8sa")
 }],
 "loop": true,
 "name": &"fall",
@@ -73,22 +91,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_vb1d7")
+"texture": SubResource("AtlasTexture_ffw0t")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_lyiud")
+"texture": SubResource("AtlasTexture_m7rk1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_g15mk")
+"texture": SubResource("AtlasTexture_yfina")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_ibj3f")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_cdwxm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_83tlj")
+"texture": SubResource("AtlasTexture_m0bwf")
 }],
 "loop": true,
 "name": &"idle",
@@ -96,13 +108,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_cxxfw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_pydm4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_ua1tl")
+"texture": SubResource("AtlasTexture_kaosa")
 }],
 "loop": false,
 "name": &"jump",
@@ -110,28 +116,25 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("11_b7lke")
+"texture": SubResource("AtlasTexture_qwo2k")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_pan4w")
+"texture": SubResource("AtlasTexture_4ogln")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_lgbwt")
+"texture": SubResource("AtlasTexture_h2md7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_8unxk")
+"texture": SubResource("AtlasTexture_xo0kh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_yprko")
+"texture": SubResource("AtlasTexture_47wlf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_ako8q")
+"texture": SubResource("AtlasTexture_8fcd5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_c0b64")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_625ek")
+"texture": SubResource("AtlasTexture_qal4d")
 }],
 "loop": true,
 "name": &"run",
@@ -139,7 +142,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("11_b7lke")
+"texture": SubResource("AtlasTexture_vpavd")
 }],
 "loop": true,
 "name": &"walljump",
@@ -147,13 +150,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("34_3hahs")
-}, {
-"duration": 1.0,
-"texture": ExtResource("35_wy6iv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("36_ghtg1")
+"texture": SubResource("AtlasTexture_l6yta")
 }],
 "loop": true,
 "name": &"wallslide",
@@ -170,10 +167,13 @@ collision_layer = 2
 collision_mask = 5
 floor_snap_length = 2.0
 script = ExtResource("1_hdvfq")
+max_speed = 100
+gravity = 600
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 99
-position = Vector2(0, -16)
+position = Vector2(0, -11)
+scale = Vector2(0.05, 0.05)
 sprite_frames = SubResource("SpriteFrames_bcbir")
 animation = &"crouch"
 autoplay = "idle"

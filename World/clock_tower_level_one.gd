@@ -8,12 +8,14 @@ extends Node
 @onready var door_2 = $Door2
 @onready var animated_sprite_2d = $Door2/AnimatedSprite2D
 @onready var collision_shape_2d = $Door2/CollisionShape2D
+@onready var door = $Door
+@onready var door_collision_shape_2d = $Door/CollisionShape2D
 
 
 func _ready():
 	button.button_pressed.connect(_on_Button_pressed)
 	animated_sprite_2d.play("close")
-
+	
 func _on_Button_pressed():
 	show_cutscene()
 

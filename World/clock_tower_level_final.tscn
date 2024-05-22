@@ -1,9 +1,10 @@
-[gd_scene load_steps=63 format=3 uid="uid://ddj6xpgoad76s"]
+[gd_scene load_steps=65 format=3 uid="uid://ddj6xpgoad76s"]
 
 [ext_resource type="Script" path="res://World/clock_tower_level_final.gd" id="1_mcs3i"]
 [ext_resource type="PackedScene" uid="uid://cyhg841lp1wjc" path="res://Assets/Interactables/button.tscn" id="2_m05qi"]
 [ext_resource type="Shader" path="res://World/shiny.gdshader" id="3_x07wd"]
 [ext_resource type="PackedScene" uid="uid://cjyikkfta6ce3" path="res://EnviroSprites/GroundandBG/ground.tscn" id="4_ll56c"]
+[ext_resource type="Texture2D" uid="uid://bwcpxbx5n3br3" path="res://EnviroSprites/GroundandBG/ceiling.png" id="5_b7qvc"]
 [ext_resource type="Texture2D" uid="uid://pdk6rv3xc122" path="res://EnviroSprites/Buildings/Walls/WallStriped.png" id="5_qpqbw"]
 [ext_resource type="Texture2D" uid="uid://c7v6foq5t3k2q" path="res://EnviroSprites/Buildings/Walls/WallBricked.png" id="6_v53qw"]
 [ext_resource type="Texture2D" uid="uid://dw8gm7hqp7bug" path="res://EnviroSprites/Buildings/ColumnsEtc/Separator.png" id="7_3nkdg"]
@@ -50,6 +51,7 @@
 [ext_resource type="Resource" uid="uid://bwn3blrbvj2ah" path="res://World/BouncyOne_Final.tres" id="48_ijbuy"]
 [ext_resource type="PackedScene" uid="uid://ckiyh57un5obs" path="res://Assets/Interactables/door.tscn" id="48_t4jjd"]
 [ext_resource type="PackedScene" uid="uid://c8pfinyhx3py8" path="res://World/camera_limits.tscn" id="50_0ofth"]
+[ext_resource type="Texture2D" uid="uid://70m61a1xdwa1" path="res://EnviroSprites/GroundandBG/glow.png" id="52_1pymy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a2w3v"]
 shader = ExtResource("3_x07wd")
@@ -190,6 +192,69 @@ material = SubResource("ShaderMaterial_a2w3v")
 z_index = 90
 position = Vector2(-54, 272)
 scale = Vector2(0.5, 0.5)
+
+[node name="Ceiling" type="Node2D" parent="."]
+z_index = 1
+
+[node name="Ceiling2" type="Sprite2D" parent="Ceiling"]
+position = Vector2(1422, -246)
+rotation = -0.118145
+scale = Vector2(0.302749, 0.256685)
+texture = ExtResource("5_b7qvc")
+
+[node name="Ceiling3" type="Sprite2D" parent="Ceiling"]
+position = Vector2(1803, -200)
+rotation = 0.0940588
+scale = Vector2(0.304638, 0.277034)
+texture = ExtResource("5_b7qvc")
+
+[node name="Ceiling4" type="Sprite2D" parent="Ceiling"]
+position = Vector2(2183, -67)
+rotation = 0.378521
+scale = Vector2(0.304638, 0.277034)
+texture = ExtResource("5_b7qvc")
+
+[node name="Ceiling5" type="Sprite2D" parent="Ceiling"]
+position = Vector2(784, -246)
+rotation = 0.118819
+scale = Vector2(-0.303, 0.257)
+texture = ExtResource("5_b7qvc")
+
+[node name="Ceiling6" type="Sprite2D" parent="Ceiling"]
+position = Vector2(373, -187)
+rotation = -0.198128
+scale = Vector2(-0.303, 0.257)
+texture = ExtResource("5_b7qvc")
+
+[node name="Ceiling7" type="Sprite2D" parent="Ceiling"]
+position = Vector2(139, -86)
+rotation = -0.446512
+scale = Vector2(-0.303, 0.257)
+texture = ExtResource("5_b7qvc")
+
+[node name="Ceiling8" type="Sprite2D" parent="Ceiling"]
+position = Vector2(826, -316)
+rotation = 0.142199
+scale = Vector2(-0.363089, 0.344709)
+texture = ExtResource("5_b7qvc")
+
+[node name="Ceiling9" type="Sprite2D" parent="Ceiling"]
+position = Vector2(305, -261)
+rotation = -0.218025
+scale = Vector2(-0.363089, 0.344709)
+texture = ExtResource("5_b7qvc")
+
+[node name="Ceiling10" type="Sprite2D" parent="Ceiling"]
+position = Vector2(1297, -302)
+rotation = -0.118145
+scale = Vector2(0.302749, 0.389992)
+texture = ExtResource("5_b7qvc")
+
+[node name="Ceiling11" type="Sprite2D" parent="Ceiling"]
+position = Vector2(1746, -310)
+rotation = 0.0957895
+scale = Vector2(0.302749, 0.389992)
+texture = ExtResource("5_b7qvc")
 
 [node name="Building3" type="Node2D" parent="."]
 z_index = 1
@@ -2332,6 +2397,12 @@ offset_right = 2238.0
 offset_bottom = 650.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="Glow" type="Sprite2D" parent="."]
+position = Vector2(1107, -199)
+rotation = -1.57079
+scale = Vector2(0.187717, 0.217297)
+texture = ExtResource("52_1pymy")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 

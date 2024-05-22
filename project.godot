@@ -19,10 +19,15 @@ config/icon="res://Screenshot/Memento_title_red.png"
 
 Events="*res://Singleton/Events.gd"
 MainInstances="*res://Singleton/MainInstances.gd"
+SceneManager="*res://addons/scene_manager/SceneManager.tscn"
 
 [display]
 
 window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/scene_manager/plugin.cfg")
 
 [file_customization]
 

@@ -52,3 +52,12 @@ position = Vector2(576.444, 326.25)
 scale = Vector2(0.599537, 0.599537)
 sprite_frames = SubResource("SpriteFrames_abmp3")
 frame_progress = 1.0
+
+[node name="Start" type="Button" parent="."]
+layout_mode = 0
+offset_left = 469.0
+offset_top = 514.0
+offset_right = 706.0
+offset_bottom = 582.0
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]

@@ -265,6 +265,20 @@ energy = 1.78
 texture = SubResource("GradientTexture2D_8sdbk")
 texture_scale = 1.9
 
+[node name="PointLight2D16" type="PointLight2D" parent="Lights"]
+position = Vector2(1162, 83)
+color = Color(0.937255, 0.533333, 0.223529, 1)
+energy = 2.08
+texture = SubResource("GradientTexture2D_8sdbk")
+texture_scale = 1.9
+
+[node name="PointLight2D17" type="PointLight2D" parent="Lights"]
+position = Vector2(1071, 22)
+color = Color(0.937255, 0.533333, 0.223529, 1)
+energy = 0.73
+texture = SubResource("GradientTexture2D_8sdbk")
+texture_scale = 1.9
+
 [node name="PointLight2D15" type="PointLight2D" parent="Lights"]
 position = Vector2(1100, -76)
 scale = Vector2(1.93785, 1.93785)

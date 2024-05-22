@@ -187,6 +187,7 @@ animation = &"crouch"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1000
 position = Vector2(0, -14)
 shape = SubResource("CapsuleShape2D_tejjw")
 

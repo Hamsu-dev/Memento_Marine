@@ -12,21 +12,6 @@ script = ExtResource("1_eeowi")
 
 [node name="Player" parent="." instance=ExtResource("2_qkquh")]
 position = Vector2(97, 259)
-acceleration = 400
-air_acceleration = 200
-wall_jump_air_acceleration = 100
-max_speed = 250
-friction = 1000
-air_friction = 5000
-slide_friction = 0.8
-gravity = 500
-jump_force = 250
-max_fall_velocity = 500
-drop_force = 600
-wall_slide_gravity = 500
-wall_jump_force = 250
-wall_jump_push_force = 200
-bounce_multiplier = 1.4
 
 [node name="OverallGradient" parent="Player" index="0"]
 visible = false
@@ -36,7 +21,6 @@ limit_left = 4
 limit_top = 0
 limit_right = 1800
 limit_bottom = 329
-limit_smoothed = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 editor_draw_limits = true

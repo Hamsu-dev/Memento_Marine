@@ -1,0 +1,141 @@
+[gd_scene load_steps=11 format=3 uid="uid://b0qbe26dkclxd"]
+
+[ext_resource type="Texture2D" uid="uid://bpyew2rr8q42v" path="res://EnviroSprites/Platforms/platformextenddropshadow.png" id="1_gdeaa"]
+[ext_resource type="PackedScene" uid="uid://b2kioq0ibvkx8" path="res://Player/player.tscn" id="2_ekg8i"]
+[ext_resource type="Texture2D" uid="uid://vi5035ts0eoq" path="res://TEMP ASSETS DELETE LATER/water_temp.png" id="3_qkth6"]
+[ext_resource type="Script" path="res://TEMP ASSETS DELETE LATER/button_test.gd" id="4_4kuv0"]
+[ext_resource type="Script" path="res://TEMP ASSETS DELETE LATER/Water.gd" id="5_hdrj2"]
+[ext_resource type="Texture2D" uid="uid://cedm5ipxqkp5s" path="res://TEMP ASSETS DELETE LATER/lever6.png" id="5_q33yt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_usvjt"]
+radius = 360.622
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7cagq"]
+size = Vector2(1111.5, 142)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tp6sx"]
+size = Vector2(106, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_02oco"]
+size = Vector2(1004, 121)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+z_index = 1000
+position = Vector2(537, 639)
+scale = Vector2(0.0944444, 0.0944444)
+script = ExtResource("4_4kuv0")
+
+[node name="Lever6" type="Sprite2D" parent="Area2D"]
+scale = Vector2(1, 1)
+texture = ExtResource("5_q33yt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.000244141, 21.1763)
+scale = Vector2(1, 1)
+shape = SubResource("CircleShape2D_usvjt")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+z_index = 2000
+position = Vector2(586.25, 720)
+shape = SubResource("RectangleShape2D_7cagq")
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+z_index = 2000
+position = Vector2(450, 555.5)
+shape = SubResource("RectangleShape2D_tp6sx")
+one_way_collision = true
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+z_index = 2000
+position = Vector2(611, 385)
+shape = SubResource("RectangleShape2D_tp6sx")
+one_way_collision = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+z_index = 2000
+position = Vector2(595, 497)
+shape = SubResource("RectangleShape2D_tp6sx")
+one_way_collision = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+z_index = 2000
+position = Vector2(470, 445)
+shape = SubResource("RectangleShape2D_tp6sx")
+one_way_collision = true
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+z_index = 2000
+position = Vector2(483, 328)
+shape = SubResource("RectangleShape2D_tp6sx")
+one_way_collision = true
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+z_index = 2000
+position = Vector2(609, 261)
+shape = SubResource("RectangleShape2D_tp6sx")
+one_way_collision = true
+
+[node name="Node2D" type="Node2D" parent="."]
+z_index = 1000
+position = Vector2(437, 527)
+scale = Vector2(0.494186, 0.494186)
+
+[node name="Platformextenddropshadow" type="Sprite2D" parent="Node2D"]
+position = Vector2(29.8942, 55.1411)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_gdeaa")
+
+[node name="Platformextenddropshadow2" type="Sprite2D" parent="Node2D"]
+position = Vector2(321.741, -62.7294)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_gdeaa")
+
+[node name="Platformextenddropshadow3" type="Sprite2D" parent="Node2D"]
+position = Vector2(68.8002, -167.953)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_gdeaa")
+
+[node name="Platformextenddropshadow4" type="Sprite2D" parent="Node2D"]
+position = Vector2(356.141, -289.365)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_gdeaa")
+
+[node name="Platformextenddropshadow5" type="Sprite2D" parent="Node2D"]
+position = Vector2(95.1061, -404.706)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_gdeaa")
+
+[node name="Platformextenddropshadow6" type="Sprite2D" parent="Node2D"]
+position = Vector2(352.095, -540.283)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_gdeaa")
+
+[node name="Platformextenddropshadow" type="Sprite2D" parent="."]
+z_index = 1000
+position = Vector2(601, 704)
+scale = Vector2(2.6, 2.6)
+texture = ExtResource("1_gdeaa")
+
+[node name="Player" parent="." instance=ExtResource("2_ekg8i")]
+position = Vector2(571, 617)
+
+[node name="Water" type="Area2D" parent="."]
+position = Vector2(577, 1012)
+script = ExtResource("5_hdrj2")
+
+[node name="WaterTemp" type="Sprite2D" parent="Water"]
+z_index = 2000
+texture = ExtResource("3_qkth6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Water"]
+position = Vector2(-11, -209)
+shape = SubResource("RectangleShape2D_02oco")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="Water" to="Water" method="_on_body_entered"]

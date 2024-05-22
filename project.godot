@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Memento Marine"
+run/main_scene="res://World/world.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://Screenshot/Memento_title_red.png"
 

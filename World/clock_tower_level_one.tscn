@@ -173,102 +173,103 @@ z_index = 2001
 
 [node name="PointLight2D" type="PointLight2D" parent="Lights"]
 position = Vector2(83, 515)
-color = Color(0.937255, 0.533333, 0.223529, 1)
-energy = 1.5
+color = Color(0.890196, 0.721569, 0.698039, 0.701961)
+energy = 1.78
 texture = SubResource("GradientTexture2D_8sdbk")
 
 [node name="PointLight2D2" type="PointLight2D" parent="Lights"]
 position = Vector2(147, 515)
-color = Color(0.937255, 0.533333, 0.223529, 1)
-energy = 2.08
+color = Color(0.890196, 0.721569, 0.698039, 0.701961)
+energy = 1.78
 texture = SubResource("GradientTexture2D_8sdbk")
 
 [node name="PointLight2D3" type="PointLight2D" parent="Lights"]
 position = Vector2(217, 515)
-color = Color(0.937255, 0.533333, 0.223529, 1)
-energy = 2.08
+color = Color(0.890196, 0.721569, 0.698039, 0.701961)
+energy = 1.78
 texture = SubResource("GradientTexture2D_8sdbk")
 
 [node name="PointLight2D4" type="PointLight2D" parent="Lights"]
 position = Vector2(437, 470)
-color = Color(0.937255, 0.533333, 0.223529, 1)
-energy = 2.08
+color = Color(0.890196, 0.721569, 0.698039, 0.701961)
+energy = 1.78
 texture = SubResource("GradientTexture2D_8sdbk")
 
 [node name="PointLight2D5" type="PointLight2D" parent="Lights"]
 position = Vector2(495, 484)
-color = Color(0.937255, 0.533333, 0.223529, 1)
-energy = 2.08
+color = Color(0.890196, 0.721569, 0.698039, 0.701961)
+energy = 1.78
 texture = SubResource("GradientTexture2D_8sdbk")
 texture_scale = 1.5
 
 [node name="PointLight2D6" type="PointLight2D" parent="Lights"]
 position = Vector2(600, 470)
-color = Color(0.937255, 0.533333, 0.223529, 1)
-energy = 2.08
+color = Color(0.890196, 0.721569, 0.698039, 0.701961)
+energy = 1.78
 texture = SubResource("GradientTexture2D_8sdbk")
 texture_scale = 1.5
 
 [node name="PointLight2D7" type="PointLight2D" parent="Lights"]
 position = Vector2(815, 470)
-color = Color(0.937255, 0.533333, 0.223529, 1)
-energy = 2.08
+color = Color(0.890196, 0.721569, 0.698039, 0.701961)
+energy = 1.78
 texture = SubResource("GradientTexture2D_8sdbk")
 texture_scale = 1.5
 
 [node name="PointLight2D8" type="PointLight2D" parent="Lights"]
 position = Vector2(971, 470)
-color = Color(0.937255, 0.533333, 0.223529, 1)
-energy = 2.08
+color = Color(0.890196, 0.721569, 0.698039, 0.701961)
+energy = 1.78
 texture = SubResource("GradientTexture2D_8sdbk")
 texture_scale = 1.5
 
 [node name="PointLight2D9" type="PointLight2D" parent="Lights"]
 position = Vector2(1136, 471)
-color = Color(0.937255, 0.533333, 0.223529, 1)
-energy = 2.08
+color = Color(0.890196, 0.721569, 0.698039, 0.701961)
+energy = 1.78
 texture = SubResource("GradientTexture2D_8sdbk")
 texture_scale = 1.5
 
 [node name="PointLight2D10" type="PointLight2D" parent="Lights"]
-position = Vector2(1098, 366)
-color = Color(0.937255, 0.533333, 0.223529, 1)
-energy = 2.08
+position = Vector2(1100, 350)
+color = Color(0.890196, 0.721569, 0.698039, 0.701961)
+energy = 1.78
 texture = SubResource("GradientTexture2D_8sdbk")
 texture_scale = 1.9
 
 [node name="PointLight2D11" type="PointLight2D" parent="Lights"]
-position = Vector2(1163, 276)
-color = Color(0.937255, 0.533333, 0.223529, 1)
-energy = 2.08
+position = Vector2(1172, 258)
+color = Color(0.890196, 0.721569, 0.698039, 0.701961)
+energy = 1.78
 texture = SubResource("GradientTexture2D_8sdbk")
 texture_scale = 1.9
 
 [node name="PointLight2D12" type="PointLight2D" parent="Lights"]
-position = Vector2(1035, 237)
-color = Color(0.937255, 0.533333, 0.223529, 1)
-energy = 2.08
+position = Vector2(1031, 220)
+color = Color(0.890196, 0.721569, 0.698039, 0.701961)
+energy = 1.78
 texture = SubResource("GradientTexture2D_8sdbk")
 texture_scale = 1.9
 
 [node name="PointLight2D13" type="PointLight2D" parent="Lights"]
-position = Vector2(1101, 148)
-color = Color(0.937255, 0.533333, 0.223529, 1)
-energy = 2.08
+position = Vector2(1097, 125)
+color = Color(0.890196, 0.721569, 0.698039, 0.701961)
+energy = 1.78
 texture = SubResource("GradientTexture2D_8sdbk")
 texture_scale = 1.9
 
 [node name="PointLight2D14" type="PointLight2D" parent="Lights"]
-position = Vector2(1162, 83)
-color = Color(0.937255, 0.533333, 0.223529, 1)
-energy = 2.08
+position = Vector2(1166, 62)
+color = Color(0.890196, 0.721569, 0.698039, 0.701961)
+energy = 1.78
 texture = SubResource("GradientTexture2D_8sdbk")
 texture_scale = 1.9
 
 [node name="PointLight2D15" type="PointLight2D" parent="Lights"]
-position = Vector2(1101, -104)
-color = Color(0.937255, 0.533333, 0.223529, 1)
-energy = 2.08
+position = Vector2(1100, -76)
+scale = Vector2(1.93785, 1.93785)
+color = Color(0.956787, 0.827876, 0.846271, 0.670588)
+energy = 1.77
 texture = SubResource("GradientTexture2D_8sdbk")
 texture_scale = 1.9
 
@@ -2439,7 +2440,7 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.243137, 0.34902, 0.52549, 1)
+color = Color(0.33972, 0.341544, 0.412054, 1)
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="Door/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

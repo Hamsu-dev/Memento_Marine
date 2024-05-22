@@ -5,9 +5,14 @@ extends Node
 @onready var world_camera = $"../WorldCamera"
 @onready var player_camera = $"../Player/Camera2D"
 @onready var animation_player = $AnimationPlayer
+@onready var door_2 = $Door2
+@onready var animated_sprite_2d = $Door2/AnimatedSprite2D
+@onready var collision_shape_2d = $Door2/CollisionShape2D
+
 
 func _ready():
 	button.button_pressed.connect(_on_Button_pressed)
+	animated_sprite_2d.play("close")
 
 func _on_Button_pressed():
 	show_cutscene()
@@ -27,3 +32,8 @@ func _on_animation_player_animation_finished(anim_name):
 			player_camera.make_current()  # Activate player camera
 	if player:
 		player.enable()
+
+func _on_door_2_body_entered(body):
+	if body.is_in_group("Player"):
+		animated_sprite_2d.play("close")
+		door_2.queue_free()

@@ -107,6 +107,8 @@ func check_wall_collision():
 	elif (top_right.is_colliding() and top_right.get_collider().is_in_group("wall_jumpable")) or (bottom_right.is_colliding() and bottom_right.get_collider().is_in_group("wall_jumpable")):
 		on_wall = true
 		wall_direction = -1
+	else:
+		return
 
 	if on_wall and not is_on_floor():
 		wall_sliding = true

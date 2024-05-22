@@ -2325,7 +2325,10 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="Door/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="Door2" to="." method="_on_door_2_body_entered"]
 
 [editable path="Button"]
 [editable path="MovingPlatform"]
 [editable path="Door"]
+[editable path="Door2"]

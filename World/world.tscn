@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bid3m2t7vjvfx"]
+[gd_scene load_steps=9 format=3 uid="uid://bid3m2t7vjvfx"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_eeowi"]
 [ext_resource type="PackedScene" uid="uid://b2kioq0ibvkx8" path="res://Player/player.tscn" id="2_qkquh"]
@@ -6,6 +6,18 @@
 [ext_resource type="PackedScene" uid="uid://brnd5o5qwcj2y" path="res://World/world_camera.tscn" id="4_3jlew"]
 [ext_resource type="PackedScene" uid="uid://ckiyh57un5obs" path="res://Assets/Interactables/door.tscn" id="5_0kljm"]
 [ext_resource type="Resource" uid="uid://dfqdx0vvh2u6v" path="res://World/Prolouge_ClockTowerOne.tres" id="6_d4f8u"]
+[ext_resource type="Texture2D" uid="uid://dxibw2ta2sr2p" path="res://Assets/Interactables/glow.png" id="7_yb7k4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0f0qv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_yb7k4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_eeowi")
@@ -33,13 +45,26 @@ position = Vector2(2134, 459)
 
 [node name="Prologue" parent="." instance=ExtResource("4_0ltqj")]
 
+[node name="CameraLimits" parent="Prologue" index="3"]
+offset_left = 6.0
+offset_right = 1733.0
+offset_bottom = 324.0
+
 [node name="Door" parent="Prologue" instance=ExtResource("5_0kljm")]
-position = Vector2(1562, 277)
+position = Vector2(1722, 282)
 new_level_path = "res://World/clock_tower_level_one.tscn"
 connection = ExtResource("6_d4f8u")
 
 [node name="AnimatedSprite2D" parent="Prologue/Door" index="0"]
-visible = false
+position = Vector2(-1103.24, -1127.27)
+scale = Vector2(5.77708, 5.835)
+sprite_frames = SubResource("SpriteFrames_0f0qv")
+animation = &"default"
+frame = 0
+frame_progress = 0.0
+
+[node name="LeftCast" parent="Prologue/Door" index="3"]
+target_position = Vector2(-400, 0)
 
 [editable path="Player"]
 [editable path="Prologue"]

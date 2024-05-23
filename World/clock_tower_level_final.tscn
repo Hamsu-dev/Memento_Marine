@@ -1,8 +1,6 @@
-[gd_scene load_steps=65 format=3 uid="uid://ddj6xpgoad76s"]
+[gd_scene load_steps=62 format=3 uid="uid://ddj6xpgoad76s"]
 
 [ext_resource type="Script" path="res://World/clock_tower_level_final.gd" id="1_mcs3i"]
-[ext_resource type="PackedScene" uid="uid://cyhg841lp1wjc" path="res://Assets/Interactables/finaldoor.tscn" id="2_m05qi"]
-[ext_resource type="Shader" path="res://World/shiny.gdshader" id="3_x07wd"]
 [ext_resource type="PackedScene" uid="uid://cjyikkfta6ce3" path="res://EnviroSprites/GroundandBG/ground.tscn" id="4_ll56c"]
 [ext_resource type="Texture2D" uid="uid://bwcpxbx5n3br3" path="res://EnviroSprites/GroundandBG/ceiling.png" id="5_b7qvc"]
 [ext_resource type="Texture2D" uid="uid://pdk6rv3xc122" path="res://EnviroSprites/Buildings/Walls/WallStriped.png" id="5_qpqbw"]
@@ -52,14 +50,6 @@
 [ext_resource type="PackedScene" uid="uid://ckiyh57un5obs" path="res://Assets/Interactables/door.tscn" id="48_t4jjd"]
 [ext_resource type="PackedScene" uid="uid://c8pfinyhx3py8" path="res://World/camera_limits.tscn" id="50_0ofth"]
 [ext_resource type="Texture2D" uid="uid://70m61a1xdwa1" path="res://EnviroSprites/GroundandBG/glow.png" id="52_1pymy"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_a2w3v"]
-shader = ExtResource("3_x07wd")
-shader_parameter/shine_color = Color(1, 1, 1, 0.25)
-shader_parameter/line_width = 0.1
-shader_parameter/angle = 0.785398
-shader_parameter/speed = 1.0
-shader_parameter/wait_cycles = 1.0
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_qb4ny"]
 
@@ -180,13 +170,6 @@ script = ExtResource("1_mcs3i")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelFloorCollision"]
 polygon = PackedVector2Array(-4, 10, 4, 648, 2226, 641, 2232, 5, 2147, 6, 2146, 553, 1984, 553, 1969.15, 547, 248, 547, 233, 554, 75, 554, 73, 30)
-
-[node name="Button" parent="." instance=ExtResource("2_m05qi")]
-position = Vector2(1072, 30)
-scale = Vector2(0.1, 0.1)
-
-[node name="AnimatedSprite2D" parent="Button" index="1"]
-material = SubResource("ShaderMaterial_a2w3v")
 
 [node name="Ground" parent="." instance=ExtResource("4_ll56c")]
 z_index = 90
@@ -2327,14 +2310,15 @@ position = Vector2(616, 136)
 scale = Vector2(0.184, 0.184)
 
 [node name="AnimatableBody2D" parent="MovingPlatform" index="0"]
-position = Vector2(0, -116.139)
+position = Vector2(0, -224.12)
 
 [node name="Path2D" parent="MovingPlatform" index="2"]
 position = Vector2(0, 163.043)
 curve = ExtResource("42_ts8xi")
 
 [node name="PathFollow2D" parent="MovingPlatform/Path2D" index="0"]
-position = Vector2(0, -279.182)
+position = Vector2(0, 0)
+progress = 0.0
 
 [node name="_Timer_19059" type="Timer" parent="MovingPlatform/Path2D/PathFollow2D" index="1"]
 wait_time = 0.2
@@ -2378,7 +2362,7 @@ offset_bottom = 161.0
 position = Vector2(758, 490)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../Button")
+root_node = NodePath("")
 libraries = {
 "": SubResource("AnimationLibrary_cvqyn")
 }
@@ -2410,6 +2394,5 @@ texture = ExtResource("52_1pymy")
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="Door/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 
-[editable path="Button"]
 [editable path="MovingPlatform"]
 [editable path="Door"]

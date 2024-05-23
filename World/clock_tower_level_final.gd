@@ -1,6 +1,5 @@
 extends Node
 
-@onready var button = $Button
 @onready var world_camera = $WorldCamera
 @onready var animation_player = $AnimationPlayer
 @onready var player_camera = $"../Player/Camera2D"
@@ -10,7 +9,6 @@ extends Node
 @onready var collision_shape_2d = $Door/CollisionShape2D
 
 func _ready():
-	button.button_pressed.connect(_on_Button_pressed)
 	animated_sprite_2d.play("close")
 
 func _on_Button_pressed():

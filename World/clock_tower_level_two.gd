@@ -17,7 +17,7 @@ func _ready():
 	animated_sprite_2d.play("close")
 	popup_panel.hide()
 	if not has_key:
-		show_message("another key has spawned!")
+		show_message("Another key has appeared in the world.")
 
 	var player = MainInstances.player as Player
 	if player:

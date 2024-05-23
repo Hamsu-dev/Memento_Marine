@@ -10,10 +10,10 @@ func _on_body_entered(body):
 		var message = ""
 		if ability_type == "bounce":
 			PowerUps.unlock_bounce_ability()
-			message = "You acquired the Bounce ability! Press 'Down' while in the air to bounce higher."
+			message = "The memento flashes... bounce jump unlocked."
 		elif ability_type == "wall_jump":
 			PowerUps.unlock_wall_jump_ability()
-			message = "Remembers how to walljump..."
+			message = "The memento flashes... wall jump unlocked."
 		
 		# Show the notification message
 		var ui_manager = get_tree().root.get_node("World/UINode")

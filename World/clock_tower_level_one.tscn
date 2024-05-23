@@ -1,6 +1,6 @@
 [gd_scene load_steps=72 format=3 uid="uid://dhwsckm1ag60"]
 
-[ext_resource type="PackedScene" path="res://Assets/Interactables/finaldoor.tscn" id="1_3nmw7"]
+[ext_resource type="PackedScene" uid="uid://cyhg841lp1wjc" path="res://Assets/Interactables/finaldoor.tscn" id="1_3nmw7"]
 [ext_resource type="Script" path="res://World/clock_tower_level_one.gd" id="1_257nd"]
 [ext_resource type="PackedScene" uid="uid://cjyikkfta6ce3" path="res://EnviroSprites/GroundandBG/ground.tscn" id="4_evsy5"]
 [ext_resource type="Texture2D" uid="uid://pdk6rv3xc122" path="res://EnviroSprites/Buildings/Walls/WallStriped.png" id="5_jibu0"]
@@ -53,7 +53,7 @@
 [ext_resource type="PackedScene" uid="uid://ufxn2upl3iqo" path="res://Memento/memento.tscn" id="52_v3bl7"]
 [ext_resource type="Shader" path="res://World/door_disappear.gdshader" id="53_0fd21"]
 [ext_resource type="Texture2D" uid="uid://b18igou5iswru" path="res://Assets/Mementos/memento_watchred.png" id="53_y387c"]
-[ext_resource type="PackedScene" path="res://Memento/key.tscn" id="54_8f4bp"]
+[ext_resource type="PackedScene" uid="uid://cbwxbdjknadvv" path="res://Memento/key.tscn" id="54_8f4bp"]
 [ext_resource type="Script" path="res://World/music_trigger.gd" id="55_1vp4e"]
 
 [sub_resource type="Gradient" id="Gradient_ilvig"]
@@ -2366,11 +2366,6 @@ position = Vector2(96, 555)
 new_level_path = "res://World/prologue.tscn"
 connection = ExtResource("49_nqkmm")
 
-[node name="AnimatedSprite2D" parent="Door2" index="0"]
-animation = &"open"
-frame = 0
-frame_progress = 0.0
-
 [node name="CameraLimits" parent="." instance=ExtResource("50_k35hs")]
 anchors_preset = 0
 anchor_right = 0.0
@@ -2449,8 +2444,8 @@ scale = Vector2(0.23, 0.23)
 scale = Vector2(0.23, 0.23)
 
 [node name="PathFollow2D" parent="MovingPlatform/Path2D" index="0"]
-position = Vector2(10.1395, 0)
-progress = 10.2079
+position = Vector2(0, 0)
+progress = 0.0
 
 [node name="Memento" parent="." instance=ExtResource("52_v3bl7")]
 z_index = 3

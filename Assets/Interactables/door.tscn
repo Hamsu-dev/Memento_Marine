@@ -1,32 +1,33 @@
-[gd_scene load_steps=6 format=3 uid="uid://ckiyh57un5obs"]
+[gd_scene load_steps=7 format=3 uid="uid://ckiyh57un5obs"]
 
-[ext_resource type="Texture2D" uid="uid://pon2mr8wog36" path="res://Assets/Interactables/doorclose.png" id="1_dmsb3"]
 [ext_resource type="Script" path="res://Assets/Interactables/door.gd" id="1_e1xfs"]
+[ext_resource type="Texture2D" uid="uid://dwd4jtxvi5orf" path="res://Assets/Interactables/doorcloseedited.png" id="2_seirl"]
 [ext_resource type="Texture2D" uid="uid://g48tomj40shg" path="res://Assets/Interactables/dooropen.png" id="2_u4cul"]
+[ext_resource type="Texture2D" uid="uid://bumfthkqtubw0" path="res://Assets/Interactables/dooropenedited.png" id="4_2uft1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y0bga"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_dmsb3")
+"texture": ExtResource("2_seirl")
 }, {
 "duration": 1.0,
 "texture": ExtResource("2_u4cul")
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_dmsb3")
+"texture": ExtResource("2_seirl")
 }, {
 "duration": 1.0,
 "texture": ExtResource("2_u4cul")
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_dmsb3")
+"texture": ExtResource("2_seirl")
 }, {
 "duration": 1.0,
 "texture": ExtResource("2_u4cul")
 }, {
 "duration": 1.0,
-"texture": ExtResource("1_dmsb3")
+"texture": ExtResource("2_seirl")
 }],
 "loop": false,
 "name": &"close",
@@ -34,7 +35,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_dmsb3")
+"texture": ExtResource("2_seirl")
 }],
 "loop": true,
 "name": &"default",
@@ -42,10 +43,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_dmsb3")
+"texture": ExtResource("2_seirl")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_u4cul")
+"texture": ExtResource("4_2uft1")
 }],
 "loop": false,
 "name": &"open",
@@ -65,9 +66,7 @@ new_level_path = "<null>"
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -182)
 sprite_frames = SubResource("SpriteFrames_y0bga")
-animation = &"close"
-frame = 6
-frame_progress = 1.0
+animation = &"open"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -183.909)

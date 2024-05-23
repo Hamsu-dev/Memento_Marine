@@ -48,12 +48,12 @@
 [ext_resource type="Resource" uid="uid://dk34tbggomtho" path="res://World/WallJumpOne_ClockTowerTwo.tres" id="48_ejuso"]
 [ext_resource type="PackedScene" uid="uid://brnd5o5qwcj2y" path="res://World/world_camera.tscn" id="49_nrwmj"]
 [ext_resource type="Resource" uid="uid://dht2524qto2og" path="res://World/ClockTowerTwo_BouncyOne.tres" id="50_m4lao"]
-[ext_resource type="PackedScene" path="res://Memento/key.tscn" id="50_mkdvs"]
+[ext_resource type="PackedScene" uid="uid://cbwxbdjknadvv" path="res://Memento/key.tscn" id="50_mkdvs"]
 [ext_resource type="PackedScene" uid="uid://c8pfinyhx3py8" path="res://World/camera_limits.tscn" id="51_w04xk"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_qb4ny"]
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_orwfr"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5le2r"]
 seamless = true
 seamless_blend_skirt = 0.735
 noise = SubResource("FastNoiseLite_qb4ny")
@@ -64,7 +64,7 @@ shader_parameter/refraction_stretch = Vector2(1, 1)
 shader_parameter/refraction_strength = 0.037
 shader_parameter/water_tint = Color(0.2, 0.6, 1, 0)
 shader_parameter/speed = 0.05
-shader_parameter/refraction_map = SubResource("NoiseTexture2D_orwfr")
+shader_parameter/refraction_map = SubResource("NoiseTexture2D_5le2r")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_aptt4"]
 
@@ -2264,7 +2264,7 @@ position = Vector2(616, 136)
 scale = Vector2(0.184, 0.184)
 
 [node name="AnimatableBody2D" parent="MovingPlatform" index="0"]
-position = Vector2(0, 163.043)
+position = Vector2(0, -224.12)
 
 [node name="Path2D" parent="MovingPlatform" index="2"]
 position = Vector2(0, 163.043)

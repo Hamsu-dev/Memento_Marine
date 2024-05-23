@@ -7,8 +7,8 @@ extends Node2D
 
 func _ready():
 	animated_sprite_2d.play("close")
+	collision_shape_2d.disabled = true
 
 func _on_animated_sprite_2d_animation_finished():
 	animated_sprite_2d.play("close")
-	collision_shape_2d.disabled = true
 	door.visible = false

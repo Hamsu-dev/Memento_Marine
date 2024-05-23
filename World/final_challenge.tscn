@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://ctsovcie5ppuq"]
+[gd_scene load_steps=28 format=3 uid="uid://ctsovcie5ppuq"]
 
 [ext_resource type="PackedScene" uid="uid://b2kioq0ibvkx8" path="res://Player/player.tscn" id="1_iihlp"]
 [ext_resource type="Texture2D" uid="uid://dw8gm7hqp7bug" path="res://EnviroSprites/Buildings/ColumnsEtc/Separator.png" id="2_ipswc"]
@@ -24,6 +24,8 @@
 [ext_resource type="Texture2D" uid="uid://lkicqyhl3beh" path="res://EnviroSprites/Buildings/Decorative/buttress.png" id="22_1j3o6"]
 [ext_resource type="Texture2D" uid="uid://bsup3gbeths4c" path="res://EnviroSprites/Buildings/Decorative/lamp 2.png" id="23_k5ne3"]
 [ext_resource type="Texture2D" uid="uid://cj20hjygi2qe1" path="res://Menu/diagrams/run.png" id="24_ip4hv"]
+[ext_resource type="PackedScene" uid="uid://cndekko4w8xru" path="res://water_shader.tscn" id="25_qpour"]
+[ext_resource type="PackedScene" uid="uid://c8pfinyhx3py8" path="res://World/camera_limits.tscn" id="26_cy4gq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o3mbq"]
 size = Vector2(98.5585, 4215.46)
@@ -1114,3 +1116,14 @@ position = Vector2(175, 1059)
 rotation = 0.117229
 scale = Vector2(0.331202, 0.331202)
 texture = ExtResource("24_ip4hv")
+
+[node name="Water Shader" parent="." instance=ExtResource("25_qpour")]
+position = Vector2(-372, 1226)
+
+[node name="CameraLimits" parent="." instance=ExtResource("26_cy4gq")]
+offset_left = 10.0
+offset_top = -632.0
+offset_right = 330.0
+offset_bottom = 1153.0
+
+[editable path="Water Shader"]

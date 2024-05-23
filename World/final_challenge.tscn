@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ctsovcie5ppuq"]
+[gd_scene load_steps=25 format=3 uid="uid://ctsovcie5ppuq"]
 
 [ext_resource type="PackedScene" uid="uid://b2kioq0ibvkx8" path="res://Player/player.tscn" id="1_iihlp"]
 [ext_resource type="Texture2D" uid="uid://dw8gm7hqp7bug" path="res://EnviroSprites/Buildings/ColumnsEtc/Separator.png" id="2_ipswc"]
@@ -11,6 +11,18 @@
 [ext_resource type="Texture2D" uid="uid://qmxdbjuc566i" path="res://EnviroSprites/Buildings/Decorative/statue.png" id="8_mpcmx"]
 [ext_resource type="Texture2D" uid="uid://dw01h5bf51lm7" path="res://EnviroSprites/Buildings/Decorative/barnacles.png" id="9_jyxi5"]
 [ext_resource type="Texture2D" uid="uid://c4e5a5v6370qw" path="res://EnviroSprites/Buildings/Decorative/marker thing.png" id="10_5aiep"]
+[ext_resource type="Texture2D" uid="uid://dyvl05d3eayk" path="res://EnviroSprites/Buildings/Windows/rectangle window 2.png" id="11_ipveg"]
+[ext_resource type="Texture2D" uid="uid://b5bvgf4dtsmg8" path="res://EnviroSprites/Buildings/Walls/WallPlainTextured.png" id="12_in5lp"]
+[ext_resource type="Texture2D" uid="uid://c7v6foq5t3k2q" path="res://EnviroSprites/Buildings/Walls/WallBricked.png" id="13_smdmh"]
+[ext_resource type="Texture2D" uid="uid://bnb8k8h168wak" path="res://EnviroSprites/Buildings/Roofs/big_triangle_roof.png" id="14_2fme6"]
+[ext_resource type="Texture2D" uid="uid://dvk2jcslh26xu" path="res://EnviroSprites/Buildings/Roofs/gutter mid.png" id="15_0r4nw"]
+[ext_resource type="Texture2D" uid="uid://bv3x2wyhiqk7q" path="res://EnviroSprites/Buildings/Windows/big arch.png" id="17_kuiwy"]
+[ext_resource type="Texture2D" uid="uid://bilkqa6vojxr1" path="res://EnviroSprites/Buildings/Roofs/Tile2/tile roof right.png" id="18_ch4lo"]
+[ext_resource type="Texture2D" uid="uid://bfk1tk8jsr8al" path="res://EnviroSprites/Buildings/Decorative/chimneys x3.png" id="19_66cn8"]
+[ext_resource type="Texture2D" uid="uid://bv6252why7y8m" path="res://EnviroSprites/Buildings/Decorative/line 2 no clothes.png" id="20_uqc30"]
+[ext_resource type="Texture2D" uid="uid://118q5fmgd7se" path="res://EnviroSprites/Buildings/Decorative/blood.png" id="21_7cxc1"]
+[ext_resource type="Texture2D" uid="uid://lkicqyhl3beh" path="res://EnviroSprites/Buildings/Decorative/buttress.png" id="22_1j3o6"]
+[ext_resource type="Texture2D" uid="uid://bsup3gbeths4c" path="res://EnviroSprites/Buildings/Decorative/lamp 2.png" id="23_k5ne3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o3mbq"]
 size = Vector2(98.5585, 4215.46)
@@ -22,12 +34,12 @@ z_index = 3
 scale = Vector2(0.56601, 0.415555)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelFloorCollision"]
-position = Vector2(40.6353, 1334.15)
+position = Vector2(40.6353, 579.947)
 scale = Vector2(0.805756, 1)
 shape = SubResource("RectangleShape2D_o3mbq")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="LevelFloorCollision"]
-position = Vector2(572.428, 1334.15)
+position = Vector2(572.428, 579.947)
 scale = Vector2(0.805756, 1)
 shape = SubResource("RectangleShape2D_o3mbq")
 
@@ -41,17 +53,6 @@ shape = SubResource("RectangleShape2D_o3mbq")
 position = Vector2(323.316, 1896.26)
 rotation = 1.5708
 scale = Vector2(0.386763, 0.0141169)
-shape = SubResource("RectangleShape2D_o3mbq")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelFloorCollision"]
-z_index = 1
-position = Vector2(1095.39, 1369.25)
-polygon = PackedVector2Array(-19.4343, 38.5028, -91.8712, 117.915, -118.372, 187.701, -118.372, 344.118, 72.4369, 341.712, 70.6701, 9.62573)
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="LevelFloorCollision"]
-position = Vector2(825.074, 1222.46)
-rotation = 1.5708
-scale = Vector2(0.386763, 0.0650776)
 shape = SubResource("RectangleShape2D_o3mbq")
 
 [node name="Player" parent="." instance=ExtResource("1_iihlp")]
@@ -115,6 +116,591 @@ texture = ExtResource("2_ipswc")
 [node name="Separator14" type="Sprite2D" parent="Separator"]
 position = Vector2(-3435.49, 0.00015017)
 texture = ExtResource("2_ipswc")
+
+[node name="FleshWalls" type="Node2D" parent="."]
+position = Vector2(46, 811)
+rotation = 3.14159
+
+[node name="Flesh Wall" parent="FleshWalls" instance=ExtResource("5_2lx2e")]
+position = Vector2(-1, 14)
+
+[node name="Flesh Wall2" parent="FleshWalls" instance=ExtResource("5_2lx2e")]
+position = Vector2(-149, 65)
+scale = Vector2(-1, -1)
+
+[node name="Flesh Wall3" parent="FleshWalls" instance=ExtResource("5_2lx2e")]
+position = Vector2(-33, 165)
+
+[node name="Flesh Wall4" parent="FleshWalls" instance=ExtResource("5_2lx2e")]
+position = Vector2(-254, 276)
+scale = Vector2(-1, -1)
+
+[node name="Flesh Wall5" parent="FleshWalls" instance=ExtResource("5_2lx2e")]
+position = Vector2(-105, 335)
+
+[node name="Flesh Wall6" parent="FleshWalls" instance=ExtResource("5_2lx2e")]
+position = Vector2(-254, 398)
+scale = Vector2(-1, -1)
+
+[node name="Flesh Wall7" parent="FleshWalls" instance=ExtResource("5_2lx2e")]
+position = Vector2(-52, 448)
+
+[node name="Flesh Wall8" parent="FleshWalls" instance=ExtResource("5_2lx2e")]
+position = Vector2(-1, 1070)
+
+[node name="MarkerThing" type="Sprite2D" parent="."]
+position = Vector2(212, 705)
+rotation = -0.429587
+scale = Vector2(0.235838, 0.235838)
+texture = ExtResource("10_5aiep")
+
+[node name="BG" type="Node2D" parent="."]
+
+[node name="frontwalls" type="Node2D" parent="BG"]
+z_index = -1
+
+[node name="WallPlainTextured" type="Sprite2D" parent="BG/frontwalls"]
+modulate = Color(0.691357, 0.691357, 0.691357, 1)
+self_modulate = Color(0.730751, 0.119225, 0.361779, 1)
+position = Vector2(-67, -173)
+rotation = 1.57079
+scale = Vector2(0.564262, 0.564262)
+texture = ExtResource("12_in5lp")
+
+[node name="WallPlainTextured2" type="Sprite2D" parent="BG/frontwalls"]
+modulate = Color(0.691357, 0.691357, 0.691357, 1)
+self_modulate = Color(0.730751, 0.119225, 0.361779, 1)
+position = Vector2(-64, 91)
+rotation = 1.57079
+scale = Vector2(0.564262, 0.564262)
+texture = ExtResource("12_in5lp")
+
+[node name="WallPlainTextured3" type="Sprite2D" parent="BG/frontwalls"]
+modulate = Color(0.691357, 0.691357, 0.691357, 1)
+self_modulate = Color(0.730751, 0.119225, 0.361779, 1)
+position = Vector2(-64, 354)
+rotation = 1.57079
+scale = Vector2(0.564262, 0.564262)
+texture = ExtResource("12_in5lp")
+
+[node name="WallPlainTextured4" type="Sprite2D" parent="BG/frontwalls"]
+modulate = Color(0.691357, 0.691357, 0.691357, 1)
+self_modulate = Color(0.730751, 0.119225, 0.361779, 1)
+position = Vector2(-64, 615)
+rotation = 1.57079
+scale = Vector2(0.564262, 0.564262)
+texture = ExtResource("12_in5lp")
+
+[node name="WallPlainTextured5" type="Sprite2D" parent="BG/frontwalls"]
+modulate = Color(0.691357, 0.691357, 0.691357, 1)
+self_modulate = Color(0.730751, 0.119225, 0.361779, 1)
+position = Vector2(-64, 878)
+rotation = 1.57079
+scale = Vector2(0.564262, 0.564262)
+texture = ExtResource("12_in5lp")
+
+[node name="WallPlainTextured6" type="Sprite2D" parent="BG/frontwalls"]
+modulate = Color(0.691357, 0.691357, 0.691357, 1)
+self_modulate = Color(0.730751, 0.119225, 0.361779, 1)
+position = Vector2(-67, 1141)
+rotation = 1.57079
+scale = Vector2(0.564262, 0.564262)
+texture = ExtResource("12_in5lp")
+
+[node name="WallPlainTextured7" type="Sprite2D" parent="BG/frontwalls"]
+modulate = Color(0.691357, 0.691357, 0.691357, 1)
+self_modulate = Color(0.730751, 0.119225, 0.361779, 1)
+position = Vector2(412.671, -182.141)
+rotation = 1.57079
+scale = Vector2(0.564262, 0.564262)
+texture = ExtResource("12_in5lp")
+
+[node name="WallPlainTextured8" type="Sprite2D" parent="BG/frontwalls"]
+modulate = Color(0.691357, 0.691357, 0.691357, 1)
+self_modulate = Color(0.730751, 0.119225, 0.361779, 1)
+position = Vector2(415.671, 81.8588)
+rotation = 1.57079
+scale = Vector2(0.564262, 0.564262)
+texture = ExtResource("12_in5lp")
+
+[node name="WallPlainTextured9" type="Sprite2D" parent="BG/frontwalls"]
+modulate = Color(0.691357, 0.691357, 0.691357, 1)
+self_modulate = Color(0.730751, 0.119225, 0.361779, 1)
+position = Vector2(415.671, 344.859)
+rotation = 1.57079
+scale = Vector2(0.564262, 0.564262)
+texture = ExtResource("12_in5lp")
+
+[node name="WallPlainTextured10" type="Sprite2D" parent="BG/frontwalls"]
+modulate = Color(0.691357, 0.691357, 0.691357, 1)
+self_modulate = Color(0.730751, 0.119225, 0.361779, 1)
+position = Vector2(415.671, 605.859)
+rotation = 1.57079
+scale = Vector2(0.564262, 0.564262)
+texture = ExtResource("12_in5lp")
+
+[node name="WallPlainTextured11" type="Sprite2D" parent="BG/frontwalls"]
+modulate = Color(0.691357, 0.691357, 0.691357, 1)
+self_modulate = Color(0.730751, 0.119225, 0.361779, 1)
+position = Vector2(415.671, 868.859)
+rotation = 1.57079
+scale = Vector2(0.564262, 0.564262)
+texture = ExtResource("12_in5lp")
+
+[node name="WallPlainTextured12" type="Sprite2D" parent="BG/frontwalls"]
+modulate = Color(0.691357, 0.691357, 0.691357, 1)
+self_modulate = Color(0.730751, 0.119225, 0.361779, 1)
+position = Vector2(412.671, 1131.86)
+rotation = 1.57079
+scale = Vector2(0.564262, 0.564262)
+texture = ExtResource("12_in5lp")
+
+[node name="WallPlainTextured13" type="Sprite2D" parent="BG/frontwalls"]
+modulate = Color(0.691357, 0.691357, 0.691357, 1)
+self_modulate = Color(0.730751, 0.119225, 0.361779, 1)
+position = Vector2(172, 1212)
+rotation = 3.14159
+scale = Vector2(0.724262, 0.564262)
+texture = ExtResource("12_in5lp")
+
+[node name="BackWalls" type="Node2D" parent="BG"]
+z_index = -10
+
+[node name="WallPlainTextured16" type="Sprite2D" parent="BG/BackWalls"]
+position = Vector2(265.901, 1070.85)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+
+[node name="WallPlainTextured17" type="Sprite2D" parent="BG/BackWalls"]
+position = Vector2(193, 1052)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured18" type="Sprite2D" parent="BG/BackWalls"]
+position = Vector2(102, 1052)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured19" type="Sprite2D" parent="BG/BackWalls"]
+position = Vector2(306.189, 999.85)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+
+[node name="WallPlainTextured20" type="Sprite2D" parent="BG/BackWalls"]
+position = Vector2(233.288, 981)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured21" type="Sprite2D" parent="BG/BackWalls"]
+position = Vector2(142.288, 981)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured22" type="Sprite2D" parent="BG/BackWalls"]
+position = Vector2(52, 981)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured23" type="Sprite2D" parent="BG/BackWalls"]
+position = Vector2(265.901, 928.85)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+
+[node name="WallPlainTextured24" type="Sprite2D" parent="BG/BackWalls"]
+position = Vector2(193, 910)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured25" type="Sprite2D" parent="BG/BackWalls"]
+position = Vector2(102, 910)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured26" type="Sprite2D" parent="BG/BackWalls"]
+position = Vector2(306.189, 857.85)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+
+[node name="WallPlainTextured27" type="Sprite2D" parent="BG/BackWalls"]
+position = Vector2(233.288, 839)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured28" type="Sprite2D" parent="BG/BackWalls"]
+position = Vector2(142.288, 839)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured29" type="Sprite2D" parent="BG/BackWalls"]
+position = Vector2(52, 839)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="BackWalls2" type="Node2D" parent="BG"]
+z_index = -10
+position = Vector2(0, -284)
+
+[node name="WallPlainTextured16" type="Sprite2D" parent="BG/BackWalls2"]
+position = Vector2(265.901, 1070.85)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+
+[node name="WallPlainTextured17" type="Sprite2D" parent="BG/BackWalls2"]
+position = Vector2(193, 1052)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured18" type="Sprite2D" parent="BG/BackWalls2"]
+position = Vector2(102, 1052)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured19" type="Sprite2D" parent="BG/BackWalls2"]
+position = Vector2(306.189, 999.85)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+
+[node name="WallPlainTextured20" type="Sprite2D" parent="BG/BackWalls2"]
+position = Vector2(233.288, 981)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured21" type="Sprite2D" parent="BG/BackWalls2"]
+position = Vector2(142.288, 981)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured22" type="Sprite2D" parent="BG/BackWalls2"]
+position = Vector2(52, 981)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured23" type="Sprite2D" parent="BG/BackWalls2"]
+position = Vector2(265.901, 928.85)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+
+[node name="WallPlainTextured24" type="Sprite2D" parent="BG/BackWalls2"]
+position = Vector2(193, 910)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured25" type="Sprite2D" parent="BG/BackWalls2"]
+position = Vector2(102, 910)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured26" type="Sprite2D" parent="BG/BackWalls2"]
+position = Vector2(306.189, 857.85)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+
+[node name="WallPlainTextured27" type="Sprite2D" parent="BG/BackWalls2"]
+position = Vector2(233.288, 839)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured28" type="Sprite2D" parent="BG/BackWalls2"]
+position = Vector2(142.288, 839)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured29" type="Sprite2D" parent="BG/BackWalls2"]
+position = Vector2(52, 839)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="BackWalls3" type="Node2D" parent="BG"]
+z_index = -10
+position = Vector2(0, -568)
+
+[node name="WallPlainTextured16" type="Sprite2D" parent="BG/BackWalls3"]
+position = Vector2(265.901, 1070.85)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+
+[node name="WallPlainTextured17" type="Sprite2D" parent="BG/BackWalls3"]
+position = Vector2(193, 1052)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured18" type="Sprite2D" parent="BG/BackWalls3"]
+position = Vector2(102, 1052)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured19" type="Sprite2D" parent="BG/BackWalls3"]
+position = Vector2(306.189, 999.85)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+
+[node name="WallPlainTextured20" type="Sprite2D" parent="BG/BackWalls3"]
+position = Vector2(233.288, 981)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured21" type="Sprite2D" parent="BG/BackWalls3"]
+position = Vector2(142.288, 981)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured22" type="Sprite2D" parent="BG/BackWalls3"]
+position = Vector2(52, 981)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured23" type="Sprite2D" parent="BG/BackWalls3"]
+position = Vector2(265.901, 928.85)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+
+[node name="WallPlainTextured24" type="Sprite2D" parent="BG/BackWalls3"]
+position = Vector2(193, 910)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured25" type="Sprite2D" parent="BG/BackWalls3"]
+position = Vector2(102, 910)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured26" type="Sprite2D" parent="BG/BackWalls3"]
+position = Vector2(306.189, 857.85)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+
+[node name="WallPlainTextured27" type="Sprite2D" parent="BG/BackWalls3"]
+position = Vector2(233.288, 839)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured28" type="Sprite2D" parent="BG/BackWalls3"]
+position = Vector2(142.288, 839)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured29" type="Sprite2D" parent="BG/BackWalls3"]
+position = Vector2(52, 839)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="BackWalls4" type="Node2D" parent="BG"]
+z_index = -10
+position = Vector2(0, -852)
+
+[node name="WallPlainTextured16" type="Sprite2D" parent="BG/BackWalls4"]
+position = Vector2(265.901, 1070.85)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+
+[node name="WallPlainTextured17" type="Sprite2D" parent="BG/BackWalls4"]
+position = Vector2(193, 1052)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured18" type="Sprite2D" parent="BG/BackWalls4"]
+position = Vector2(102, 1052)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured19" type="Sprite2D" parent="BG/BackWalls4"]
+position = Vector2(306.189, 999.85)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+
+[node name="WallPlainTextured20" type="Sprite2D" parent="BG/BackWalls4"]
+position = Vector2(233.288, 981)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured21" type="Sprite2D" parent="BG/BackWalls4"]
+position = Vector2(142.288, 981)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured22" type="Sprite2D" parent="BG/BackWalls4"]
+position = Vector2(52, 981)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured23" type="Sprite2D" parent="BG/BackWalls4"]
+position = Vector2(265.901, 928.85)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+
+[node name="WallPlainTextured24" type="Sprite2D" parent="BG/BackWalls4"]
+position = Vector2(193, 910)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured25" type="Sprite2D" parent="BG/BackWalls4"]
+position = Vector2(102, 910)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured26" type="Sprite2D" parent="BG/BackWalls4"]
+position = Vector2(306.189, 857.85)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+
+[node name="WallPlainTextured27" type="Sprite2D" parent="BG/BackWalls4"]
+position = Vector2(233.288, 839)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured28" type="Sprite2D" parent="BG/BackWalls4"]
+position = Vector2(142.288, 839)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured29" type="Sprite2D" parent="BG/BackWalls4"]
+position = Vector2(52, 839)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="BackWalls5" type="Node2D" parent="BG"]
+z_index = -10
+position = Vector2(0, -1136)
+
+[node name="WallPlainTextured16" type="Sprite2D" parent="BG/BackWalls5"]
+position = Vector2(265.901, 1070.85)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+
+[node name="WallPlainTextured17" type="Sprite2D" parent="BG/BackWalls5"]
+position = Vector2(193, 1052)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured18" type="Sprite2D" parent="BG/BackWalls5"]
+position = Vector2(102, 1052)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured19" type="Sprite2D" parent="BG/BackWalls5"]
+position = Vector2(306.189, 999.85)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+
+[node name="WallPlainTextured20" type="Sprite2D" parent="BG/BackWalls5"]
+position = Vector2(233.288, 981)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured21" type="Sprite2D" parent="BG/BackWalls5"]
+position = Vector2(142.288, 981)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured22" type="Sprite2D" parent="BG/BackWalls5"]
+position = Vector2(52, 981)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured23" type="Sprite2D" parent="BG/BackWalls5"]
+position = Vector2(265.901, 928.85)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+
+[node name="WallPlainTextured24" type="Sprite2D" parent="BG/BackWalls5"]
+position = Vector2(193, 910)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured25" type="Sprite2D" parent="BG/BackWalls5"]
+position = Vector2(102, 910)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured26" type="Sprite2D" parent="BG/BackWalls5"]
+position = Vector2(306.189, 857.85)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+
+[node name="WallPlainTextured27" type="Sprite2D" parent="BG/BackWalls5"]
+position = Vector2(233.288, 839)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured28" type="Sprite2D" parent="BG/BackWalls5"]
+position = Vector2(142.288, 839)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="WallPlainTextured29" type="Sprite2D" parent="BG/BackWalls5"]
+position = Vector2(52, 839)
+scale = Vector2(0.193259, 0.193259)
+texture = ExtResource("13_smdmh")
+offset = Vector2(-93.6534, 97.5356)
+
+[node name="BigTriangleRoof" type="Sprite2D" parent="BG"]
+position = Vector2(176, -425)
+scale = Vector2(0.404484, 0.324481)
+texture = ExtResource("14_2fme6")
+
+[node name="GutterMid" type="Sprite2D" parent="BG"]
+position = Vector2(70, -314)
+scale = Vector2(0.611717, 0.611717)
+texture = ExtResource("15_0r4nw")
+
+[node name="GutterMid2" type="Sprite2D" parent="BG"]
+position = Vector2(191, -314)
+scale = Vector2(0.611717, 0.611717)
+texture = ExtResource("15_0r4nw")
+
+[node name="GutterMid3" type="Sprite2D" parent="BG"]
+position = Vector2(311, -314)
+scale = Vector2(0.611717, 0.611717)
+texture = ExtResource("15_0r4nw")
 
 [node name="LongPlatformssss" type="Node2D" parent="."]
 position = Vector2(262, 1105)
@@ -219,38 +805,20 @@ scale = Vector2(1, 1)
 position = Vector2(92, -4340)
 scale = Vector2(1, 1)
 
-[node name="FleshWalls" type="Node2D" parent="."]
-position = Vector2(46, 811)
-rotation = 3.14159
+[node name="Small Platforms5" parent="ShortPlatforms" instance=ExtResource("4_waipe")]
+position = Vector2(-336, -936)
+scale = Vector2(1, 1)
 
-[node name="Flesh Wall" parent="FleshWalls" instance=ExtResource("5_2lx2e")]
-position = Vector2(-1, 14)
-
-[node name="Flesh Wall2" parent="FleshWalls" instance=ExtResource("5_2lx2e")]
-position = Vector2(-149, 65)
-scale = Vector2(-1, -1)
-
-[node name="Flesh Wall3" parent="FleshWalls" instance=ExtResource("5_2lx2e")]
-position = Vector2(-33, 165)
-
-[node name="Flesh Wall4" parent="FleshWalls" instance=ExtResource("5_2lx2e")]
-position = Vector2(-254, 276)
-scale = Vector2(-1, -1)
-
-[node name="Flesh Wall5" parent="FleshWalls" instance=ExtResource("5_2lx2e")]
-position = Vector2(-105, 335)
-
-[node name="Flesh Wall6" parent="FleshWalls" instance=ExtResource("5_2lx2e")]
-position = Vector2(-254, 398)
-scale = Vector2(-1, -1)
-
-[node name="Flesh Wall7" parent="FleshWalls" instance=ExtResource("5_2lx2e")]
-position = Vector2(-52, 448)
-
-[node name="Flesh Wall8" parent="FleshWalls" instance=ExtResource("5_2lx2e")]
-position = Vector2(-1, 1070)
+[node name="Small Platforms17" parent="ShortPlatforms" instance=ExtResource("4_waipe")]
+position = Vector2(-792, -4788)
+scale = Vector2(1, 1)
 
 [node name="Decor" type="Node2D" parent="."]
+
+[node name="RectangleWindow2" type="Sprite2D" parent="Decor"]
+position = Vector2(162, 963)
+scale = Vector2(0.127719, 0.127719)
+texture = ExtResource("11_ipveg")
 
 [node name="ColumnTextured" type="Sprite2D" parent="Decor"]
 position = Vector2(202, 785)
@@ -308,13 +876,233 @@ scale = Vector2(0.413764, 0.413764)
 texture = ExtResource("9_jyxi5")
 
 [node name="Ceiling5" type="Sprite2D" parent="Decor"]
-position = Vector2(96, 509)
-rotation = 2.86962
-scale = Vector2(0.0695256, 0.0811135)
+z_index = -2
+position = Vector2(78, 491)
+rotation = 3.15855
+scale = Vector2(0.0864825, 0.121294)
 texture = ExtResource("6_jg8re")
 
-[node name="MarkerThing" type="Sprite2D" parent="."]
-position = Vector2(212, 705)
-rotation = -0.429587
-scale = Vector2(0.235838, 0.235838)
-texture = ExtResource("10_5aiep")
+[node name="Ceiling6" type="Sprite2D" parent="Decor"]
+z_index = -2
+position = Vector2(57, 430)
+rotation = 3.58057
+scale = Vector2(0.12492, 0.14574)
+texture = ExtResource("6_jg8re")
+
+[node name="Ceiling7" type="Sprite2D" parent="Decor"]
+z_index = -2
+position = Vector2(41, 381)
+rotation = 1.84484
+scale = Vector2(0.12492, 0.14574)
+texture = ExtResource("6_jg8re")
+
+[node name="RectangleWindow3" type="Sprite2D" parent="Decor"]
+z_index = -2
+position = Vector2(96, 864)
+scale = Vector2(0.127719, 0.127719)
+texture = ExtResource("11_ipveg")
+
+[node name="RectangleWindow4" type="Sprite2D" parent="Decor"]
+position = Vector2(141, 687)
+scale = Vector2(0.127719, 0.127719)
+texture = ExtResource("11_ipveg")
+
+[node name="RectangleWindow5" type="Sprite2D" parent="Decor"]
+position = Vector2(95, 562)
+scale = Vector2(0.127719, 0.127719)
+texture = ExtResource("11_ipveg")
+
+[node name="RectangleWindow6" type="Sprite2D" parent="Decor"]
+position = Vector2(220, 462)
+scale = Vector2(0.127719, 0.127719)
+texture = ExtResource("11_ipveg")
+
+[node name="RectangleWindow7" type="Sprite2D" parent="Decor"]
+position = Vector2(147, 309)
+scale = Vector2(0.127719, 0.127719)
+texture = ExtResource("11_ipveg")
+
+[node name="RectangleWindow8" type="Sprite2D" parent="Decor"]
+position = Vector2(119, 189)
+scale = Vector2(0.127719, 0.127719)
+texture = ExtResource("11_ipveg")
+
+[node name="RectangleWindow9" type="Sprite2D" parent="Decor"]
+position = Vector2(253, 180)
+scale = Vector2(0.127719, 0.127719)
+texture = ExtResource("11_ipveg")
+
+[node name="RectangleWindow10" type="Sprite2D" parent="Decor"]
+position = Vector2(175, 110)
+scale = Vector2(0.127719, 0.127719)
+texture = ExtResource("11_ipveg")
+
+[node name="BigArch" type="Sprite2D" parent="Decor"]
+position = Vector2(206, -41)
+scale = Vector2(0.278359, 0.278359)
+texture = ExtResource("17_kuiwy")
+
+[node name="BigArch2" type="Sprite2D" parent="Decor"]
+position = Vector2(206, -202)
+scale = Vector2(0.278359, 0.278359)
+texture = ExtResource("17_kuiwy")
+
+[node name="BigArch3" type="Sprite2D" parent="Decor"]
+position = Vector2(206, -389)
+scale = Vector2(0.278359, 0.278359)
+texture = ExtResource("17_kuiwy")
+
+[node name="TileRoofRight" type="Sprite2D" parent="Decor"]
+z_index = -2
+position = Vector2(-13, 524)
+rotation = -0.20812
+scale = Vector2(0.359657, 0.359657)
+texture = ExtResource("18_ch4lo")
+
+[node name="ChimneysX3" type="Sprite2D" parent="Decor"]
+z_index = -2
+position = Vector2(126, 487)
+rotation = 1.13279
+scale = Vector2(0.148292, 0.148292)
+texture = ExtResource("19_66cn8")
+
+[node name="Statue2" type="Sprite2D" parent="Decor"]
+position = Vector2(234, 329)
+scale = Vector2(0.192292, 0.192292)
+texture = ExtResource("8_mpcmx")
+
+[node name="Ceiling8" type="Sprite2D" parent="Decor"]
+modulate = Color(0.741385, 0.741385, 0.741385, 1)
+position = Vector2(54, 412)
+rotation = 1.1987
+scale = Vector2(0.0905148, 0.180146)
+texture = ExtResource("6_jg8re")
+
+[node name="Line2NoClothes" type="Sprite2D" parent="Decor"]
+modulate = Color(1, 1, 1, 0.454902)
+z_index = -2
+position = Vector2(171, 1027)
+scale = Vector2(0.381545, 0.381545)
+texture = ExtResource("20_uqc30")
+
+[node name="Barnacles3" type="Sprite2D" parent="Decor"]
+position = Vector2(66, 337)
+rotation = -0.830826
+scale = Vector2(0.253788, 0.253788)
+texture = ExtResource("9_jyxi5")
+
+[node name="Barnacles4" type="Sprite2D" parent="Decor"]
+position = Vector2(79, 418)
+rotation = -0.0673484
+scale = Vector2(0.672275, 0.672275)
+texture = ExtResource("9_jyxi5")
+
+[node name="Blood" type="Sprite2D" parent="Decor"]
+position = Vector2(175, 1064)
+scale = Vector2(0.468676, 0.468676)
+texture = ExtResource("21_7cxc1")
+
+[node name="Line2NoClothes2" type="Sprite2D" parent="Decor"]
+modulate = Color(1, 1, 1, 0.4)
+z_index = -2
+position = Vector2(159, 816)
+rotation = -0.432457
+scale = Vector2(-0.382, 0.382)
+texture = ExtResource("20_uqc30")
+
+[node name="Blood2" type="Sprite2D" parent="Decor"]
+position = Vector2(63, 780)
+scale = Vector2(0.468676, 0.468676)
+texture = ExtResource("21_7cxc1")
+
+[node name="Blood3" type="Sprite2D" parent="Decor"]
+position = Vector2(216, 515)
+scale = Vector2(0.306731, 0.306731)
+texture = ExtResource("21_7cxc1")
+
+[node name="Blood4" type="Sprite2D" parent="Decor"]
+position = Vector2(95, 196)
+scale = Vector2(0.306731, 0.306731)
+texture = ExtResource("21_7cxc1")
+
+[node name="Buttress" type="Sprite2D" parent="Decor"]
+position = Vector2(254, 289)
+scale = Vector2(0.205332, 0.205332)
+texture = ExtResource("22_1j3o6")
+
+[node name="Barnacles5" type="Sprite2D" parent="Decor"]
+position = Vector2(65, 929)
+rotation = -0.190554
+scale = Vector2(0.451928, 0.451928)
+texture = ExtResource("9_jyxi5")
+
+[node name="Barnacles6" type="Sprite2D" parent="Decor"]
+position = Vector2(264, 1028)
+rotation = 0.30338
+scale = Vector2(0.451928, 0.451928)
+texture = ExtResource("9_jyxi5")
+
+[node name="Barnacles7" type="Sprite2D" parent="Decor"]
+position = Vector2(161, 549)
+rotation = 0.30338
+scale = Vector2(0.451928, 0.451928)
+texture = ExtResource("9_jyxi5")
+
+[node name="Barnacles8" type="Sprite2D" parent="Decor"]
+position = Vector2(151, 423)
+rotation = 2.22661
+scale = Vector2(0.451928, 0.451928)
+texture = ExtResource("9_jyxi5")
+
+[node name="Lamp2" type="Sprite2D" parent="Decor"]
+position = Vector2(262, 91)
+scale = Vector2(0.237243, 0.237243)
+texture = ExtResource("23_k5ne3")
+
+[node name="Lamp3" type="Sprite2D" parent="Decor"]
+position = Vector2(85, 121)
+scale = Vector2(-0.237, 0.237)
+texture = ExtResource("23_k5ne3")
+
+[node name="Buttress3" type="Sprite2D" parent="Decor"]
+position = Vector2(254.5, 1033.6)
+scale = Vector2(0.205332, 0.205332)
+texture = ExtResource("22_1j3o6")
+
+[node name="Buttress4" type="Sprite2D" parent="Decor"]
+position = Vector2(96.5, 1032)
+scale = Vector2(-0.205, 0.205)
+texture = ExtResource("22_1j3o6")
+
+[node name="Lamp4" type="Sprite2D" parent="Decor"]
+position = Vector2(262, -181.889)
+scale = Vector2(0.237243, 0.237243)
+texture = ExtResource("23_k5ne3")
+
+[node name="Lamp5" type="Sprite2D" parent="Decor"]
+position = Vector2(85, -181.889)
+scale = Vector2(-0.237, 0.237)
+texture = ExtResource("23_k5ne3")
+
+[node name="Lamp6" type="Sprite2D" parent="Decor"]
+position = Vector2(262, 887.111)
+scale = Vector2(0.237243, 0.237243)
+texture = ExtResource("23_k5ne3")
+
+[node name="Lamp7" type="Sprite2D" parent="Decor"]
+position = Vector2(85, 595)
+scale = Vector2(-0.237, 0.237)
+texture = ExtResource("23_k5ne3")
+
+[node name="Blood5" type="Sprite2D" parent="Decor"]
+position = Vector2(187, -128)
+scale = Vector2(0.278436, 0.278436)
+texture = ExtResource("21_7cxc1")
+
+[node name="Ceiling9" type="Sprite2D" parent="Decor"]
+modulate = Color(0.741385, 0.741385, 0.741385, 1)
+z_index = -2
+position = Vector2(312, 157)
+rotation = -1.76745
+scale = Vector2(0.0669927, 0.162276)
+texture = ExtResource("6_jg8re")

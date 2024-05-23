@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://dhwsckm1ag60"]
+[gd_scene load_steps=66 format=3 uid="uid://dhwsckm1ag60"]
 
 [ext_resource type="PackedScene" uid="uid://cyhg841lp1wjc" path="res://Assets/Interactables/button.tscn" id="1_3nmw7"]
 [ext_resource type="Script" path="res://World/clock_tower_level_one.gd" id="1_257nd"]
@@ -41,15 +41,16 @@
 [ext_resource type="PackedScene" uid="uid://d0aoahb3jj4kc" path="res://Platforms/platforms.tscn" id="39_lwcgv"]
 [ext_resource type="PackedScene" uid="uid://bf4ldidd5sglr" path="res://Platforms/platformlong.tscn" id="40_4p0js"]
 [ext_resource type="PackedScene" uid="uid://dtn3e440x0422" path="res://Platforms/moving_platform.tscn" id="41_jjtal"]
-[ext_resource type="Curve2D" uid="uid://m4852hfy6mfw" path="res://Platforms/MovingPlatformsRoutes/Positive_y_10Meters.tres" id="42_pd5yb"]
 [ext_resource type="PackedScene" uid="uid://ckiyh57un5obs" path="res://Assets/Interactables/door.tscn" id="43_dq7q6"]
 [ext_resource type="Shader" path="res://World/water.gdshader" id="44_8hs8o"]
 [ext_resource type="Texture2D" uid="uid://v3q7u1hq2qcd" path="res://EnviroSprites/GroundandBG/ocean.png" id="45_5uvxr"]
 [ext_resource type="Shader" path="res://World/fog.gdshader" id="46_2q6js"]
 [ext_resource type="Shader" path="res://World/GodRay.gdshader" id="47_dpbcb"]
 [ext_resource type="Resource" uid="uid://b6xxg0hnhnfik" path="res://World/ClockTower_WallJump.tres" id="48_3mcgq"]
+[ext_resource type="PackedScene" uid="uid://bsm4p2xpdjlod" path="res://Platforms/flesh_wall_jump.tscn" id="49_akkd4"]
 [ext_resource type="Resource" uid="uid://dfqdx0vvh2u6v" path="res://World/Prolouge_ClockTowerOne.tres" id="49_nqkmm"]
 [ext_resource type="PackedScene" uid="uid://c8pfinyhx3py8" path="res://World/camera_limits.tscn" id="50_k35hs"]
+[ext_resource type="Curve2D" uid="uid://djw5gx3eg2vxy" path="res://Platforms/MovingPlatformsRoutes/Positive_x_10Meters.tres" id="51_vc6vo"]
 
 [sub_resource type="Gradient" id="Gradient_qymc3"]
 offsets = PackedFloat32Array(0, 0.649351)
@@ -59,6 +60,9 @@ colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 gradient = SubResource("Gradient_qymc3")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fwhjp"]
+size = Vector2(26, 74)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_a2w3v"]
 shader = ExtResource("2_v5ris")
@@ -142,7 +146,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1142, -24), Vector2(1941, 547)]
+"values": [Vector2(1142, -24), Vector2(1941, 447)]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -291,6 +295,11 @@ texture_scale = 1.9
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelFloorCollision"]
 polygon = PackedVector2Array(-4, 10, 4, 648, 2226, 641, 2232, 5, 2147, 6, 2146, 553, 1984, 553, 1969.15, 547, 248, 547, 233, 554, 75, 554, 73, 30)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelFloorCollision"]
+z_index = 2
+position = Vector2(729, 378)
+shape = SubResource("RectangleShape2D_fwhjp")
 
 [node name="Button" parent="." instance=ExtResource("1_3nmw7")]
 position = Vector2(1072, 30)
@@ -2268,54 +2277,6 @@ texture = ExtResource("38_qkekg")
 [node name="PlatformFolder" type="Node2D" parent="."]
 position = Vector2(132, 0)
 
-[node name="Platform" parent="PlatformFolder" instance=ExtResource("39_lwcgv")]
-position = Vector2(572, 504)
-
-[node name="Platform2" parent="PlatformFolder" instance=ExtResource("39_lwcgv")]
-position = Vector2(893, 468)
-
-[node name="Platform2" parent="PlatformFolder/Platform2" instance=ExtResource("39_lwcgv")]
-z_index = 1
-position = Vector2(-1164, -808)
-scale = Vector2(0.736765, 0.736765)
-
-[node name="Platform5" parent="PlatformFolder/Platform2" instance=ExtResource("39_lwcgv")]
-position = Vector2(-2124, -708)
-scale = Vector2(1.14968, 1.14968)
-
-[node name="Platform3" parent="PlatformFolder/Platform2" instance=ExtResource("39_lwcgv")]
-z_index = 1
-position = Vector2(-1164, -1084)
-scale = Vector2(0.736765, 0.736765)
-
-[node name="Platform3" parent="PlatformFolder" instance=ExtResource("39_lwcgv")]
-position = Vector2(965, 403)
-
-[node name="Platform4" parent="PlatformFolder" instance=ExtResource("39_lwcgv")]
-position = Vector2(1040, 316)
-
-[node name="Platform14" parent="PlatformFolder" instance=ExtResource("39_lwcgv")]
-position = Vector2(954, 271)
-
-[node name="Platform15" parent="PlatformFolder" instance=ExtResource("39_lwcgv")]
-position = Vector2(1023, 212)
-
-[node name="Platform16" parent="PlatformFolder" instance=ExtResource("39_lwcgv")]
-position = Vector2(970, 171)
-
-[node name="Platform5" parent="PlatformFolder" instance=ExtResource("39_lwcgv")]
-position = Vector2(886, 196)
-
-[node name="Platform6" parent="PlatformFolder" instance=ExtResource("39_lwcgv")]
-position = Vector2(1041, 116)
-
-[node name="Platform7" parent="PlatformFolder" instance=ExtResource("39_lwcgv")]
-position = Vector2(506, 427)
-scale = Vector2(0.43543, 0.271301)
-
-[node name="Platform8" parent="PlatformFolder" instance=ExtResource("39_lwcgv")]
-position = Vector2(1042, 36)
-
 [node name="Platform9" parent="PlatformFolder" instance=ExtResource("39_lwcgv")]
 position = Vector2(891, 36)
 
@@ -2341,49 +2302,6 @@ position = Vector2(152, 285)
 
 [node name="Platform13" parent="PlatformFolder" instance=ExtResource("40_4p0js")]
 position = Vector2(1332, 136)
-
-[node name="Label" type="Label" parent="."]
-offset_left = 618.0
-offset_top = 39.0
-offset_right = 691.0
-offset_bottom = 166.0
-text = "^
-Moving
-Platform
-Up/Down
-V"
-
-[node name="Label2" type="Label" parent="."]
-offset_left = 399.0
-offset_top = -13.0
-offset_right = 522.0
-offset_bottom = 36.0
-text = "Double Jump
-Mementos here"
-
-[node name="Label3" type="Label" parent="."]
-offset_left = 1792.0
-offset_top = -53.0
-offset_right = 1915.0
-offset_bottom = 22.0
-text = "Wall Climb 
-mementos
-Here"
-
-[node name="MovingPlatform" parent="." instance=ExtResource("41_jjtal")]
-position = Vector2(616, 136)
-scale = Vector2(0.184, 0.184)
-
-[node name="AnimatableBody2D" parent="MovingPlatform" index="0"]
-position = Vector2(0, 163.043)
-
-[node name="Path2D" parent="MovingPlatform" index="2"]
-position = Vector2(0, 163.043)
-curve = ExtResource("42_pd5yb")
-
-[node name="_Timer_19059" type="Timer" parent="MovingPlatform/Path2D/PathFollow2D" index="1"]
-wait_time = 0.2
-one_shot = true
 
 [node name="Water Shader" type="Node" parent="."]
 
@@ -2456,12 +2374,82 @@ grow_vertical = 1
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.33972, 0.341544, 0.412054, 1)
 
+[node name="Platform" parent="." instance=ExtResource("39_lwcgv")]
+position = Vector2(794, 439)
+
+[node name="Platform2" parent="." instance=ExtResource("39_lwcgv")]
+position = Vector2(736, 483)
+
+[node name="Platform3" parent="." instance=ExtResource("39_lwcgv")]
+position = Vector2(810, 511)
+
+[node name="Platform4" parent="." instance=ExtResource("39_lwcgv")]
+position = Vector2(786, 280)
+
+[node name="Platform7" parent="." instance=ExtResource("39_lwcgv")]
+position = Vector2(1098, 175)
+
+[node name="Platform8" parent="." instance=ExtResource("39_lwcgv")]
+position = Vector2(1128, 109)
+
+[node name="Platform6" parent="." instance=ExtResource("39_lwcgv")]
+position = Vector2(786, 280)
+
+[node name="Flesh Wall" parent="." instance=ExtResource("49_akkd4")]
+position = Vector2(840, 391)
+scale = Vector2(0.99, 0.99)
+
+[node name="Flesh Wall4" parent="." instance=ExtResource("49_akkd4")]
+position = Vector2(1180, 228)
+scale = Vector2(0.99, 0.99)
+
+[node name="Flesh Wall6" parent="." instance=ExtResource("49_akkd4")]
+position = Vector2(1187, 59)
+scale = Vector2(0.99, 0.99)
+
+[node name="Flesh Wall3" parent="." instance=ExtResource("49_akkd4")]
+position = Vector2(840, 327)
+scale = Vector2(0.99, 0.99)
+
+[node name="Flesh Wall2" parent="." instance=ExtResource("49_akkd4")]
+position = Vector2(749, 358)
+
+[node name="FleshWallJump" parent="Flesh Wall2" index="1"]
+flip_h = true
+
+[node name="Flesh Wall5" parent="." instance=ExtResource("49_akkd4")]
+position = Vector2(1021, 122)
+
+[node name="FleshWallJump" parent="Flesh Wall5" index="1"]
+flip_h = true
+
+[node name="Platform5" parent="." instance=ExtResource("40_4p0js")]
+position = Vector2(885, 253)
+scale = Vector2(0.301, 0.31686)
+
+[node name="MovingPlatform" parent="." instance=ExtResource("41_jjtal")]
+position = Vector2(1038, 267)
+
+[node name="AnimatableBody2D" parent="MovingPlatform" index="0"]
+position = Vector2(0, 0)
+scale = Vector2(0.23, 0.23)
+
+[node name="Path2D" parent="MovingPlatform" index="2"]
+scale = Vector2(0.23, 0.23)
+curve = ExtResource("51_vc6vo")
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="Door/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Door2" to="." method="_on_door_2_body_entered"]
 [connection signal="animation_finished" from="Door2/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 
 [editable path="Button"]
-[editable path="MovingPlatform"]
 [editable path="Door"]
 [editable path="Door2"]
+[editable path="Flesh Wall"]
+[editable path="Flesh Wall4"]
+[editable path="Flesh Wall6"]
+[editable path="Flesh Wall3"]
+[editable path="Flesh Wall2"]
+[editable path="Flesh Wall5"]
+[editable path="MovingPlatform"]

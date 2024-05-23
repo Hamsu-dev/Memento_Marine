@@ -2,6 +2,7 @@ extends Area2D
 
 @onready var lights = $"../Lights"
 @onready var canvas_modulate = $"../CanvasModulate"
+@onready var animated_sprite_2d = $AnimatedSprite2D
 
 signal button_pressed
 
@@ -10,6 +11,7 @@ var player_in_area = false
 
 func _on_body_entered(body):
 	if body.is_in_group("Player"):
+		animated_sprite_2d.play("pressed")
 		player_in_area = true
 
 func _on_body_exited(body):

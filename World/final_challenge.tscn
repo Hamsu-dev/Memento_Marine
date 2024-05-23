@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://ctsovcie5ppuq"]
+[gd_scene load_steps=26 format=3 uid="uid://ctsovcie5ppuq"]
 
 [ext_resource type="PackedScene" uid="uid://b2kioq0ibvkx8" path="res://Player/player.tscn" id="1_iihlp"]
 [ext_resource type="Texture2D" uid="uid://dw8gm7hqp7bug" path="res://EnviroSprites/Buildings/ColumnsEtc/Separator.png" id="2_ipswc"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://118q5fmgd7se" path="res://EnviroSprites/Buildings/Decorative/blood.png" id="21_7cxc1"]
 [ext_resource type="Texture2D" uid="uid://lkicqyhl3beh" path="res://EnviroSprites/Buildings/Decorative/buttress.png" id="22_1j3o6"]
 [ext_resource type="Texture2D" uid="uid://bsup3gbeths4c" path="res://EnviroSprites/Buildings/Decorative/lamp 2.png" id="23_k5ne3"]
+[ext_resource type="Texture2D" uid="uid://cj20hjygi2qe1" path="res://Menu/diagrams/run.png" id="24_ip4hv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o3mbq"]
 size = Vector2(98.5585, 4215.46)
@@ -1106,3 +1107,10 @@ position = Vector2(312, 157)
 rotation = -1.76745
 scale = Vector2(0.0669927, 0.162276)
 texture = ExtResource("6_jg8re")
+
+[node name="Run" type="Sprite2D" parent="."]
+modulate = Color(0.737255, 0.117647, 0.278431, 1)
+position = Vector2(175, 1059)
+rotation = 0.117229
+scale = Vector2(0.331202, 0.331202)
+texture = ExtResource("24_ip4hv")

@@ -550,6 +550,18 @@ scale = Vector2(1, 1)
 position = Vector2(-1164, -764)
 scale = Vector2(1, 1)
 
+[node name="Platform13" parent="Platform6" instance=ExtResource("4_w8ghy")]
+position = Vector2(-532, -212)
+scale = Vector2(1, 1)
+
+[node name="Platform14" parent="Platform6" instance=ExtResource("4_w8ghy")]
+position = Vector2(-1704, -1444)
+scale = Vector2(1, 1)
+
+[node name="Platform15" parent="Platform6" instance=ExtResource("4_w8ghy")]
+position = Vector2(-192, -1056)
+scale = Vector2(1, 1)
+
 [node name="ColumnTextured" type="Sprite2D" parent="."]
 z_index = 97
 position = Vector2(154, 139)

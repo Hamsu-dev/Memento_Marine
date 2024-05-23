@@ -346,7 +346,7 @@ position = Vector2(-15, 4)
 position = Vector2(-52, -109)
 
 [node name="Flesh Wall4" parent="FleshWalls" instance=ExtResource("8_ms4s2")]
-position = Vector2(-15, -279)
+position = Vector2(-15, -223)
 
 [node name="Flesh Wall13" parent="FleshWalls" instance=ExtResource("8_ms4s2")]
 position = Vector2(-274, -241)
@@ -364,7 +364,7 @@ position = Vector2(-172, -203)
 position = Vector2(-172, -140)
 
 [node name="Flesh Wall3" parent="FleshWalls" instance=ExtResource("8_ms4s2")]
-position = Vector2(-151, -209)
+position = Vector2(-151, -158)
 
 [node name="CollisionShape2D" parent="FleshWalls/Flesh Wall3" index="0"]
 position = Vector2(-3, 0)
@@ -420,6 +420,18 @@ flip_h = true
 [node name="Flesh Wall9" parent="FleshWalls" instance=ExtResource("8_ms4s2")]
 position = Vector2(-172, -461)
 
+[node name="Flesh Wall10" parent="FleshWalls" instance=ExtResource("8_ms4s2")]
+position = Vector2(-15, -327)
+
+[node name="Flesh Wall17" parent="FleshWalls" instance=ExtResource("8_ms4s2")]
+position = Vector2(-151, -272)
+
+[node name="CollisionShape2D" parent="FleshWalls/Flesh Wall17" index="0"]
+position = Vector2(-3, 0)
+
+[node name="FleshWallJump" parent="FleshWalls/Flesh Wall17" index="1"]
+flip_h = true
+
 [node name="Door" parent="." instance=ExtResource("9_dbq51")]
 position = Vector2(301, 462)
 new_level_path = "res://World/clock_tower_level_one.tscn"
@@ -467,5 +479,6 @@ texture = ExtResource("6_bxnni")
 [editable path="FleshWalls/Flesh Wall16"]
 [editable path="FleshWalls/Flesh Wall5"]
 [editable path="FleshWalls/Flesh Wall6"]
+[editable path="FleshWalls/Flesh Wall17"]
 [editable path="Door"]
 [editable path="Door2"]

@@ -55,9 +55,20 @@ frame_progress = 1.0
 
 [node name="Start" type="Button" parent="."]
 layout_mode = 0
-offset_left = 469.0
-offset_top = 514.0
-offset_right = 706.0
-offset_bottom = 582.0
+offset_left = 523.0
+offset_top = 562.0
+offset_right = 664.0
+offset_bottom = 618.0
+theme_override_font_sizes/font_size = 41
+text = "Play"
+
+[node name="credits" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1050.0
+offset_top = 17.0
+offset_right = 1132.0
+offset_bottom = 57.0
+text = "Credits"
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="credits" to="." method="_on_credits_pressed"]

@@ -7,3 +7,7 @@ func _ready():
 
 func _on_start_pressed():
 	SceneManager.change_scene("res://World/world.tscn")
+
+
+func _on_credits_pressed():
+	get_tree().change_scene_to_file("res://Menu/Credits.tscn")

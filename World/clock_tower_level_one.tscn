@@ -55,12 +55,12 @@
 [ext_resource type="Texture2D" uid="uid://b18igou5iswru" path="res://Assets/Mementos/memento_watchred.png" id="53_y387c"]
 [ext_resource type="PackedScene" uid="uid://cbwxbdjknadvv" path="res://Memento/key.tscn" id="54_8f4bp"]
 
-[sub_resource type="Gradient" id="Gradient_d6jud"]
+[sub_resource type="Gradient" id="Gradient_ilvig"]
 offsets = PackedFloat32Array(0, 0.649351)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_8sdbk"]
-gradient = SubResource("Gradient_d6jud")
+gradient = SubResource("Gradient_ilvig")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
@@ -114,6 +114,21 @@ shader_parameter/color = Color(1, 0.9, 0.65, 0.8)
 shader_parameter/hdr = false
 shader_parameter/seed = 5.0
 
+[sub_resource type="Animation" id="Animation_udm24"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WorldCamera:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1098, 3)]
+}
+
 [sub_resource type="Animation" id="Animation_rdebw"]
 resource_name = "cutscene"
 length = 5.0
@@ -145,21 +160,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(1433, 86), Vector2(1943, 500)]
-}
-
-[sub_resource type="Animation" id="Animation_udm24"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("WorldCamera:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1098, 3)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wit7r"]
@@ -2438,14 +2438,14 @@ scale = Vector2(0.301, 0.31686)
 position = Vector2(1038, 267)
 
 [node name="AnimatableBody2D" parent="MovingPlatform" index="0"]
-position = Vector2(2.33215, 0)
+position = Vector2(2.33203, 0)
 scale = Vector2(0.23, 0.23)
 
 [node name="Path2D" parent="MovingPlatform" index="2"]
 scale = Vector2(0.23, 0.23)
 
 [node name="PathFollow2D" parent="MovingPlatform/Path2D" index="0"]
-position = Vector2(10.1396, 0)
+position = Vector2(10.1395, 0)
 progress = 10.2079
 
 [node name="Memento" parent="." instance=ExtResource("52_v3bl7")]

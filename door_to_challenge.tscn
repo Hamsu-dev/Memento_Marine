@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=3 uid="uid://df5fy7orxnlq1"]
+
+[ext_resource type="Script" path="res://door_to_challenge.gd" id="1_5wsu3"]
+[ext_resource type="Texture2D" uid="uid://pon2mr8wog36" path="res://Assets/Interactables/doorclose.png" id="2_j1t41"]
+[ext_resource type="Texture2D" uid="uid://g48tomj40shg" path="res://Assets/Interactables/dooropen.png" id="3_dfi1m"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o5m8v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_j1t41")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_j1t41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dfi1m")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_d6jud"]
+offsets = PackedFloat32Array(0, 0.649351)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_t3ojo"]
+gradient = SubResource("Gradient_d6jud")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="Door_to_challenge" type="Area2D"]
+position = Vector2(-3, -115)
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_5wsu3")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-136, 110, -126, -106, -76, -199, 2, -247, 82, -190, 119, -94, 133, 111)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -62)
+sprite_frames = SubResource("SpriteFrames_o5m8v")
+
+[node name="PointLight2D16" type="PointLight2D" parent="."]
+position = Vector2(3, -31)
+color = Color(0.937255, 0.533333, 0.223529, 1)
+energy = 2.08
+texture = SubResource("GradientTexture2D_t3ojo")
+texture_scale = 1.9
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

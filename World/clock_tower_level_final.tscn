@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://ddj6xpgoad76s"]
+[gd_scene load_steps=67 format=3 uid="uid://ddj6xpgoad76s"]
 
 [ext_resource type="Script" path="res://World/clock_tower_level_final.gd" id="1_mcs3i"]
 [ext_resource type="PackedScene" uid="uid://cjyikkfta6ce3" path="res://EnviroSprites/GroundandBG/ground.tscn" id="4_ll56c"]
@@ -49,7 +49,9 @@
 [ext_resource type="Resource" uid="uid://bwn3blrbvj2ah" path="res://World/BouncyOne_Final.tres" id="48_ijbuy"]
 [ext_resource type="PackedScene" uid="uid://ckiyh57un5obs" path="res://Assets/Interactables/door.tscn" id="48_t4jjd"]
 [ext_resource type="PackedScene" uid="uid://c8pfinyhx3py8" path="res://World/camera_limits.tscn" id="50_0ofth"]
+[ext_resource type="PackedScene" uid="uid://df5fy7orxnlq1" path="res://door_to_challenge.tscn" id="51_r5h4s"]
 [ext_resource type="Texture2D" uid="uid://70m61a1xdwa1" path="res://EnviroSprites/GroundandBG/glow.png" id="52_1pymy"]
+[ext_resource type="Shader" path="res://World/ClockMemento.gdshader" id="52_yv8gd"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_qb4ny"]
 
@@ -162,6 +164,19 @@ _data = {
 "cutscene": SubResource("Animation_3slq6"),
 "cutscene_two": SubResource("Animation_gc3mj")
 }
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_cjmie"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_cypo6"]
+noise = SubResource("FastNoiseLite_cjmie")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s6uoo"]
+shader = ExtResource("52_yv8gd")
+shader_parameter/radius = 0.459
+shader_parameter/effectControl = 0.309
+shader_parameter/burnSpeed = 0.076
+shader_parameter/shape = 1.0
+shader_parameter/textureNoise = SubResource("NoiseTexture2D_cypo6")
 
 [node name="ClockTowerLevelfinal" type="Node2D"]
 script = ExtResource("1_mcs3i")
@@ -2310,7 +2325,7 @@ position = Vector2(616, 136)
 scale = Vector2(0.184, 0.184)
 
 [node name="AnimatableBody2D" parent="MovingPlatform" index="0"]
-position = Vector2(0, -224.12)
+position = Vector2(0, 163.043)
 
 [node name="Path2D" parent="MovingPlatform" index="2"]
 position = Vector2(0, 163.043)
@@ -2351,7 +2366,6 @@ offset_bottom = 665.0
 [node name="God Ray" type="Node" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="God Ray"]
-visible = false
 material = SubResource("ShaderMaterial_rauk0")
 offset_left = 998.0
 offset_top = -432.0
@@ -2391,8 +2405,20 @@ rotation = -1.57079
 scale = Vector2(0.187717, 0.217297)
 texture = ExtResource("52_1pymy")
 
+[node name="Door_to_challenge" parent="." instance=ExtResource("51_r5h4s")]
+position = Vector2(1052, 18)
+scale = Vector2(0.1, 0.1)
+
+[node name="AnimatedSprite2D" parent="Door_to_challenge" index="1"]
+material = SubResource("ShaderMaterial_s6uoo")
+
+[node name="PointLight2D16" parent="Door_to_challenge" index="2"]
+position = Vector2(-9.99984, -50)
+scale = Vector2(3.37171, 3.04276)
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="Door/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 
 [editable path="MovingPlatform"]
 [editable path="Door"]
+[editable path="Door_to_challenge"]

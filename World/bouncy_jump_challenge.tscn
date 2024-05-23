@@ -794,8 +794,11 @@ offset_right = 627.0
 offset_bottom = 503.0
 
 [node name="Memento" parent="." instance=ExtResource("19_snyxf")]
-position = Vector2(207, 405)
+position = Vector2(215, 406)
 ability_type = "bounce"
+
+[node name="CollisionShape2D" parent="Memento" index="0"]
+scale = Vector2(0.065, 0.065)
 
 [node name="Sprite2D" parent="Memento" index="1"]
 scale = Vector2(0.055, 0.055)

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://wuvlkx7ujrs7"]
+
+[ext_resource type="AudioStream" uid="uid://bwfykipr86fof" path="res://Assets/Music/WalkSFX.mp3" id="1_52aci"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_52aci")
+bus = &"SFX"

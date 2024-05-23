@@ -4,3 +4,4 @@
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer"]
 stream = ExtResource("1_6y2hb")
+bus = &"BGM"

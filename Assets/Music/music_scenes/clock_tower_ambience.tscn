@@ -2,6 +2,7 @@
 
 [ext_resource type="AudioStream" uid="uid://c8jkqm8s4wfj" path="res://Assets/Music/Clock Tower Ambience.mp3" id="1_r14c1"]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer"]
 stream = ExtResource("1_r14c1")
 volume_db = -4.685
+bus = &"SFX"

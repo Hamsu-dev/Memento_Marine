@@ -804,6 +804,9 @@ scale = Vector2(0.065, 0.065)
 scale = Vector2(0.055, 0.055)
 texture = ExtResource("20_h7ycw")
 
+[node name="PointLight2D" parent="Memento" index="2"]
+energy = 0.2
+
 [connection signal="animation_finished" from="Door/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 
 [editable path="FleshWalls/Flesh Wall12"]

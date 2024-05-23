@@ -486,7 +486,7 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("3_y88mf")
 
 [node name="Platformextenddropshadow2" type="Sprite2D" parent="Platformextenddropshadow"]
-position = Vector2(-1612, -1272)
+position = Vector2(-1544, -1288)
 texture = ExtResource("3_y88mf")
 
 [node name="Platformextenddropshadow3" type="Sprite2D" parent="Platformextenddropshadow"]
@@ -542,6 +542,10 @@ scale = Vector2(1, 1)
 
 [node name="Platform11" parent="Platform6" instance=ExtResource("4_w8ghy")]
 position = Vector2(-704, -1312)
+scale = Vector2(1, 1)
+
+[node name="Platform12" parent="Platform6" instance=ExtResource("4_w8ghy")]
+position = Vector2(-1164, -764)
 scale = Vector2(1, 1)
 
 [node name="ColumnTextured" type="Sprite2D" parent="."]
@@ -781,6 +785,7 @@ scale = Vector2(260, 260)
 target_position = Vector2(-2, 0)
 
 [node name="CameraLimits" parent="." instance=ExtResource("17_uljuc")]
+visible = false
 offset_left = -408.0
 offset_top = -385.0
 offset_right = 627.0

@@ -54,24 +54,24 @@ texture = ExtResource("2_3yykw")
 [node name="Ceiling5" type="Sprite2D" parent="Ceiling"]
 modulate = Color(0, 0, 0, 1)
 z_index = 3
-position = Vector2(-816.591, 1289.4)
-rotation = 3.32861
+position = Vector2(-840.084, 1351.02)
+rotation = 3.18531
 scale = Vector2(0.683399, 0.755813)
 texture = ExtResource("2_3yykw")
 
 [node name="Ceiling6" type="Sprite2D" parent="Ceiling"]
 modulate = Color(0, 0, 0, 1)
 z_index = 3
-position = Vector2(-1306.28, 867.373)
-rotation = 4.16897
-scale = Vector2(0.683399, 0.755813)
+position = Vector2(-1427.31, 1055.08)
+rotation = 3.97607
+scale = Vector2(0.662811, 0.921362)
 texture = ExtResource("2_3yykw")
 
 [node name="Ceiling7" type="Sprite2D" parent="Ceiling"]
 modulate = Color(0, 0, 0, 1)
 z_index = 3
-position = Vector2(-1311.18, 300.247)
-rotation = 4.97821
+position = Vector2(-1385.89, 523.727)
+rotation = 4.82715
 scale = Vector2(0.619828, 0.990157)
 texture = ExtResource("2_3yykw")
 
@@ -88,7 +88,7 @@ scale = Vector2(0.610494, 0.610494)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelFloorCollision"]
 position = Vector2(20, 40)
-polygon = PackedVector2Array(-3, -339.757, 4, 648, 396, 836, 681, 837, 678, -43, 188.028, -43, 188.028, 284.327, 210.96, 284.327, 210.96, -17.0678, 614, -17.0678, 613.913, 353.124, 554.944, 353.124, 554.944, 479.252, 614, 479.653, 614, 716, 449, 716, 449, 574.257, 181.476, 574.257, 181.476, 390.799, 74.3823, 390.915, 72, -329.929)
+polygon = PackedVector2Array(-3, -555.976, 4, 648, 396, 836, 681, 837, 678, -372.518, 613.913, -436.4, 613.913, -43, 188.028, -43, 188.028, 284.327, 210.96, 284.327, 210.96, -17.0678, 614, -17.0678, 613.913, 353.124, 554.944, 353.124, 554.944, 479.252, 614, 479.653, 614, 716, 449, 716, 449, 574.257, 181.476, 574.257, 181.476, 390.799, 74.3823, 390.915, 72, -555.976)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelFloorCollision"]
 position = Vector2(388.21, 294.024)
@@ -96,6 +96,10 @@ shape = SubResource("RectangleShape2D_qo3ao")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="LevelFloorCollision"]
 position = Vector2(705.986, -150.698)
+shape = SubResource("RectangleShape2D_qo3ao")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="LevelFloorCollision"]
+position = Vector2(388.21, -229.322)
 shape = SubResource("RectangleShape2D_qo3ao")
 
 [node name="Platformextenddropshadow" type="Sprite2D" parent="."]
@@ -122,6 +126,10 @@ texture = ExtResource("3_3blgw")
 
 [node name="Platformextenddropshadow6" type="Sprite2D" parent="Platformextenddropshadow"]
 position = Vector2(-648, -452)
+texture = ExtResource("3_3blgw")
+
+[node name="Platformextenddropshadow7" type="Sprite2D" parent="Platformextenddropshadow"]
+position = Vector2(-548, -1808)
 texture = ExtResource("3_3blgw")
 
 [node name="Platform6" parent="." instance=ExtResource("5_hgx0w")]
@@ -221,6 +229,15 @@ texture = ExtResource("2_fi8vh")
 position = Vector2(-1900.32, -1719.18)
 texture = ExtResource("2_fi8vh")
 
+[node name="WallPlainTextured19" type="Sprite2D" parent="WallPlainTextured"]
+position = Vector2(-1902.69, -2081.37)
+texture = ExtResource("2_fi8vh")
+
+[node name="WallPlainTextured20" type="Sprite2D" parent="WallPlainTextured"]
+position = Vector2(169.021, -1545.33)
+scale = Vector2(1, 1.05434)
+texture = ExtResource("2_fi8vh")
+
 [node name="WallPlainTextured2" type="Sprite2D" parent="."]
 z_index = -2
 position = Vector2(304, 75)
@@ -255,6 +272,26 @@ texture = ExtResource("8_m4o8q")
 [node name="WallPlainTextured8" type="Sprite2D" parent="WallPlainTextured2"]
 z_index = -2
 position = Vector2(-460.26, -2.66891)
+texture = ExtResource("8_m4o8q")
+
+[node name="WallPlainTextured9" type="Sprite2D" parent="WallPlainTextured2"]
+z_index = -2
+position = Vector2(-459.056, -368.312)
+texture = ExtResource("8_m4o8q")
+
+[node name="WallPlainTextured10" type="Sprite2D" parent="WallPlainTextured2"]
+z_index = -2
+position = Vector2(-5.33786, -368.312)
+texture = ExtResource("8_m4o8q")
+
+[node name="WallPlainTextured11" type="Sprite2D" parent="WallPlainTextured2"]
+z_index = -2
+position = Vector2(-459.056, -719.267)
+texture = ExtResource("8_m4o8q")
+
+[node name="WallPlainTextured12" type="Sprite2D" parent="WallPlainTextured2"]
+z_index = -2
+position = Vector2(-5.33786, -719.267)
 texture = ExtResource("8_m4o8q")
 
 [node name="FleshWalls" type="Node2D" parent="."]
@@ -338,6 +375,9 @@ position = Vector2(-3, 0)
 [node name="FleshWallJump" parent="FleshWalls/Flesh Wall6" index="1"]
 flip_h = true
 
+[node name="Flesh Wall9" parent="FleshWalls" instance=ExtResource("8_ms4s2")]
+position = Vector2(-172, -461)
+
 [node name="Door" parent="." instance=ExtResource("9_dbq51")]
 position = Vector2(301, 462)
 new_level_path = "res://World/clock_tower_level_one.tscn"
@@ -349,13 +389,9 @@ frame = 0
 frame_progress = 0.0
 
 [node name="Door2" parent="." instance=ExtResource("9_dbq51")]
-position = Vector2(407, -2)
+position = Vector2(73, -75)
 new_level_path = "res://World/clock_tower_level_two.tscn"
 connection = ExtResource("11_l3x3a")
-
-[node name="LeftCast" parent="Door2" index="3"]
-scale = Vector2(260, 260)
-target_position = Vector2(-2, 0)
 
 [node name="CameraLimits" parent="." instance=ExtResource("12_llkxt")]
 anchors_preset = 0
@@ -367,6 +403,16 @@ offset_right = 594.0
 offset_bottom = 569.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="ColumnTextured5" type="Sprite2D" parent="."]
+position = Vector2(238, -184.173)
+scale = Vector2(0.260192, 0.260192)
+texture = ExtResource("6_bxnni")
+
+[node name="ColumnTextured6" type="Sprite2D" parent="."]
+position = Vector2(238, -89.1732)
+scale = Vector2(0.260192, 0.260192)
+texture = ExtResource("6_bxnni")
 
 [connection signal="body_entered" from="Door" to="." method="_on_door_body_entered"]
 [connection signal="animation_finished" from="Door/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

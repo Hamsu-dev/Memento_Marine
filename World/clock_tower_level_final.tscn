@@ -2333,6 +2333,9 @@ position = Vector2(0, 163.043)
 position = Vector2(0, 163.043)
 curve = ExtResource("42_ts8xi")
 
+[node name="PathFollow2D" parent="MovingPlatform/Path2D" index="0"]
+position = Vector2(0, -279.182)
+
 [node name="_Timer_19059" type="Timer" parent="MovingPlatform/Path2D/PathFollow2D" index="1"]
 wait_time = 0.2
 one_shot = true

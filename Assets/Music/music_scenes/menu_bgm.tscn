@@ -5,3 +5,4 @@
 [node name="menu_bgm" type="AudioStreamPlayer"]
 stream = ExtResource("1_fchog")
 autoplay = true
+bus = &"BGM"

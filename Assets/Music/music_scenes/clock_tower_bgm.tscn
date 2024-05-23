@@ -2,5 +2,6 @@
 
 [ext_resource type="AudioStream" uid="uid://ber1uov6o7h8t" path="res://Assets/Music/whale_game_good2.wav" id="1_55sbe"]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer"]
 stream = ExtResource("1_55sbe")
+bus = &"BGM"

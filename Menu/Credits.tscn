@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://drdoyj0o76bss"]
+[gd_scene load_steps=7 format=3 uid="uid://drdoyj0o76bss"]
 
 [ext_resource type="Script" path="res://Menu/Credits.gd" id="1_jcvbh"]
+[ext_resource type="Texture2D" uid="uid://mebl30grr3mc" path="res://Assets/MenuAssets/Credit_Assets/Artist.png" id="2_wp87h"]
+[ext_resource type="Texture2D" uid="uid://dlgyx2o8m3feq" path="res://Assets/MenuAssets/Credit_Assets/Music.png" id="3_h2cis"]
+[ext_resource type="Texture2D" uid="uid://c1p5wx7eaxgq1" path="res://Assets/MenuAssets/Credit_Assets/Programmers.png" id="4_3ds00"]
+[ext_resource type="Texture2D" uid="uid://c17kc5g5u0rh0" path="res://Assets/MenuAssets/Credit_Assets/SFX.png" id="5_awt2n"]
+[ext_resource type="Texture2D" uid="uid://cqsa35bhb8kos" path="res://Assets/MenuAssets/Credit_Assets/Writers.png" id="6_3rtx6"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -11,6 +16,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jcvbh")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1157.0
+offset_bottom = 657.0
+color = Color(0, 0, 0, 1)
+
 [node name="back_to_menu" type="Button" parent="."]
 layout_mode = 0
 offset_left = 1050.0
@@ -18,5 +29,139 @@ offset_top = 17.0
 offset_right = 1132.0
 offset_bottom = 57.0
 text = "Back"
+
+[node name="Headings" type="Node2D" parent="."]
+
+[node name="Artist" type="Sprite2D" parent="Headings"]
+position = Vector2(188.444, 117.75)
+scale = Vector2(0.128241, 0.128241)
+texture = ExtResource("2_wp87h")
+
+[node name="Music" type="Sprite2D" parent="Headings"]
+position = Vector2(504, 116)
+scale = Vector2(0.135185, 0.135185)
+texture = ExtResource("3_h2cis")
+
+[node name="Programmers" type="Sprite2D" parent="Headings"]
+position = Vector2(879, 119)
+scale = Vector2(0.162037, 0.162037)
+texture = ExtResource("4_3ds00")
+
+[node name="Sfx" type="Sprite2D" parent="Headings"]
+position = Vector2(183, 404)
+scale = Vector2(0.10162, 0.10162)
+texture = ExtResource("5_awt2n")
+
+[node name="Writers" type="Sprite2D" parent="Headings"]
+position = Vector2(500, 399)
+scale = Vector2(0.131945, 0.131945)
+texture = ExtResource("6_3rtx6")
+
+[node name="names" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Will" type="Label" parent="names"]
+layout_mode = 0
+offset_left = 786.0
+offset_top = 201.0
+offset_right = 1002.0
+offset_bottom = 250.0
+theme_override_font_sizes/font_size = 11
+text = "Will
+https://github.com/Willsu00"
+
+[node name="Sam" type="Label" parent="names"]
+layout_mode = 0
+offset_left = 785.0
+offset_top = 264.0
+offset_right = 1001.0
+offset_bottom = 313.0
+theme_override_font_sizes/font_size = 11
+text = "Sam
+https://github.com/Hamsu-dev"
+
+[node name="Anabel" type="Label" parent="names"]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 189.0
+offset_right = 299.0
+offset_bottom = 238.0
+theme_override_font_sizes/font_size = 11
+text = "Anabel"
+
+[node name="D" type="Label" parent="names"]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 242.0
+offset_right = 297.0
+offset_bottom = 291.0
+theme_override_font_sizes/font_size = 11
+text = "Thesanya"
+
+[node name="Zho" type="Label" parent="names"]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 292.0
+offset_right = 297.0
+offset_bottom = 341.0
+theme_override_font_sizes/font_size = 11
+text = "Zho
+"
+
+[node name="Paige" type="Label" parent="names"]
+layout_mode = 0
+offset_left = 217.0
+offset_top = 186.0
+offset_right = 433.0
+offset_bottom = 235.0
+theme_override_font_sizes/font_size = 11
+text = "Paige"
+
+[node name="Paige2" type="Label" parent="names"]
+layout_mode = 0
+offset_left = 399.0
+offset_top = 541.0
+offset_right = 615.0
+offset_bottom = 590.0
+theme_override_font_sizes/font_size = 11
+text = "Paige"
+
+[node name="Allyson" type="Label" parent="names"]
+layout_mode = 0
+offset_left = 398.0
+offset_top = 183.0
+offset_right = 614.0
+offset_bottom = 232.0
+theme_override_font_sizes/font_size = 11
+text = "Allyson"
+
+[node name="Anna" type="Label" parent="names"]
+layout_mode = 0
+offset_left = 397.0
+offset_top = 234.0
+offset_right = 613.0
+offset_bottom = 283.0
+theme_override_font_sizes/font_size = 11
+text = "Anna"
+
+[node name="Shy" type="Label" parent="names"]
+layout_mode = 0
+offset_left = 91.0
+offset_top = 488.0
+offset_right = 307.0
+offset_bottom = 537.0
+theme_override_font_sizes/font_size = 11
+text = "Shyamal"
+
+[node name="Shy2" type="Label" parent="names"]
+layout_mode = 0
+offset_left = 399.0
+offset_top = 490.0
+offset_right = 615.0
+offset_bottom = 539.0
+theme_override_font_sizes/font_size = 11
+text = "Shyamal"
 
 [connection signal="pressed" from="back_to_menu" to="." method="_on_back_to_menu_pressed"]

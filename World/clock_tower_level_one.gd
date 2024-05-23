@@ -30,23 +30,27 @@ func _ready():
 		player.camera_enabled.connect(_on_camera_enabled)
 
 func _on_Door_interact():
+	var message = ""
 	if not has_key:
-		show_message("It seems to be locked! Find the key to unlock the door!")
+		message = "It seems to be locked! Find the key to unlock the door!"
 	else:
-		show_message("The door is unlocked!")
+		message = "The door is unlocked!"
+	show_message(message, player.global_position + Vector2(0, -50)) # Adjust the offset as needed
 
-
+	
 func _on_animated_sprite_2d_animation_finished():
 	animated_sprite_2d.play("close")
 	collision_shape_2d.disabled = true
 	door_2.visible = false
 
 
-func show_message(message: String):
+func show_message(message: String, position: Vector2):
 	popup_label_1.text = message
+	popup_panel.position = position
 	popup_panel.show()
 	await get_tree().create_timer(3.0).timeout
 	popup_panel.hide()
+
 
 func _on_Key_collected():
 	has_key = true

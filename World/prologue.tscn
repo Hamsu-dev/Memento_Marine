@@ -44,10 +44,10 @@ scale = Vector2(0.147659, 0.147659)
 texture = ExtResource("4_jdohf")
 
 [node name="TestLabel" type="Label" parent="."]
-offset_left = 1547.0
-offset_top = 212.0
-offset_right = 2396.0
-offset_bottom = 348.0
+offset_left = 1402.0
+offset_top = 234.0
+offset_right = 2251.0
+offset_bottom = 370.0
 scale = Vector2(0.127631, 0.127631)
 theme_override_colors/font_color = Color(0.996078, 0.160784, 0.196078, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -111,3 +111,6 @@ position = Vector2(1623, 284)
 
 [node name="Platform3" parent="." instance=ExtResource("7_f05w3")]
 position = Vector2(1379, 207)
+
+[node name="Platform4" parent="." instance=ExtResource("8_rag18")]
+position = Vector2(1715, 284)

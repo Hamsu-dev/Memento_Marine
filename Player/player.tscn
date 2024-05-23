@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://df6a23n1648bh" path="res://Assets/Player/Skelly/idle_anim_skele.png" id="3_gug4i"]
 [ext_resource type="Texture2D" uid="uid://cqcdldlcrsbxv" path="res://Assets/Player/Skelly/jump_anim_skele.png" id="4_x54et"]
 [ext_resource type="Texture2D" uid="uid://c0jwcpq0xqqu7" path="res://Assets/Player/Skelly/run_anim_skele.png" id="5_ksjwf"]
+[ext_resource type="Texture2D" uid="uid://lkm22nnksic7" path="res://Assets/Player/Skelly/skeleslide.png" id="6_atj6c"]
 [ext_resource type="Script" path="res://Player/Camera2D.gd" id="32_7qmes"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p5ml1"]
@@ -65,10 +66,6 @@ region = Rect2(1000, 1000, 1000, 1000)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vpavd"]
 atlas = ExtResource("4_x54et")
-region = Rect2(0, 0, 1000, 1000)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l6yta"]
-atlas = ExtResource("2_fkidp")
 region = Rect2(0, 0, 1000, 1000)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bcbir"]
@@ -150,7 +147,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_l6yta")
+"texture": ExtResource("6_atj6c")
 }],
 "loop": true,
 "name": &"wallslide",
@@ -167,15 +164,15 @@ collision_layer = 2
 collision_mask = 5
 floor_snap_length = 2.0
 script = ExtResource("1_hdvfq")
-max_speed = 100
-gravity = 600
+max_speed = 150
+jump_force = 300
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 99
 position = Vector2(0, -11)
 scale = Vector2(0.05, 0.05)
 sprite_frames = SubResource("SpriteFrames_bcbir")
-animation = &"crouch"
+animation = &"wallslide"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

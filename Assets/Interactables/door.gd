@@ -12,6 +12,8 @@ extends Area2D
 
 enum DoorState { CLOSED, OPEN }
 
+var has_key = false
+
 func door_open():
 	animated_sprite_2d.play("open")
 	door_state = DoorState.OPEN

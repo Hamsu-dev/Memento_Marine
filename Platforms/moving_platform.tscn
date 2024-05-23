@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dtn3e440x0422"]
 
 [ext_resource type="Texture2D" uid="uid://b2at63rn5t8hw" path="res://EnviroSprites/Platforms/platformdropshadow.png" id="1_iqffj"]
-[ext_resource type="Curve2D" uid="uid://c0xtvvg02q7vn" path="res://Platforms/MovingPlatformsRoutes/+10M_Fast.tres" id="2_dwoxh"]
+[ext_resource type="Curve2D" uid="uid://djw5gx3eg2vxy" path="res://Platforms/MovingPlatformsRoutes/Positive_x_10Meters.tres" id="2_bj6px"]
 
 [sub_resource type="Animation" id="Animation_48ehq"]
 resource_name = "Default_PathFollow"
@@ -14,7 +14,7 @@ tracks/0/path = NodePath("Path2D/PathFollow2D:progress_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 5),
+"times": PackedFloat32Array(0.4, 5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
@@ -44,7 +44,7 @@ _data = {
 [node name="MovingPlatform" type="Node2D"]
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
-position = Vector2(0, -279.182)
+position = Vector2(387.168, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
 texture = ExtResource("1_iqffj")
@@ -59,11 +59,11 @@ libraries = {
 autoplay = "Default_PathFollow"
 
 [node name="Path2D" type="Path2D" parent="."]
-curve = ExtResource("2_dwoxh")
+curve = ExtResource("2_bj6px")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(0, -279.182)
-progress = 279.182
+position = Vector2(387.168, 0)
+progress = 387.163
 rotates = false
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Path2D/PathFollow2D"]

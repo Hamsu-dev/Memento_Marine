@@ -1,8 +1,7 @@
-[gd_scene load_steps=69 format=3 uid="uid://dhwsckm1ag60"]
+[gd_scene load_steps=70 format=3 uid="uid://dhwsckm1ag60"]
 
-[ext_resource type="PackedScene" uid="uid://cyhg841lp1wjc" path="res://Assets/Interactables/button.tscn" id="1_3nmw7"]
+[ext_resource type="PackedScene" uid="uid://cyhg841lp1wjc" path="res://Assets/Interactables/finaldoor.tscn" id="1_3nmw7"]
 [ext_resource type="Script" path="res://World/clock_tower_level_one.gd" id="1_257nd"]
-[ext_resource type="Shader" path="res://World/shiny.gdshader" id="2_v5ris"]
 [ext_resource type="PackedScene" uid="uid://cjyikkfta6ce3" path="res://EnviroSprites/GroundandBG/ground.tscn" id="4_evsy5"]
 [ext_resource type="Texture2D" uid="uid://pdk6rv3xc122" path="res://EnviroSprites/Buildings/Walls/WallStriped.png" id="5_jibu0"]
 [ext_resource type="Texture2D" uid="uid://c7v6foq5t3k2q" path="res://EnviroSprites/Buildings/Walls/WallBricked.png" id="6_x6njb"]
@@ -42,6 +41,7 @@
 [ext_resource type="PackedScene" uid="uid://bf4ldidd5sglr" path="res://Platforms/platformlong.tscn" id="40_4p0js"]
 [ext_resource type="PackedScene" uid="uid://dtn3e440x0422" path="res://Platforms/moving_platform.tscn" id="41_jjtal"]
 [ext_resource type="PackedScene" uid="uid://ckiyh57un5obs" path="res://Assets/Interactables/door.tscn" id="43_dq7q6"]
+[ext_resource type="PackedScene" uid="uid://brnd5o5qwcj2y" path="res://World/world_camera.tscn" id="43_e2n0d"]
 [ext_resource type="Shader" path="res://World/water.gdshader" id="44_8hs8o"]
 [ext_resource type="Texture2D" uid="uid://v3q7u1hq2qcd" path="res://EnviroSprites/GroundandBG/ocean.png" id="45_5uvxr"]
 [ext_resource type="Shader" path="res://World/fog.gdshader" id="46_2q6js"]
@@ -50,16 +50,17 @@
 [ext_resource type="PackedScene" uid="uid://bsm4p2xpdjlod" path="res://Platforms/flesh_wall_jump.tscn" id="49_akkd4"]
 [ext_resource type="Resource" uid="uid://dfqdx0vvh2u6v" path="res://World/Prolouge_ClockTowerOne.tres" id="49_nqkmm"]
 [ext_resource type="PackedScene" uid="uid://c8pfinyhx3py8" path="res://World/camera_limits.tscn" id="50_k35hs"]
-[ext_resource type="Curve2D" uid="uid://djw5gx3eg2vxy" path="res://Platforms/MovingPlatformsRoutes/Positive_x_10Meters.tres" id="51_vc6vo"]
 [ext_resource type="PackedScene" uid="uid://ufxn2upl3iqo" path="res://Memento/memento.tscn" id="52_v3bl7"]
+[ext_resource type="Shader" path="res://World/door_disappear.gdshader" id="53_0fd21"]
 [ext_resource type="Texture2D" uid="uid://b18igou5iswru" path="res://Assets/Mementos/memento_watchred.png" id="53_y387c"]
+[ext_resource type="PackedScene" uid="uid://cbwxbdjknadvv" path="res://Memento/key.tscn" id="54_8f4bp"]
 
-[sub_resource type="Gradient" id="Gradient_pj727"]
+[sub_resource type="Gradient" id="Gradient_d6jud"]
 offsets = PackedFloat32Array(0, 0.649351)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_8sdbk"]
-gradient = SubResource("Gradient_pj727")
+gradient = SubResource("Gradient_d6jud")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
@@ -113,67 +114,66 @@ shader_parameter/color = Color(1, 0.9, 0.65, 0.8)
 shader_parameter/hdr = false
 shader_parameter/seed = 5.0
 
-[sub_resource type="Animation" id="Animation_1m3v4"]
+[sub_resource type="Animation" id="Animation_rdebw"]
+resource_name = "cutscene"
+length = 5.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Door")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"door_close"
+}, {
+"args": [],
+"method": &"door_open"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WorldCamera:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1433, 86), Vector2(1943, 500)]
+}
+
+[sub_resource type="Animation" id="Animation_udm24"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../../WorldCamera:position")
+tracks/0/path = NodePath("WorldCamera:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(2134, 459)]
+"values": [Vector2(1098, 3)]
 }
 
-[sub_resource type="Animation" id="Animation_3slq6"]
-resource_name = "cutscene"
-length = 5.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../WorldCamera:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(1142, -24), Vector2(1941, 447)]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Door")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(3),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"door_open"
-}]
-}
-
-[sub_resource type="Animation" id="Animation_jdtd4"]
-resource_name = "final door shake"
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_cvqyn"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wit7r"]
 _data = {
-"RESET": SubResource("Animation_1m3v4"),
-"cutscene": SubResource("Animation_3slq6"),
-"final door shake": SubResource("Animation_jdtd4")
+"RESET": SubResource("Animation_udm24"),
+"cutscene": SubResource("Animation_rdebw")
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xnett"]
-shader = ExtResource("2_v5ris")
-shader_parameter/shine_color = Color(1, 1, 1, 0.25)
-shader_parameter/line_width = 0.1
-shader_parameter/angle = 0.785398
-shader_parameter/speed = 1.0
-shader_parameter/wait_cycles = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wvhpt"]
+shader = ExtResource("53_0fd21")
+shader_parameter/size = 0.0
+shader_parameter/source_size = Vector2(16, 16)
 
 [node name="ClockTowerLevelOne" type="Node2D"]
 script = ExtResource("1_257nd")
@@ -2336,10 +2336,12 @@ offset_top = -432.0
 offset_right = 1297.0
 offset_bottom = 161.0
 
+[node name="WorldCamera" parent="." instance=ExtResource("43_e2n0d")]
+position = Vector2(1098, 3)
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("")
 libraries = {
-"": SubResource("AnimationLibrary_cvqyn")
+"": SubResource("AnimationLibrary_wit7r")
 }
 
 [node name="Door" parent="." instance=ExtResource("43_dq7q6")]
@@ -2359,6 +2361,11 @@ target_position = Vector2(-2, 0)
 position = Vector2(96, 555)
 new_level_path = "res://World/prologue.tscn"
 connection = ExtResource("49_nqkmm")
+
+[node name="AnimatedSprite2D" parent="Door2" index="0"]
+animation = &"open"
+frame = 0
+frame_progress = 0.0
 
 [node name="CameraLimits" parent="." instance=ExtResource("50_k35hs")]
 anchors_preset = 0
@@ -2431,16 +2438,15 @@ scale = Vector2(0.301, 0.31686)
 position = Vector2(1038, 267)
 
 [node name="AnimatableBody2D" parent="MovingPlatform" index="0"]
-position = Vector2(64.2119, 0)
+position = Vector2(2.33215, 0)
 scale = Vector2(0.23, 0.23)
 
 [node name="Path2D" parent="MovingPlatform" index="2"]
 scale = Vector2(0.23, 0.23)
-curve = ExtResource("51_vc6vo")
 
 [node name="PathFollow2D" parent="MovingPlatform/Path2D" index="0"]
-position = Vector2(0, 0)
-progress = 0.0
+position = Vector2(10.1396, 0)
+progress = 10.2079
 
 [node name="Memento" parent="." instance=ExtResource("52_v3bl7")]
 z_index = 3
@@ -2450,7 +2456,6 @@ ability_type = "wall_jump"
 
 [node name="CollisionShape2D" parent="Memento" index="0"]
 position = Vector2(22.2234, 22.2225)
-scale = Vector2(1, 1)
 
 [node name="Sprite2D" parent="Memento" index="1"]
 texture = ExtResource("53_y387c")
@@ -2460,6 +2465,18 @@ material = SubResource("ShaderMaterial_xnett")
 position = Vector2(1051, 19)
 scale = Vector2(0.1, 0.1)
 
+[node name="AnimatedSprite2D" parent="FinalDoor" index="1"]
+material = SubResource("ShaderMaterial_wvhpt")
+
+[node name="Key" parent="." instance=ExtResource("54_8f4bp")]
+position = Vector2(1433, 122)
+scale = Vector2(0.14, 0.14)
+
+[node name="MovingPlatform2" parent="." instance=ExtResource("41_jjtal")]
+position = Vector2(1204, 41)
+scale = Vector2(0.385, 0.385)
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="Door/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Door2" to="." method="_on_door_2_body_entered"]
 [connection signal="animation_finished" from="Door2/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

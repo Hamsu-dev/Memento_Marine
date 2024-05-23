@@ -1,7 +1,7 @@
 [gd_scene load_steps=65 format=3 uid="uid://ddj6xpgoad76s"]
 
 [ext_resource type="Script" path="res://World/clock_tower_level_final.gd" id="1_mcs3i"]
-[ext_resource type="PackedScene" uid="uid://cyhg841lp1wjc" path="res://Assets/Interactables/button.tscn" id="2_m05qi"]
+[ext_resource type="PackedScene" uid="uid://cyhg841lp1wjc" path="res://Assets/Interactables/finaldoor.tscn" id="2_m05qi"]
 [ext_resource type="Shader" path="res://World/shiny.gdshader" id="3_x07wd"]
 [ext_resource type="PackedScene" uid="uid://cjyikkfta6ce3" path="res://EnviroSprites/GroundandBG/ground.tscn" id="4_ll56c"]
 [ext_resource type="Texture2D" uid="uid://bwcpxbx5n3br3" path="res://EnviroSprites/GroundandBG/ceiling.png" id="5_b7qvc"]
@@ -185,7 +185,7 @@ polygon = PackedVector2Array(-4, 10, 4, 648, 2226, 641, 2232, 5, 2147, 6, 2146, 
 position = Vector2(1072, 30)
 scale = Vector2(0.1, 0.1)
 
-[node name="AnimatedSprite2D" parent="Button" index="0"]
+[node name="AnimatedSprite2D" parent="Button" index="1"]
 material = SubResource("ShaderMaterial_a2w3v")
 
 [node name="Ground" parent="." instance=ExtResource("4_ll56c")]
@@ -2327,7 +2327,7 @@ position = Vector2(616, 136)
 scale = Vector2(0.184, 0.184)
 
 [node name="AnimatableBody2D" parent="MovingPlatform" index="0"]
-position = Vector2(0, 163.043)
+position = Vector2(0, -116.139)
 
 [node name="Path2D" parent="MovingPlatform" index="2"]
 position = Vector2(0, 163.043)

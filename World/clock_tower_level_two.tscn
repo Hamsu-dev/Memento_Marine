@@ -1,8 +1,6 @@
-[gd_scene load_steps=64 format=3 uid="uid://cuk8i5xir27pw"]
+[gd_scene load_steps=62 format=3 uid="uid://cuk8i5xir27pw"]
 
 [ext_resource type="Script" path="res://World/clock_tower_level_two.gd" id="1_07jn3"]
-[ext_resource type="PackedScene" uid="uid://cyhg841lp1wjc" path="res://Assets/Interactables/button.tscn" id="2_1y41u"]
-[ext_resource type="Shader" path="res://World/shiny.gdshader" id="3_ueu4c"]
 [ext_resource type="PackedScene" uid="uid://cjyikkfta6ce3" path="res://EnviroSprites/GroundandBG/ground.tscn" id="4_3qxe8"]
 [ext_resource type="Texture2D" uid="uid://pdk6rv3xc122" path="res://EnviroSprites/Buildings/Walls/WallStriped.png" id="5_bb63c"]
 [ext_resource type="Texture2D" uid="uid://c7v6foq5t3k2q" path="res://EnviroSprites/Buildings/Walls/WallBricked.png" id="6_dhfjx"]
@@ -50,15 +48,8 @@
 [ext_resource type="Resource" uid="uid://dk34tbggomtho" path="res://World/WallJumpOne_ClockTowerTwo.tres" id="48_ejuso"]
 [ext_resource type="PackedScene" uid="uid://brnd5o5qwcj2y" path="res://World/world_camera.tscn" id="49_nrwmj"]
 [ext_resource type="Resource" uid="uid://dht2524qto2og" path="res://World/ClockTowerTwo_BouncyOne.tres" id="50_m4lao"]
+[ext_resource type="PackedScene" uid="uid://cbwxbdjknadvv" path="res://Memento/key.tscn" id="50_mkdvs"]
 [ext_resource type="PackedScene" uid="uid://c8pfinyhx3py8" path="res://World/camera_limits.tscn" id="51_w04xk"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_a2w3v"]
-shader = ExtResource("3_ueu4c")
-shader_parameter/shine_color = Color(1, 1, 1, 0.25)
-shader_parameter/line_width = 0.1
-shader_parameter/angle = 0.785398
-shader_parameter/speed = 1.0
-shader_parameter/wait_cycles = 1.0
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_qb4ny"]
 
@@ -123,7 +114,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../WorldCamera:position")
+tracks/1/path = NodePath("WorldCamera:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -155,25 +146,28 @@ length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../WorldCamera:position")
+tracks/0/path = NodePath("WorldCamera:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1074, 3), Vector2(758, 490)]
+"values": [Vector2(495, 265), Vector2(758, 490)]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../Door2")
+tracks/1/path = NodePath("Door2")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(3),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
+"args": [],
+"method": &"door_close"
+}, {
 "args": [],
 "method": &"door_open"
 }]
@@ -186,20 +180,13 @@ _data = {
 "cutscene_two": SubResource("Animation_gc3mj")
 }
 
-[node name="ClockTowerLevelOne" type="Node2D"]
+[node name="ClockTowerLevelTwo" type="Node2D"]
 script = ExtResource("1_07jn3")
 
 [node name="LevelFloorCollision" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelFloorCollision"]
 polygon = PackedVector2Array(-4, 10, 4, 648, 2226, 641, 2232, 5, 2147, 6, 2146, 553, 1984, 553, 1969.15, 547, 248, 547, 233, 554, 75, 554, 73, 30)
-
-[node name="Button" parent="." instance=ExtResource("2_1y41u")]
-position = Vector2(1072, 30)
-scale = Vector2(0.1, 0.1)
-
-[node name="AnimatedSprite2D" parent="Button" index="0"]
-material = SubResource("ShaderMaterial_a2w3v")
 
 [node name="Ground" parent="." instance=ExtResource("4_3qxe8")]
 z_index = 90
@@ -2277,14 +2264,15 @@ position = Vector2(616, 136)
 scale = Vector2(0.184, 0.184)
 
 [node name="AnimatableBody2D" parent="MovingPlatform" index="0"]
-position = Vector2(0, -116.139)
+position = Vector2(0, -224.12)
 
 [node name="Path2D" parent="MovingPlatform" index="2"]
 position = Vector2(0, 163.043)
 curve = ExtResource("42_qpxn0")
 
 [node name="PathFollow2D" parent="MovingPlatform/Path2D" index="0"]
-position = Vector2(0, -279.182)
+position = Vector2(0, 0)
+progress = 0.0
 
 [node name="_Timer_19059" type="Timer" parent="MovingPlatform/Path2D/PathFollow2D" index="1"]
 wait_time = 0.2
@@ -2328,7 +2316,6 @@ offset_bottom = 161.0
 position = Vector2(758, 490)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../Button")
 libraries = {
 "": SubResource("AnimationLibrary_cvqyn")
 }
@@ -2355,6 +2342,7 @@ scale = Vector2(0.818314, 0.818314)
 [node name="Door2" parent="." instance=ExtResource("47_fopkn")]
 z_index = 2
 position = Vector2(758, 546)
+door_state = 0
 new_level_path = "res://World/bouncy_jump_challenge.tscn"
 connection = ExtResource("50_m4lao")
 
@@ -2368,9 +2356,13 @@ offset_bottom = 656.0
 grow_horizontal = 1
 grow_vertical = 1
 
+[node name="Key" parent="." instance=ExtResource("50_mkdvs")]
+position = Vector2(495, 268)
+scale = Vector2(0.14, 0.14)
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="Door/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 
-[editable path="Button"]
 [editable path="MovingPlatform"]
 [editable path="Door"]
+[editable path="Door2"]

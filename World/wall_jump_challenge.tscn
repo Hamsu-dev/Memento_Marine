@@ -415,6 +415,9 @@ position = Vector2(73, -75)
 new_level_path = "res://World/clock_tower_level_two.tscn"
 connection = ExtResource("11_l3x3a")
 
+[node name="CollisionShape2D" parent="Door2" index="1"]
+position = Vector2(0, -313.637)
+
 [node name="CameraLimits" parent="." instance=ExtResource("12_llkxt")]
 anchors_preset = 0
 anchor_right = 0.0

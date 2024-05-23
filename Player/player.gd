@@ -189,7 +189,7 @@ func update_animations(input_axis):
 	elif wall_sliding and not Input.is_action_pressed("up"): 
 		if animated_sprite_2d.animation != "wallslide":
 			animated_sprite_2d.play("wallslide")
-		animated_sprite_2d.flip_h = wall_direction > 0  
+		animated_sprite_2d.flip_h = wall_direction < 0  
 	elif is_dropping:
 		if animated_sprite_2d.animation != "crouch":
 			animated_sprite_2d.play("crouch")

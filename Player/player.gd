@@ -145,15 +145,15 @@ func apply_friction(delta):
 func jump_check():
 	if (is_on_floor() or coyote_jump_timer.time_left > 0.0) and Input.is_action_just_pressed("up"):
 		velocity.y = -jump_force
-		coyote_jump_timer.stop() 
-	elif on_wall and Input.is_action_just_pressed("up"):
+		coyote_jump_timer.stop()
+	elif on_wall and PowerUps.wall_jump_unlocked and Input.is_action_just_pressed("up"):  # Check global variable
 		velocity.y = -wall_jump_force
-		velocity.x = wall_jump_push_force * wall_direction  
-		animated_sprite_2d.flip_h = wall_direction < 0  
-		wall_jumping = true  
-		wall_sliding = false  
+		velocity.x = wall_jump_push_force * wall_direction
+		animated_sprite_2d.flip_h = wall_direction < 0
+		wall_jumping = true
+		wall_sliding = false
 	else:
-		wall_jumping = false 
+		wall_jumping = false
 	if Input.is_action_just_pressed("down") and not is_on_floor():
 		start_drop()
 	if Input.is_action_just_released("up") and velocity.y < -jump_force / 2:
@@ -168,7 +168,7 @@ func start_drop():
 		animated_sprite_2d.play("crouch")  # Assume this is your falling fast animation
 
 func bounce():
-	if not bounce_used:
+	if PowerUps.bounce_unlocked and not bounce_used:
 		velocity.y = -jump_force * bounce_multiplier
 		is_dropping = false
 		bounce_used = true

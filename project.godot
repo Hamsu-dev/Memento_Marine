@@ -20,6 +20,7 @@ config/icon="res://Screenshot/Memento_title_red.png"
 Events="*res://Singleton/Events.gd"
 MainInstances="*res://Singleton/MainInstances.gd"
 SceneManager="*res://addons/scene_manager/SceneManager.tscn"
+PowerUps="*res://Singleton/PowerUps.gd"
 
 [display]
 

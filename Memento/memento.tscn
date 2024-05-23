@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=3 uid="uid://ufxn2upl3iqo"]
+
+[ext_resource type="Script" path="res://Memento/Memento.gd" id="1_pxn2q"]
+[ext_resource type="Shader" path="res://World/ClockMemento.gdshader" id="2_40iet"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6errw"]
+size = Vector2(355.557, 377.777)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_4sohm"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ep2yy"]
+noise = SubResource("FastNoiseLite_4sohm")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a1mkt"]
+shader = ExtResource("2_40iet")
+shader_parameter/radius = 0.459
+shader_parameter/effectControl = 0.701
+shader_parameter/burnSpeed = 0.076
+shader_parameter/shape = 0.0
+shader_parameter/textureNoise = SubResource("NoiseTexture2D_ep2yy")
+
+[sub_resource type="Gradient" id="Gradient_qymc3"]
+offsets = PackedFloat32Array(0, 0.649351)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_86lsv"]
+gradient = SubResource("Gradient_qymc3")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="Memento" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_pxn2q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6errw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_a1mkt")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.890196, 0.721569, 0.698039, 0.701961)
+energy = 1.78
+texture = SubResource("GradientTexture2D_86lsv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

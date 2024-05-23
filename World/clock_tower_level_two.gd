@@ -44,7 +44,7 @@ func _on_camera_enabled():
 	#if world_camera:
 		#world_camera.current = false  # Deactivate world camera
 
-func _on_door_body_entered(body):
-	if body.is_in_group("Player"):
-		animated_sprite_2d.play("close")
-		door.queue_free()
+func _on_animated_sprite_2d_animation_finished():
+	animated_sprite_2d.play("close")
+	collision_shape_2d.disabled = true
+	door.visible = false

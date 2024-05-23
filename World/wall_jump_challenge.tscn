@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://pfrm2qy1gfkx"]
+[gd_scene load_steps=17 format=3 uid="uid://pfrm2qy1gfkx"]
 
 [ext_resource type="Script" path="res://World/wall_jump_challenge.gd" id="1_5hl64"]
 [ext_resource type="Texture2D" uid="uid://bwcpxbx5n3br3" path="res://EnviroSprites/GroundandBG/ceiling.png" id="2_3yykw"]
@@ -17,6 +17,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qo3ao"]
 size = Vector2(30.25, 319.413)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e55ee"]
+size = Vector2(174.449, 20)
 
 [node name="WallJumpChallenge2" type="Node2D"]
 script = ExtResource("1_5hl64")
@@ -116,6 +119,10 @@ shape = SubResource("RectangleShape2D_qo3ao")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="LevelFloorCollision"]
 position = Vector2(388.21, -229.322)
 shape = SubResource("RectangleShape2D_qo3ao")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="LevelFloorCollision"]
+position = Vector2(163.392, -116.299)
+shape = SubResource("RectangleShape2D_e55ee")
 
 [node name="Platformextenddropshadow" type="Sprite2D" parent="."]
 z_index = 1

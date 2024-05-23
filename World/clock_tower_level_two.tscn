@@ -2277,11 +2277,14 @@ position = Vector2(616, 136)
 scale = Vector2(0.184, 0.184)
 
 [node name="AnimatableBody2D" parent="MovingPlatform" index="0"]
-position = Vector2(0, 163.043)
+position = Vector2(0, -116.139)
 
 [node name="Path2D" parent="MovingPlatform" index="2"]
 position = Vector2(0, 163.043)
 curve = ExtResource("42_qpxn0")
+
+[node name="PathFollow2D" parent="MovingPlatform/Path2D" index="0"]
+position = Vector2(0, -279.182)
 
 [node name="_Timer_19059" type="Timer" parent="MovingPlatform/Path2D/PathFollow2D" index="1"]
 wait_time = 0.2
@@ -2331,12 +2334,23 @@ libraries = {
 }
 
 [node name="Door" parent="." instance=ExtResource("47_fopkn")]
-position = Vector2(243, 280)
+position = Vector2(1982, 195)
+rotation = -0.0638016
 new_level_path = "res://World/wall_jump_challenge.tscn"
 connection = ExtResource("48_ejuso")
 
 [node name="RightCast" parent="Door" index="2"]
 target_position = Vector2(100, 0)
+
+[node name="Platform17" parent="." instance=ExtResource("40_8ikwx")]
+position = Vector2(1913, 207)
+rotation = -0.0510771
+scale = Vector2(0.457469, 0.46389)
+
+[node name="Platform12" parent="Platform17" instance=ExtResource("40_8ikwx")]
+z_index = 1
+position = Vector2(-5496, 56)
+scale = Vector2(0.818314, 0.818314)
 
 [node name="Door2" parent="." instance=ExtResource("47_fopkn")]
 z_index = 2
@@ -2355,7 +2369,7 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
-[connection signal="body_entered" from="Door" to="." method="_on_door_body_entered"]
+[connection signal="animation_finished" from="Door/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 
 [editable path="Button"]
 [editable path="MovingPlatform"]

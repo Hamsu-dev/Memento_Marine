@@ -24,7 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://lkicqyhl3beh" path="res://EnviroSprites/Buildings/Decorative/buttress.png" id="22_1j3o6"]
 [ext_resource type="Texture2D" uid="uid://bsup3gbeths4c" path="res://EnviroSprites/Buildings/Decorative/lamp 2.png" id="23_k5ne3"]
 [ext_resource type="Texture2D" uid="uid://cj20hjygi2qe1" path="res://Menu/diagrams/run.png" id="24_ip4hv"]
-[ext_resource type="PackedScene" uid="uid://cndekko4w8xru" path="res://water_shader.tscn" id="25_qpour"]
+[ext_resource type="PackedScene" path="res://water_shader.tscn" id="25_qpour"]
 [ext_resource type="PackedScene" uid="uid://c8pfinyhx3py8" path="res://World/camera_limits.tscn" id="26_cy4gq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o3mbq"]
@@ -50,12 +50,6 @@ shape = SubResource("RectangleShape2D_o3mbq")
 position = Vector2(316.249, 2685.56)
 rotation = 1.5708
 scale = Vector2(0.805756, 0.229945)
-shape = SubResource("RectangleShape2D_o3mbq")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="LevelFloorCollision"]
-position = Vector2(323.316, 1896.26)
-rotation = 1.5708
-scale = Vector2(0.386763, 0.0141169)
 shape = SubResource("RectangleShape2D_o3mbq")
 
 [node name="Player" parent="." instance=ExtResource("1_iihlp")]
@@ -814,6 +808,22 @@ scale = Vector2(1, 1)
 
 [node name="Small Platforms17" parent="ShortPlatforms" instance=ExtResource("4_waipe")]
 position = Vector2(-792, -4788)
+scale = Vector2(1, 1)
+
+[node name="Small Platforms18" parent="ShortPlatforms" instance=ExtResource("4_waipe")]
+position = Vector2(-356, -2092)
+scale = Vector2(1, 1)
+
+[node name="Small Platforms19" parent="ShortPlatforms" instance=ExtResource("4_waipe")]
+position = Vector2(-132, -2436)
+scale = Vector2(1, 1)
+
+[node name="Small Platforms20" parent="ShortPlatforms" instance=ExtResource("4_waipe")]
+position = Vector2(-296, -2812)
+scale = Vector2(1, 1)
+
+[node name="Small Platforms21" parent="ShortPlatforms" instance=ExtResource("4_waipe")]
+position = Vector2(-92, -5236)
 scale = Vector2(1, 1)
 
 [node name="Decor" type="Node2D" parent="."]

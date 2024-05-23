@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyrx1hq0nq6sj"]
+
+[ext_resource type="AudioStream" uid="uid://ber1uov6o7h8t" path="res://Assets/Music/whale_game_good2.wav" id="1_55sbe"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_55sbe")

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbfhtu3v4i1wx"]
+
+[ext_resource type="AudioStream" uid="uid://dvpod2kllpvuw" path="res://Assets/Music/main_theme.mp3" id="1_fchog"]
+
+[node name="menu_bgm" type="AudioStreamPlayer"]
+stream = ExtResource("1_fchog")
+autoplay = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d0wofb7050l5f"]
+[gd_scene load_steps=11 format=3 uid="uid://d0wofb7050l5f"]
 
 [ext_resource type="Script" path="res://Menu/MainMenu.gd" id="1_w6b7b"]
 [ext_resource type="Texture2D" uid="uid://cqov6vtngelkt" path="res://Assets/MenuAssets/1.png" id="2_y2gv8"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bhtkx8l6o1inu" path="res://Assets/MenuAssets/5.png" id="6_b27io"]
 [ext_resource type="Texture2D" uid="uid://dw3v7oakgyjoq" path="res://Assets/MenuAssets/6.png" id="7_w67o8"]
 [ext_resource type="Texture2D" uid="uid://bt0qy7dqyqe0m" path="res://Assets/MenuAssets/7.png" id="8_ux8wx"]
+[ext_resource type="AudioStream" uid="uid://drpjfsc5cy1qi" path="res://Assets/Music/Paper_Crunch_SFX_Button_Pressed.wav" id="9_tl358"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_abmp3"]
 animations = [{
@@ -69,6 +70,10 @@ offset_top = 17.0
 offset_right = 1132.0
 offset_bottom = 57.0
 text = "Credits"
+
+[node name="Paper Cruch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_tl358")
+autoplay = true
 
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="credits" to="." method="_on_credits_pressed"]

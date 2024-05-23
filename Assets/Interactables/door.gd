@@ -9,6 +9,8 @@ extends Area2D
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var right_cast = $RightCast
 @onready var left_cast = $LeftCast
+@onready var bgm_world = $"../../bgm_world"
+
 
 enum DoorState { CLOSED, OPEN }
 
@@ -17,6 +19,7 @@ var has_key = false
 func door_open():
 	animated_sprite_2d.play("open")
 	door_state = DoorState.OPEN
+	DoorOpen.play()
 
 func door_close():
 	animated_sprite_2d.play("close")
@@ -37,3 +40,4 @@ func _physics_process(delta):
 		var direction = get_direction()
 		if player_direction == direction:
 			Events.door_entered.emit(self)
+			WorldMusic.stop()

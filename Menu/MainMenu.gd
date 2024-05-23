@@ -7,6 +7,8 @@ func _ready():
 
 func _on_start_pressed():
 	SceneManager.change_scene("res://World/world.tscn")
+	MenuBgm.stop()
+	WorldMusic.play()
 
 
 func _on_credits_pressed():

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dd3l7mtqggrof"]
+
+[ext_resource type="AudioStream" uid="uid://bbkmfwupdsifi" path="res://Assets/Music/Metal_gate_open.mp3" id="1_exmfn"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_exmfn")
+volume_db = -0.5

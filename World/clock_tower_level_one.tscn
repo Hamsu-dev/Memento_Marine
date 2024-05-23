@@ -1,6 +1,6 @@
-[gd_scene load_steps=70 format=3 uid="uid://dhwsckm1ag60"]
+[gd_scene load_steps=72 format=3 uid="uid://dhwsckm1ag60"]
 
-[ext_resource type="PackedScene" uid="uid://cyhg841lp1wjc" path="res://Assets/Interactables/finaldoor.tscn" id="1_3nmw7"]
+[ext_resource type="PackedScene" path="res://Assets/Interactables/finaldoor.tscn" id="1_3nmw7"]
 [ext_resource type="Script" path="res://World/clock_tower_level_one.gd" id="1_257nd"]
 [ext_resource type="PackedScene" uid="uid://cjyikkfta6ce3" path="res://EnviroSprites/GroundandBG/ground.tscn" id="4_evsy5"]
 [ext_resource type="Texture2D" uid="uid://pdk6rv3xc122" path="res://EnviroSprites/Buildings/Walls/WallStriped.png" id="5_jibu0"]
@@ -53,7 +53,8 @@
 [ext_resource type="PackedScene" uid="uid://ufxn2upl3iqo" path="res://Memento/memento.tscn" id="52_v3bl7"]
 [ext_resource type="Shader" path="res://World/door_disappear.gdshader" id="53_0fd21"]
 [ext_resource type="Texture2D" uid="uid://b18igou5iswru" path="res://Assets/Mementos/memento_watchred.png" id="53_y387c"]
-[ext_resource type="PackedScene" uid="uid://cbwxbdjknadvv" path="res://Memento/key.tscn" id="54_8f4bp"]
+[ext_resource type="PackedScene" path="res://Memento/key.tscn" id="54_8f4bp"]
+[ext_resource type="Script" path="res://World/music_trigger.gd" id="55_1vp4e"]
 
 [sub_resource type="Gradient" id="Gradient_ilvig"]
 offsets = PackedFloat32Array(0, 0.649351)
@@ -174,6 +175,9 @@ _data = {
 shader = ExtResource("53_0fd21")
 shader_parameter/size = 0.0
 shader_parameter/source_size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_igiwr"]
+size = Vector2(82, 90.5)
 
 [node name="ClockTowerLevelOne" type="Node2D"]
 script = ExtResource("1_257nd")
@@ -2476,10 +2480,20 @@ scale = Vector2(0.14, 0.14)
 position = Vector2(1204, 41)
 scale = Vector2(0.385, 0.385)
 
+[node name="music_trigger" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("55_1vp4e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="music_trigger"]
+position = Vector2(156, 504.75)
+shape = SubResource("RectangleShape2D_igiwr")
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="Door/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Door2" to="." method="_on_door_2_body_entered"]
 [connection signal="animation_finished" from="Door2/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="music_trigger" to="music_trigger" method="_on_body_entered"]
 
 [editable path="Door"]
 [editable path="Door2"]

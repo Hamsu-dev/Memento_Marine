@@ -32,7 +32,7 @@ func _ready():
 func _on_Door_interact():
 	var message = ""
 	if not has_key:
-		message = "It seems to be locked! Find the key to unlock the door!"
+		message = "It seems to be locked! I need to find the key to the door!"
 	else:
 		message = "The door is unlocked!"
 	show_message(message, player.global_position + Vector2(0, -50)) # Adjust the offset as needed

@@ -27,7 +27,8 @@ WorldMusic="*res://Assets/Music/music_scenes/world_music.tscn"
 ClockTowerBgm="*res://Assets/Music/music_scenes/clock_tower_bgm.tscn"
 ClockTowerAmbience="*res://Assets/Music/music_scenes/clock_tower_ambience.tscn"
 DoorOpen="*res://Assets/Music/music_scenes/doorOpen.tscn"
-RunSFX="*res://Assets/Music/music_scenes/RunSFX.tscn"
+RumblingSFX="*res://Assets/Music/music_scenes/Rumbling.tscn"
+FootSteps="*res://Assets/Music/music_scenes/FootSteps.tscn"
 
 [display]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbwxbdjknadvv"]
+[gd_scene load_steps=6 format=3 uid="uid://c8am0441sy5rc"]
 
 [ext_resource type="Texture2D" uid="uid://my6kkk3b2wdx" path="res://Memento/key.png" id="1_e7070"]
 [ext_resource type="Script" path="res://Memento/key.gd" id="1_yum6w"]
@@ -25,8 +25,8 @@ position = Vector2(0, -39)
 shape = SubResource("CircleShape2D_apjxd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -35)
-scale = Vector2(0.14, 0.14)
+position = Vector2(-5, -41)
+scale = Vector2(0.24, 0.24)
 texture = ExtResource("1_e7070")
 
 [node name="PointLight2D2" type="PointLight2D" parent="."]

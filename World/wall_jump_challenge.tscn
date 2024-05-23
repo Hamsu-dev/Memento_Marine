@@ -407,8 +407,6 @@ connection = ExtResource("10_7iktv")
 
 [node name="AnimatedSprite2D" parent="Door" index="0"]
 animation = &"default"
-frame = 0
-frame_progress = 0.0
 
 [node name="Door2" parent="." instance=ExtResource("9_dbq51")]
 position = Vector2(73, -75)

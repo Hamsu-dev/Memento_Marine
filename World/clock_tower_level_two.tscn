@@ -48,7 +48,7 @@
 [ext_resource type="Resource" uid="uid://dk34tbggomtho" path="res://World/WallJumpOne_ClockTowerTwo.tres" id="48_ejuso"]
 [ext_resource type="PackedScene" uid="uid://brnd5o5qwcj2y" path="res://World/world_camera.tscn" id="49_nrwmj"]
 [ext_resource type="Resource" uid="uid://dht2524qto2og" path="res://World/ClockTowerTwo_BouncyOne.tres" id="50_m4lao"]
-[ext_resource type="PackedScene" uid="uid://cbwxbdjknadvv" path="res://Memento/key.tscn" id="50_mkdvs"]
+[ext_resource type="PackedScene" path="res://Memento/key.tscn" id="50_mkdvs"]
 [ext_resource type="PackedScene" uid="uid://c8pfinyhx3py8" path="res://World/camera_limits.tscn" id="51_w04xk"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_qb4ny"]

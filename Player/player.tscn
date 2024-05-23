@@ -172,7 +172,7 @@ z_index = 99
 position = Vector2(0, -11)
 scale = Vector2(0.05, 0.05)
 sprite_frames = SubResource("SpriteFrames_bcbir")
-animation = &"wallslide"
+animation = &"run"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

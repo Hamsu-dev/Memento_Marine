@@ -4,5 +4,5 @@
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer"]
 stream = ExtResource("1_exmfn")
-volume_db = -2.0
+volume_db = -11.369
 bus = &"SFX"

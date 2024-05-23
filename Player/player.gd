@@ -193,18 +193,20 @@ func update_animations(input_axis):
 	elif is_dropping:
 		if animated_sprite_2d.animation != "crouch":
 			animated_sprite_2d.play("crouch")
-			
+
 	elif not on_ground:
 		if velocity.y < 0:
 			animated_sprite_2d.play("jump")
-			
+			FootSteps.stop()
 		else:
 			animated_sprite_2d.play("fall")
-			
+			FootSteps.stop()
 	else:
 		if is_moving(input_axis):
 			animated_sprite_2d.play("run")
+
 			
 		else:
 			animated_sprite_2d.play("idle")
-			
+
+			FootSteps.stop()			

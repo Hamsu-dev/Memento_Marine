@@ -17,3 +17,4 @@ func _on_body_exited(body):
 func _process(delta):
 	if player_in_area and Input.is_action_just_pressed("interact"):  # Assuming "ui_select" is mapped to the "E" key
 		SceneManager.change_scene("res://World/final_challenge.tscn")
+		RumblingSFX.play()

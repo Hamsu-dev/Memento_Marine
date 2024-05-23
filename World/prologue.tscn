@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://rg46wxqtfopg"]
+[gd_scene load_steps=9 format=3 uid="uid://rg46wxqtfopg"]
 
 [ext_resource type="Texture2D" uid="uid://dadokrixht645" path="res://EnviroSprites/Prologue/HOLYMOLY.png" id="1_cykqh"]
 [ext_resource type="Texture2D" uid="uid://brye54prqkhqg" path="res://EnviroSprites/Prologue/skeleton.png" id="2_ireh2"]
 [ext_resource type="PackedScene" uid="uid://c8pfinyhx3py8" path="res://World/camera_limits.tscn" id="3_f5x03"]
 [ext_resource type="Texture2D" uid="uid://c8i8dbibfaltq" path="res://Menu/diagrams/instructionDiagrams.png" id="4_jdohf"]
 [ext_resource type="FontFile" uid="uid://mwq4pd7yj8if" path="res://Menu/Lora-VariableFont_wght.ttf" id="5_i7e3v"]
+[ext_resource type="Texture2D" uid="uid://dvpq6lfecd5dg" path="res://EnviroSprites/Prologue/ishmaDEAD.png" id="6_qccli"]
+[ext_resource type="PackedScene" uid="uid://d0aoahb3jj4kc" path="res://Platforms/platforms.tscn" id="7_f05w3"]
+[ext_resource type="PackedScene" uid="uid://bf4ldidd5sglr" path="res://Platforms/platformlong.tscn" id="8_rag18"]
 
 [node name="Prologue" type="Node2D"]
 
@@ -41,14 +44,70 @@ scale = Vector2(0.147659, 0.147659)
 texture = ExtResource("4_jdohf")
 
 [node name="TestLabel" type="Label" parent="."]
-offset_left = 590.0
-offset_top = 195.0
-offset_right = 1439.0
-offset_bottom = 331.0
+offset_left = 1547.0
+offset_top = 212.0
+offset_right = 2396.0
+offset_bottom = 348.0
+scale = Vector2(0.127631, 0.127631)
+theme_override_colors/font_color = Color(0.996078, 0.160784, 0.196078, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.996078, 0.160784, 0.196078, 1)
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 20
+theme_override_fonts/font = ExtResource("5_i7e3v")
+theme_override_font_sizes/font_size = 50
+text = "Escape the whale!"
+
+[node name="TestLabel3" type="Label" parent="."]
+offset_left = 609.0
+offset_top = 234.0
+offset_right = 1458.0
+offset_bottom = 370.0
 scale = Vector2(0.127631, 0.127631)
 theme_override_colors/font_color = Color(0.996078, 0.160784, 0.196078, 1)
 theme_override_colors/font_outline_color = Color(0.942481, 0.202906, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("5_i7e3v")
 theme_override_font_sizes/font_size = 50
-text = "Escape the whale..."
+text = "SPACE to jump."
+
+[node name="TestLabel4" type="Label" parent="."]
+offset_left = 845.0
+offset_top = 229.0
+offset_right = 1694.0
+offset_bottom = 365.0
+scale = Vector2(0.127631, 0.127631)
+theme_override_colors/font_color = Color(0.996078, 0.160784, 0.196078, 1)
+theme_override_colors/font_outline_color = Color(0.942481, 0.202906, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("5_i7e3v")
+theme_override_font_sizes/font_size = 50
+text = "Fix the clocktower..."
+
+[node name="TestLabel2" type="Label" parent="."]
+offset_left = 290.0
+offset_top = 237.0
+offset_right = 1139.0
+offset_bottom = 373.0
+scale = Vector2(0.127631, 0.127631)
+theme_override_colors/font_color = Color(0.996078, 0.160784, 0.196078, 1)
+theme_override_colors/font_outline_color = Color(0.942481, 0.202906, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("5_i7e3v")
+theme_override_font_sizes/font_size = 50
+text = "to move..."
+
+[node name="IshmaDead" type="Sprite2D" parent="."]
+modulate = Color(0.412152, 0.412152, 0.412152, 1)
+position = Vector2(181, 264)
+scale = Vector2(0.0360125, 0.0360125)
+texture = ExtResource("6_qccli")
+
+[node name="Platform" parent="." instance=ExtResource("7_f05w3")]
+position = Vector2(1331, 249)
+
+[node name="Platform2" parent="." instance=ExtResource("8_rag18")]
+position = Vector2(1623, 284)
+
+[node name="Platform3" parent="." instance=ExtResource("7_f05w3")]
+position = Vector2(1379, 207)

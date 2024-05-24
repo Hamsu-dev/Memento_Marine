@@ -184,15 +184,15 @@ func update_animations(input_axis):
 		sprite_2d.flip_h = true
 
 	if wall_jumping:  
-		if animation_player.animation != "walljump":
+		if animation_player.current_animation != "walljump":
 			animation_player.play("walljump")
-		animation_player.flip_h = wall_direction < 0 
+		sprite_2d.flip_h = wall_direction < 0 
 	elif wall_sliding and not Input.is_action_pressed("up"): 
-		if animation_player.animation != "wallslide":
-			animation_player.play("wallslide")
-		animation_player.flip_h = wall_direction < 0  
+		if animation_player.current_animation != "wall_slide":
+			animation_player.play("wall_slide")
+		sprite_2d.flip_h = wall_direction < 0  
 	elif is_dropping:
-		if animation_player.animation != "crouch":
+		if animation_player.current_animation != "crouch":
 			animation_player.play("crouch")
 
 	elif not on_ground:

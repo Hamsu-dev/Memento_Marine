@@ -51,11 +51,11 @@ var is_disabled = false
 
 signal camera_enabled
 signal camera_disabled
+signal died
 
 # Functions
 func _enter_tree():
-	MainInstances.player = self
-	MainInstances.player_camera = player_camera
+	MainInstances.set_player(self)
 
 func _physics_process(delta):
 	if is_disabled:
@@ -187,6 +187,12 @@ func bounce():
 		bounce_used = true
 		is_bouncing = true
 
+func die():
+	died.emit()
+	
+func reset_state():
+	velocity = Vector2.ZERO
+	
 func update_animations(input_axis):
 	var on_ground = is_on_floor()
 

@@ -2,7 +2,6 @@ extends Node
 
 @onready var final_door = $FinalDoor
 @onready var player = $"../Player"
-@onready var skelly_animation = $"../Player/AnimatedSprite2D"
 @onready var world_camera = $WorldCamera
 @onready var player_camera = $"../Player/Camera2D"
 @onready var animation_player = $AnimationPlayer
@@ -14,11 +13,14 @@ extends Node
 @onready var popup_panel = $"../UINode/PopupPanel"
 @onready var popup_label_1 = $"../UINode/PopupPanel/PopupLabel1"
 @onready var key = $Key
+@onready var tutorial_msg_popups = $"Tutorial Msg Popups"
 
 
 var has_key = false
+var tutorial_shown = false
 
 func _ready():
+	tutorial_msg_popups.tutorial_interact.connect(_on_tutorial_msg)
 	final_door.door_interact.connect(_on_Door_interact)
 	key.key_collected.connect(_on_Key_collected)
 	animated_sprite_2d.play("close")
@@ -29,13 +31,19 @@ func _ready():
 		player.camera_disabled.connect(_on_camera_disabled)
 		player.camera_enabled.connect(_on_camera_enabled)
 
+func _on_tutorial_msg():
+	if not tutorial_shown:
+		var message = "Press [E] to interact with door"
+		show_message(message, player.global_position + Vector2(-750,10))
+		tutorial_shown = true
+
 func _on_Door_interact():
 	var message = ""
 	if not has_key:
 		message = "It's locked. There must be a key nearby."
 	else:
 		message = "Door unlocked."
-	show_message(message, player.global_position + Vector2(-750,10)) # Adjust the offset as needed
+	show_message(message, player.global_position + Vector2(-750,10))
 
 	
 func _on_animated_sprite_2d_animation_finished():

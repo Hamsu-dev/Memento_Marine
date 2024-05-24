@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://dnvsl41bha3pn"]
+[gd_scene load_steps=2 format=3 uid="uid://dnvsl41bha3pn"]
 
-[node name="GongSfx" type="Node2D"]
+[ext_resource type="AudioStream" uid="uid://c6qbcsn2bjyh5" path="res://Assets/Music/ONE_Clock_gong_no_ticks.mp3" id="1_py6q8"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_py6q8")

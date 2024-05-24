@@ -54,6 +54,8 @@ size = Vector2(243.5, 132)
 
 [node name="FinalChallenge" type="Node2D"]
 
+[node name="Player" parent="." instance=ExtResource("1_iihlp")]
+
 [node name="LevelFloorCollision" type="StaticBody2D" parent="."]
 z_index = 3
 scale = Vector2(0.56601, 0.415555)
@@ -73,10 +75,6 @@ position = Vector2(316.249, 2685.56)
 rotation = 1.5708
 scale = Vector2(0.805756, 0.229945)
 shape = SubResource("RectangleShape2D_o3mbq")
-
-[node name="Player" parent="." instance=ExtResource("1_iihlp")]
-z_index = 50
-position = Vector2(170, 1073)
 
 [node name="Separator" type="Sprite2D" parent="."]
 position = Vector2(307, 1018)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://rg46wxqtfopg"]
+[gd_scene load_steps=10 format=3 uid="uid://rg46wxqtfopg"]
 
 [ext_resource type="Texture2D" uid="uid://dadokrixht645" path="res://EnviroSprites/Prologue/HOLYMOLY.png" id="1_cykqh"]
 [ext_resource type="Texture2D" uid="uid://brye54prqkhqg" path="res://EnviroSprites/Prologue/skeleton.png" id="2_ireh2"]
@@ -8,8 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dvpq6lfecd5dg" path="res://EnviroSprites/Prologue/ishmaDEAD.png" id="6_qccli"]
 [ext_resource type="PackedScene" uid="uid://d0aoahb3jj4kc" path="res://Platforms/platforms.tscn" id="7_f05w3"]
 [ext_resource type="PackedScene" uid="uid://bf4ldidd5sglr" path="res://Platforms/platformlong.tscn" id="8_rag18"]
-[ext_resource type="PackedScene" uid="uid://cj45xm7iksl4b" path="res://spikes.tscn" id="9_5nycw"]
-[ext_resource type="PackedScene" uid="uid://cxqs8mt1gtmv3" path="res://RespawnPoints.tscn" id="10_g8das"]
+[ext_resource type="PackedScene" uid="uid://bpq6fln0ibc1u" path="res://prolog_to_clock.tscn" id="9_hgm17"]
 
 [node name="Prologue" type="Node2D"]
 
@@ -117,11 +116,5 @@ position = Vector2(1379, 207)
 [node name="Platform4" parent="." instance=ExtResource("8_rag18")]
 position = Vector2(1715, 284)
 
-[node name="Spikes" parent="." instance=ExtResource("9_5nycw")]
-position = Vector2(1471, 281)
-
-[node name="RespawnPoints" parent="." instance=ExtResource("10_g8das")]
-position = Vector2(700, 266)
-
-[node name="RespawnPoints2" parent="." instance=ExtResource("10_g8das")]
-position = Vector2(1595, 254)
+[node name="Prolog to Clock" parent="." instance=ExtResource("9_hgm17")]
+position = Vector2(494, 53)

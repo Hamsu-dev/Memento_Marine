@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpq6fln0ibc1u"]
+
+[ext_resource type="Texture2D" uid="uid://70m61a1xdwa1" path="res://EnviroSprites/GroundandBG/glow.png" id="1_0nkum"]
+[ext_resource type="Script" path="res://prolog_to_clock.gd" id="1_srbvu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hlxbe"]
+size = Vector2(334, 593)
+
+[node name="Prolog to Clock" type="Area2D"]
+script = ExtResource("1_srbvu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_0nkum")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, -45.5)
+shape = SubResource("RectangleShape2D_hlxbe")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

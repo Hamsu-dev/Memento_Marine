@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://pfrm2qy1gfkx"]
+[gd_scene load_steps=20 format=3 uid="uid://pfrm2qy1gfkx"]
 
 [ext_resource type="Script" path="res://World/wall_jump_challenge.gd" id="1_5hl64"]
 [ext_resource type="Texture2D" uid="uid://bwcpxbx5n3br3" path="res://EnviroSprites/GroundandBG/ceiling.png" id="2_3yykw"]
@@ -22,6 +22,9 @@ size = Vector2(30.25, 319.413)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e55ee"]
 size = Vector2(174.449, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_phmhi"]
+size = Vector2(99.9262, 418.921)
 
 [node name="WallJumpChallenge2" type="Node2D"]
 script = ExtResource("1_5hl64")
@@ -179,6 +182,11 @@ position = Vector2(265, 268)
 
 [node name="ColumnTextured" type="Sprite2D" parent="."]
 position = Vector2(238, 131)
+scale = Vector2(0.260192, 0.260192)
+texture = ExtResource("6_bxnni")
+
+[node name="ColumnTextured7" type="Sprite2D" parent="."]
+position = Vector2(101, -159)
 scale = Vector2(0.260192, 0.260192)
 texture = ExtResource("6_bxnni")
 
@@ -459,10 +467,14 @@ offset_bottom = 569.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="ColumnTextured5" type="Sprite2D" parent="."]
+[node name="ColumnTextured8" type="Sprite2D" parent="."]
 position = Vector2(238, -184.173)
 scale = Vector2(0.260192, 0.260192)
 texture = ExtResource("6_bxnni")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColumnTextured8"]
+position = Vector2(-526.534, 75.6096)
+shape = SubResource("RectangleShape2D_phmhi")
 
 [node name="ColumnTextured6" type="Sprite2D" parent="."]
 position = Vector2(238, -89.1732)

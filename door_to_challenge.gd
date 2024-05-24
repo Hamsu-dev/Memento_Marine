@@ -16,7 +16,8 @@ func _on_body_exited(body):
 		
 func _process(delta):
 	if player_in_area:  # Assuming "ui_select" is mapped to the "E" key
-		SceneManager.change_scene("res://World/final_challenge.tscn")
+		#SceneManager.change_scene("res://World/final_challenge.tscn")
+		get_tree().change_scene_to_file("res://World/final_challenge.tscn")
 		RumblingSFX.play()
 		ClockTowerBgm.stop()
 		BossBgm.play()

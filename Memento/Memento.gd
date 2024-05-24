@@ -1,7 +1,6 @@
 extends Area2D
 
 @export var ability_type : String # "bounce" or "wall_jump"
-@onready var relic_sfx = $relic_sfx
 
 
 func _on_body_entered(body):

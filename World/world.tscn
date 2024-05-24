@@ -31,7 +31,7 @@ texture = ExtResource("9_ws8tk")
 script = ExtResource("1_eeowi")
 
 [node name="Player" parent="." instance=ExtResource("2_qkquh")]
-position = Vector2(1565, 245)
+position = Vector2(141, 257)
 
 [node name="Camera2D" parent="Player" index="3"]
 limit_left = 4

@@ -86,7 +86,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"off",
-"speed": 8.0
+"speed": 30.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -119,9 +119,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_oq3sw")
 }],
-"loop": true,
+"loop": false,
 "name": &"on",
-"speed": 8.0
+"speed": 30.0
 }]
 
 [node name="Spikes" type="Area2D"]
@@ -137,7 +137,9 @@ shape = SubResource("RectangleShape2D_m7mhg")
 position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_uiq44")
 animation = &"off"
-frame = 4
-frame_progress = 1.0
+
+[node name="Timer" type="Timer" parent="."]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

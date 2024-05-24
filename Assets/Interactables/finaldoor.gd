@@ -15,5 +15,5 @@ func _on_body_exited(body):
 		player_in_area = false
 		
 func _process(delta):
-	if player_in_area and Input.is_action_just_pressed("interact"):
+	if player_in_area:
 		door_interact.emit()

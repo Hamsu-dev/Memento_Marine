@@ -18,12 +18,14 @@ extends Node
 
 var has_key = false
 var tutorial_shown = false
+var door_interacted = false
 
 func _ready():
 	tutorial_msg_popups.tutorial_interact.connect(_on_tutorial_msg)
 	final_door.door_interact.connect(_on_Door_interact)
 	key.key_collected.connect(_on_Key_collected)
 	animated_sprite_2d.play("close")
+	collision_shape_2d.disabled = true
 	popup_panel.hide()
 	
 	var player = MainInstances.player as Player
@@ -33,22 +35,22 @@ func _ready():
 
 func _on_tutorial_msg():
 	if not tutorial_shown:
-		var message = "Press [E] to interact with door"
+		var message = "That door seems"
 		show_message(message, player.global_position + Vector2(-750,10))
 		tutorial_shown = true
 
 func _on_Door_interact():
-	var message = ""
-	if not has_key:
-		message = "It's locked. There must be a key nearby."
-	else:
-		message = "Door unlocked."
-	show_message(message, player.global_position + Vector2(-750,10))
+	if not door_interacted:
+		var message = ""
+		if not has_key:
+			message = "It's locked. There must be a key nearby."
+		else:
+			message = "Door unlocked."
+		show_message(message, player.global_position + Vector2(-750,10))
+		door_interacted = true
 
-	
 func _on_animated_sprite_2d_animation_finished():
 	animated_sprite_2d.play("close")
-	collision_shape_2d.disabled = true
 	door_2.visible = false
 
 

@@ -33,11 +33,8 @@ extends CharacterBody2D
 @onready var player_camera = $Camera2D
 @onready var animation_player = $AnimationPlayer
 @onready var sprite_2d = $Sprite2D
-@onready var footsteps = $footsteps
-@onready var footstep_timer = $footstep_timer
-@onready var jump = $jump
-@onready var bouncesfx = $bouncesfx
-
+@onready var animated_sprite_2d = $AnimatedSprite2D
+@onready var collision_shape_2d = $CollisionShape2D
 
 # Variables
 var is_dropping = false
@@ -78,7 +75,6 @@ func _physics_process(delta):
 	# Check if player is dropping and on the floor to bounce
 	if is_on_floor() and is_dropping:
 		bounce()
-		bouncesfx.play()
 
 	# Reset is_dropping and bounce_used variables when landing on the floor
 	if is_on_floor():
@@ -143,10 +139,6 @@ func apply_acceleration(delta, input_axis):
 	else:
 		velocity.x = move_toward(velocity.x, input_axis * max_speed, wall_jump_air_acceleration * delta if wall_jumping else air_acceleration * delta)
 
-func _play_footstep_audio():
-	footsteps.pitch_scale(0.8,1.2)
-	footsteps.play()
-
 func apply_friction(delta):
 	if is_on_floor():
 		velocity.x = move_toward(velocity.x, 0, friction * delta)
@@ -157,14 +149,12 @@ func jump_check():
 	if (is_on_floor() or coyote_jump_timer.time_left > 0.0) and Input.is_action_just_pressed("up"):
 		velocity.y = -jump_force
 		coyote_jump_timer.stop()
-		jump.play()
 	elif on_wall and PowerUps.wall_jump_unlocked and Input.is_action_just_pressed("up"):  # Check global variable
 		velocity.y = -wall_jump_force
 		velocity.x = wall_jump_push_force * wall_direction
 		sprite_2d.flip_h = wall_direction < 0
 		wall_jumping = true
 		wall_sliding = false
-		jump.play()
 	else:
 		wall_jumping = false
 	if Input.is_action_just_pressed("down") and not is_on_floor():
@@ -189,6 +179,9 @@ func bounce():
 
 func die():
 	died.emit()
+	animated_sprite_2d.visible = true
+	animated_sprite_2d.play("die")
+	collision_shape_2d.disabled = true
 	
 func reset_state():
 	velocity = Vector2.ZERO
@@ -216,17 +209,18 @@ func update_animations(input_axis):
 	elif not on_ground:
 		if velocity.y < 0:
 			animation_player.play("jump")
-
+			FootSteps.stop()
 		else:
 			animation_player.play("fall")
-
+			FootSteps.stop()
 	else:
 		if is_moving(input_axis):
 			animation_player.play("run")
-			if footstep_timer.time_left <= 0:
-				footsteps.pitch_scale = randf_range(0.8,1.2)
-				footsteps.play()
-				footstep_timer.start(0.4)
+			
 		else:
 			animation_player.play("idle")
+			FootSteps.stop()
 
+
+func _on_animated_sprite_2d_animation_finished():
+	animated_sprite_2d.visible = false

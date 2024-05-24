@@ -54,7 +54,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7x17v"]
-size = Vector2(263.636, 1118.18)
+size = Vector2(263.636, 363.636)
 
 [node name="Door" type="Area2D" groups=["doors"]]
 scale = Vector2(0.11, 0.11)
@@ -69,7 +69,7 @@ sprite_frames = SubResource("SpriteFrames_y0bga")
 animation = &"open"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -183.909)
+position = Vector2(0, -181.818)
 shape = SubResource("RectangleShape2D_7x17v")
 
 [node name="RightCast" type="RayCast2D" parent="."]

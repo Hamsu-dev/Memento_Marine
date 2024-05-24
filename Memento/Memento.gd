@@ -17,6 +17,6 @@ func _on_body_entered(body):
 		
 		# Show the notification message
 		var ui_manager = get_tree().root.get_node("World/UINode")
-		ui_manager.show_message(message)
+		ui_manager.show_message(message, body.global_position + Vector2(-160, -100))
 		
 		queue_free() # Remove the power-up from the scene after it's collected

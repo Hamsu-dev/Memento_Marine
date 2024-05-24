@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://dhwsckm1ag60"]
+[gd_scene load_steps=71 format=3 uid="uid://dhwsckm1ag60"]
 
 [ext_resource type="PackedScene" uid="uid://cyhg841lp1wjc" path="res://Assets/Interactables/finaldoor.tscn" id="1_3nmw7"]
 [ext_resource type="Script" path="res://World/clock_tower_level_one.gd" id="1_257nd"]
@@ -51,9 +51,7 @@
 [ext_resource type="Resource" uid="uid://b6xxg0hnhnfik" path="res://World/ClockTower_WallJump.tres" id="48_3mcgq"]
 [ext_resource type="Resource" uid="uid://dfqdx0vvh2u6v" path="res://World/Prolouge_ClockTowerOne.tres" id="49_nqkmm"]
 [ext_resource type="PackedScene" uid="uid://c8pfinyhx3py8" path="res://World/camera_limits.tscn" id="50_k35hs"]
-[ext_resource type="PackedScene" uid="uid://ufxn2upl3iqo" path="res://Memento/memento.tscn" id="52_v3bl7"]
 [ext_resource type="Shader" path="res://World/door_disappear.gdshader" id="53_0fd21"]
-[ext_resource type="Texture2D" uid="uid://b18igou5iswru" path="res://Assets/Mementos/memento_watchred.png" id="53_y387c"]
 [ext_resource type="PackedScene" uid="uid://c8am0441sy5rc" path="res://Memento/key.tscn" id="54_8f4bp"]
 [ext_resource type="Script" path="res://World/music_trigger.gd" id="55_1vp4e"]
 [ext_resource type="Texture2D" uid="uid://bwcpxbx5n3br3" path="res://EnviroSprites/GroundandBG/ceiling.png" id="55_n2uxr"]
@@ -66,9 +64,6 @@ colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 gradient = SubResource("Gradient_cr5wn")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fwhjp"]
-size = Vector2(26, 74)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_qb4ny"]
 
@@ -333,11 +328,6 @@ texture = SubResource("GradientTexture2D_8sdbk")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelFloorCollision"]
 polygon = PackedVector2Array(-4, 10, 4, 648, 2226, 641, 2232, 5, 2147, 6, 2146, 553, 1984, 553, 1969.15, 547, 248, 547, 233, 554, 75, 554, 73, 30)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelFloorCollision"]
-z_index = 2
-position = Vector2(729, 378)
-shape = SubResource("RectangleShape2D_fwhjp")
 
 [node name="Ground" parent="." instance=ExtResource("4_evsy5")]
 z_index = 90
@@ -2486,18 +2476,6 @@ grow_vertical = 1
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.33972, 0.341544, 0.412054, 1)
 
-[node name="Memento" parent="." instance=ExtResource("52_v3bl7")]
-z_index = 3
-position = Vector2(122, 337)
-scale = Vector2(0.045, 0.045)
-ability_type = "wall_jump"
-
-[node name="CollisionShape2D" parent="Memento" index="0"]
-position = Vector2(22.2234, 22.2225)
-
-[node name="Sprite2D" parent="Memento" index="1"]
-texture = ExtResource("53_y387c")
-
 [node name="FinalDoor" parent="." instance=ExtResource("1_3nmw7")]
 material = SubResource("ShaderMaterial_xnett")
 position = Vector2(1051, 19)
@@ -2591,5 +2569,4 @@ texture = ExtResource("55_n2uxr")
 [editable path="MovingPlatform"]
 [editable path="Door"]
 [editable path="Door2"]
-[editable path="Memento"]
 [editable path="FinalDoor"]

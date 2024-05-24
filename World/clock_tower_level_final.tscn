@@ -2550,7 +2550,7 @@ libraries = {
 }
 
 [node name="Door" parent="." instance=ExtResource("48_t4jjd")]
-position = Vector2(427, 47)
+position = Vector2(417, 51)
 new_level_path = "res://World/bouncy_jump_challenge.tscn"
 connection = ExtResource("48_ijbuy")
 

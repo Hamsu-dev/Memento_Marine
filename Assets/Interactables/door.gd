@@ -9,7 +9,6 @@ extends Area2D
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var right_cast = $RightCast
 @onready var left_cast = $LeftCast
-@onready var bgm_world = $"../../bgm_world"
 
 enum DoorState { CLOSED, OPEN }
 

@@ -1,6 +1,7 @@
-[gd_scene load_steps=33 format=3 uid="uid://ctsovcie5ppuq"]
+[gd_scene load_steps=34 format=3 uid="uid://ctsovcie5ppuq"]
 
 [ext_resource type="PackedScene" uid="uid://b2kioq0ibvkx8" path="res://Player/player.tscn" id="1_iihlp"]
+[ext_resource type="Script" path="res://World/final_challenge.gd" id="1_u24vh"]
 [ext_resource type="Texture2D" uid="uid://dw8gm7hqp7bug" path="res://EnviroSprites/Buildings/ColumnsEtc/Separator.png" id="2_ipswc"]
 [ext_resource type="PackedScene" uid="uid://bf4ldidd5sglr" path="res://Platforms/platformlong.tscn" id="3_d4w6b"]
 [ext_resource type="PackedScene" uid="uid://d0aoahb3jj4kc" path="res://Platforms/platforms.tscn" id="4_waipe"]
@@ -53,6 +54,7 @@ shader_parameter/seed = 5.0
 size = Vector2(243.5, 132)
 
 [node name="FinalChallenge" type="Node2D"]
+script = ExtResource("1_u24vh")
 
 [node name="Player" parent="." instance=ExtResource("1_iihlp")]
 position = Vector2(175, 1097)
@@ -148,6 +150,9 @@ scale = Vector2(-1, -1)
 
 [node name="Flesh Wall3" parent="FleshWalls" instance=ExtResource("5_2lx2e")]
 position = Vector2(-33, 165)
+
+[node name="Flesh Wall9" parent="FleshWalls" instance=ExtResource("5_2lx2e")]
+position = Vector2(-0.000648499, 256)
 
 [node name="Flesh Wall4" parent="FleshWalls" instance=ExtResource("5_2lx2e")]
 position = Vector2(-254, 276)
@@ -1174,6 +1179,20 @@ texture = ExtResource("24_ip4hv")
 
 [node name="Water Shader" parent="." instance=ExtResource("25_qpour")]
 position = Vector2(-372, 1226)
+collision_layer = 8
+collision_mask = 2
+
+[node name="Water_Shader" parent="Water Shader" index="0"]
+offset_left = 306.0
+offset_top = 3.0
+offset_right = 806.0
+offset_bottom = 90.0
+
+[node name="Water" parent="Water Shader" index="1"]
+position = Vector2(564, 389)
+
+[node name="CollisionShape2D" parent="Water Shader" index="2"]
+position = Vector2(550.75, 12)
 
 [node name="CameraLimits" parent="." instance=ExtResource("26_cy4gq")]
 offset_left = 10.0

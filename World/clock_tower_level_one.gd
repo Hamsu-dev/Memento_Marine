@@ -35,7 +35,7 @@ func _ready():
 
 func _on_tutorial_msg():
 	if not tutorial_shown:
-		var message = "That door seems"
+		var message = "I need to escape...."
 		show_message(message, player.global_position + Vector2(-750,10))
 		tutorial_shown = true
 

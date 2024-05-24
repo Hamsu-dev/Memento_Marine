@@ -799,7 +799,6 @@ scale = Vector2(260, 260)
 target_position = Vector2(-2, 0)
 
 [node name="CameraLimits" parent="." instance=ExtResource("17_uljuc")]
-visible = false
 offset_left = -408.0
 offset_top = -385.0
 offset_right = 627.0

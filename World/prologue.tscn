@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://rg46wxqtfopg"]
+[gd_scene load_steps=8 format=3 uid="uid://rg46wxqtfopg"]
 
 [ext_resource type="Texture2D" uid="uid://dadokrixht645" path="res://EnviroSprites/Prologue/HOLYMOLY.png" id="1_cykqh"]
 [ext_resource type="Texture2D" uid="uid://brye54prqkhqg" path="res://EnviroSprites/Prologue/skeleton.png" id="2_ireh2"]
@@ -6,9 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c8i8dbibfaltq" path="res://Menu/diagrams/instructionDiagrams.png" id="4_jdohf"]
 [ext_resource type="FontFile" uid="uid://mwq4pd7yj8if" path="res://Menu/Lora-VariableFont_wght.ttf" id="5_i7e3v"]
 [ext_resource type="Texture2D" uid="uid://dvpq6lfecd5dg" path="res://EnviroSprites/Prologue/ishmaDEAD.png" id="6_qccli"]
-[ext_resource type="PackedScene" uid="uid://d0aoahb3jj4kc" path="res://Platforms/platforms.tscn" id="7_f05w3"]
 [ext_resource type="PackedScene" uid="uid://bf4ldidd5sglr" path="res://Platforms/platformlong.tscn" id="8_rag18"]
-[ext_resource type="PackedScene" uid="uid://bpq6fln0ibc1u" path="res://prolog_to_clock.tscn" id="9_hgm17"]
 
 [node name="Prologue" type="Node2D"]
 
@@ -104,17 +102,8 @@ position = Vector2(181, 264)
 scale = Vector2(0.0360125, 0.0360125)
 texture = ExtResource("6_qccli")
 
-[node name="Platform" parent="." instance=ExtResource("7_f05w3")]
-position = Vector2(1331, 249)
-
 [node name="Platform2" parent="." instance=ExtResource("8_rag18")]
 position = Vector2(1623, 284)
 
-[node name="Platform3" parent="." instance=ExtResource("7_f05w3")]
-position = Vector2(1379, 207)
-
 [node name="Platform4" parent="." instance=ExtResource("8_rag18")]
 position = Vector2(1715, 284)
-
-[node name="Prolog to Clock" parent="." instance=ExtResource("9_hgm17")]
-position = Vector2(494, 53)

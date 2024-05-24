@@ -1,0 +1,118 @@
+[gd_scene load_steps=13 format=3 uid="uid://bid3m2t7vjvfx"]
+
+[ext_resource type="Script" path="res://World/world.gd" id="1_eeowi"]
+[ext_resource type="PackedScene" uid="uid://b2kioq0ibvkx8" path="res://Player/player.tscn" id="2_qkquh"]
+[ext_resource type="PackedScene" uid="uid://rg46wxqtfopg" path="res://World/prologue.tscn" id="4_0ltqj"]
+[ext_resource type="PackedScene" uid="uid://brnd5o5qwcj2y" path="res://World/world_camera.tscn" id="4_3jlew"]
+[ext_resource type="PackedScene" uid="uid://ckiyh57un5obs" path="res://Assets/Interactables/door.tscn" id="5_0kljm"]
+[ext_resource type="Resource" uid="uid://dfqdx0vvh2u6v" path="res://World/Prolouge_ClockTowerOne.tres" id="6_d4f8u"]
+[ext_resource type="Texture2D" uid="uid://dxibw2ta2sr2p" path="res://Assets/Interactables/glow.png" id="7_yb7k4"]
+[ext_resource type="Script" path="res://World/UINode.gd" id="8_i2y88"]
+[ext_resource type="Texture2D" uid="uid://defaynhr3j4vk" path="res://dialogue/dialogue1.png" id="9_ws8tk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0f0qv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_yb7k4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Theme" id="Theme_30511"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lyw7m"]
+texture = ExtResource("9_ws8tk")
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_eeowi")
+
+[node name="Player" parent="." instance=ExtResource("2_qkquh")]
+position = Vector2(141, 257)
+
+[node name="Camera2D" parent="Player" index="3"]
+limit_left = 4
+limit_top = 0
+limit_right = 1800
+limit_bottom = 329
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+editor_draw_limits = true
+
+[node name="WorldCamera" parent="." instance=ExtResource("4_3jlew")]
+position = Vector2(2134, 459)
+
+[node name="Prologue" parent="." instance=ExtResource("4_0ltqj")]
+
+[node name="CameraLimits" parent="Prologue" index="3"]
+offset_left = 6.0
+offset_right = 1733.0
+offset_bottom = 324.0
+
+[node name="Prolog to Clock" parent="Prologue" index="14"]
+collision_layer = 8
+collision_mask = 2
+
+[node name="Door" parent="Prologue" instance=ExtResource("5_0kljm")]
+position = Vector2(1722, 282)
+new_level_path = "res://World/clock_tower_level_one.tscn"
+connection = ExtResource("6_d4f8u")
+
+[node name="AnimatedSprite2D" parent="Prologue/Door" index="0"]
+position = Vector2(-1103.24, -1127.27)
+scale = Vector2(5.77708, 5.835)
+sprite_frames = SubResource("SpriteFrames_0f0qv")
+animation = &"default"
+
+[node name="CollisionShape2D" parent="Prologue/Door" index="1"]
+position = Vector2(-9.09091, -300)
+
+[node name="LeftCast" parent="Prologue/Door" index="3"]
+scale = Vector2(427.94, 427.94)
+target_position = Vector2(-2, 0)
+
+[node name="UINode" type="CanvasLayer" parent="."]
+script = ExtResource("8_i2y88")
+
+[node name="PopupPanel" type="Panel" parent="UINode"]
+custom_minimum_size = Vector2(320, 180)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -90.0
+offset_right = 160.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = SubResource("Theme_30511")
+theme_override_styles/panel = SubResource("StyleBoxTexture_lyw7m")
+
+[node name="PopupLabel1" type="Label" parent="UINode/PopupPanel"]
+custom_minimum_size = Vector2(300, 140)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -70.0
+offset_right = 150.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="Prologue/Prolog to Clock" to="Prologue/Prolog to Clock" method="_on_body_entered"]
+
+[editable path="Player"]
+[editable path="Prologue"]
+[editable path="Prologue/Door"]

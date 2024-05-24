@@ -4,4 +4,5 @@
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer"]
 stream = ExtResource("1_py6q8")
-volume_db = -25.0
+volume_db = -10.0
+mix_target = 1

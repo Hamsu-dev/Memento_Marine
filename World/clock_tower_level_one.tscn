@@ -178,7 +178,7 @@ shader_parameter/source_size = Vector2(16, 16)
 size = Vector2(82, 90.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3b76k"]
-size = Vector2(182, 48)
+size = Vector2(71, 48)
 
 [node name="ClockTowerLevelOne" type="Node2D"]
 script = ExtResource("1_257nd")
@@ -2571,7 +2571,7 @@ texture = ExtResource("55_n2uxr")
 position = Vector2(1088, 11)
 
 [node name="CollisionShape2D" parent="Tutorial Msg Popups" index="0"]
-position = Vector2(9, -6)
+position = Vector2(64.5, -6)
 shape = SubResource("RectangleShape2D_3b76k")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

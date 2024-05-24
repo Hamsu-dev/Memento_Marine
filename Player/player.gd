@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var acceleration = 400  # Slightly lower for smoother acceleration
 @export var air_acceleration = 200  # Lower acceleration for air control
 @export var wall_jump_air_acceleration = 100  # Lower acceleration for air control during wall jump
-@export var max_speed = 250  # Increased for faster gameplay
+@export var max_speed = 100  # Increased for faster gameplay
 
 # Friction
 @export var friction = 1000  # Increased for quick stops
@@ -14,7 +14,7 @@ extends CharacterBody2D
 
 # Gravity
 @export var gravity = 500  # Reduced for lighter, longer jumps
-@export var jump_force = 250  # Increased for higher jumps
+@export var jump_force = 260  # Increased for higher jumps
 @export var max_fall_velocity = 500  # Increased for more realistic falls
 @export var drop_force = 600  # The downward force applied when crouching in air
 @export var wall_slide_gravity = 500  # Reduced gravity when sliding down a wall
@@ -36,11 +36,14 @@ extends CharacterBody2D
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var collision_shape_2d = $CollisionShape2D
 @onready var footstep_timer = $Footstep_timer
+@onready var death_timer = $Death_timer
+@onready var jump_timer = $Jump_timer
 
 # Music
 @onready var footsteps = $Footsteps
 @onready var bounce_sfx = $BounceSFX
 @onready var jump_sfx = $JumpSFX
+@onready var death_sfx = $DeathSFX
 
 # Variables
 var is_dropping = false
@@ -51,7 +54,9 @@ var wall_jumping = false
 var bounce_used = false
 var is_bouncing = false 
 var is_disabled = false
+var can_jump = true
 
+# Signals
 signal camera_enabled
 signal camera_disabled
 signal died
@@ -153,10 +158,12 @@ func apply_friction(delta):
 		velocity.x = move_toward(velocity.x, 0, air_friction * delta)
 
 func jump_check():
-	if (is_on_floor() or coyote_jump_timer.time_left > 0.0) and Input.is_action_just_pressed("up"):
+	if can_jump and (is_on_floor() or coyote_jump_timer.time_left > 0.0) and Input.is_action_just_pressed("up"):
 		velocity.y = -jump_force
 		coyote_jump_timer.stop()
 		jump_sfx.play()
+		can_jump = false
+		jump_timer.start()
 	elif on_wall and PowerUps.wall_jump_unlocked and Input.is_action_just_pressed("up"):  # Check global variable
 		velocity.y = -wall_jump_force
 		velocity.x = wall_jump_push_force * wall_direction
@@ -187,11 +194,14 @@ func bounce():
 		is_bouncing = true
 
 func die():
-	died.emit()
+	is_disabled = true
+	death_sfx.play()
+	sprite_2d.visible = false
 	animated_sprite_2d.visible = true
 	animated_sprite_2d.play("die")
 	collision_shape_2d.disabled = true
-	
+	death_timer.start()
+
 func reset_state():
 	velocity = Vector2.ZERO
 	
@@ -238,3 +248,12 @@ func update_animations(input_axis):
 
 func _on_animated_sprite_2d_animation_finished():
 	animated_sprite_2d.visible = false
+
+
+func _on_death_timer_timeout():
+	died.emit()
+
+
+func _on_jump_timer_timeout():
+	can_jump = true
+	

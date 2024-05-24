@@ -13,6 +13,7 @@ extends Node
 var has_key = false
 
 func _ready():
+	collision_shape_2d.disabled = true
 	key.key_collected.connect(_on_Key_collected)
 	animated_sprite_2d.play("close")
 	popup_panel.hide()

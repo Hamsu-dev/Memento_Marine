@@ -6,6 +6,7 @@ extends Node2D
 
 
 func _ready():
+	collision_shape_2d.disabled = true
 	animated_sprite_2d.play("close")
 	collision_shape_2d.disabled = true
 

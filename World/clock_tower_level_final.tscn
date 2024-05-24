@@ -49,13 +49,13 @@
 [ext_resource type="Shader" path="res://World/fog.gdshader" id="45_uyoq6"]
 [ext_resource type="Shader" path="res://World/GodRay.gdshader" id="46_h6otv"]
 [ext_resource type="PackedScene" uid="uid://brnd5o5qwcj2y" path="res://World/world_camera.tscn" id="47_nvp4u"]
-[ext_resource type="Resource" uid="uid://bwn3blrbvj2ah" path="res://World/BouncyOne_Final.tres" id="48_ijbuy"]
-[ext_resource type="PackedScene" uid="uid://ckiyh57un5obs" path="res://Assets/Interactables/door.tscn" id="48_t4jjd"]
 [ext_resource type="PackedScene" uid="uid://c8pfinyhx3py8" path="res://World/camera_limits.tscn" id="50_0ofth"]
 [ext_resource type="PackedScene" uid="uid://df5fy7orxnlq1" path="res://door_to_challenge.tscn" id="51_r5h4s"]
 [ext_resource type="Texture2D" uid="uid://70m61a1xdwa1" path="res://EnviroSprites/GroundandBG/glow.png" id="52_1pymy"]
 [ext_resource type="Shader" path="res://World/ClockMemento.gdshader" id="52_yv8gd"]
+[ext_resource type="PackedScene" uid="uid://ckiyh57un5obs" path="res://Assets/Interactables/door.tscn" id="55_abisa"]
 [ext_resource type="Script" path="res://World/gong_trig.gd" id="56_c03hu"]
+[ext_resource type="Resource" uid="uid://bwn3blrbvj2ah" path="res://World/BouncyOne_Final.tres" id="56_g5g0q"]
 
 [sub_resource type="Gradient" id="Gradient_ilvig"]
 offsets = PackedFloat32Array(0, 0.649351)
@@ -2389,9 +2389,6 @@ scale = Vector2(1, -1)
 [node name="PlatformFolder" type="Node2D" parent="."]
 position = Vector2(132, 0)
 
-[node name="Platform8" parent="PlatformFolder" instance=ExtResource("39_xkxeu")]
-position = Vector2(1042, 36)
-
 [node name="Platform9" parent="PlatformFolder" instance=ExtResource("39_xkxeu")]
 position = Vector2(891, 36)
 
@@ -2411,7 +2408,7 @@ position = Vector2(164, 325)
 position = Vector2(249, 106)
 
 [node name="Platform14" parent="PlatformFolder" instance=ExtResource("39_xkxeu")]
-position = Vector2(296, 230)
+position = Vector2(238.625, 248)
 
 [node name="Platform15" parent="PlatformFolder" instance=ExtResource("40_obea5")]
 position = Vector2(754, 254)
@@ -2528,14 +2525,6 @@ libraries = {
 "": SubResource("AnimationLibrary_cvqyn")
 }
 
-[node name="Door" parent="." instance=ExtResource("48_t4jjd")]
-position = Vector2(417, 51)
-new_level_path = "res://World/bouncy_jump_challenge.tscn"
-connection = ExtResource("48_ijbuy")
-
-[node name="RightCast" parent="Door" index="2"]
-target_position = Vector2(100, 0)
-
 [node name="CameraLimits" parent="." instance=ExtResource("50_0ofth")]
 anchors_preset = 0
 anchor_right = 0.0
@@ -2572,12 +2561,15 @@ script = ExtResource("56_c03hu")
 position = Vector2(469.5, 36)
 shape = SubResource("RectangleShape2D_k01l8")
 
+[node name="Door" parent="." instance=ExtResource("55_abisa")]
+position = Vector2(420, 52)
+new_level_path = "res://World/bouncy_jump_challenge.tscn"
+connection = ExtResource("56_g5g0q")
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
-[connection signal="animation_finished" from="Door/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="gong_trig" to="gong_trig" method="_on_body_entered"]
 
 [editable path="MovingPlatformUpDown"]
 [editable path="MovingPlatform3"]
 [editable path="MovingPlatform2"]
-[editable path="Door"]
 [editable path="Door_to_challenge"]

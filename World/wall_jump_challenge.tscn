@@ -481,6 +481,12 @@ position = Vector2(238, -89.1732)
 scale = Vector2(0.260192, 0.260192)
 texture = ExtResource("6_bxnni")
 
+[node name="Platform" parent="." instance=ExtResource("5_hgx0w")]
+position = Vector2(238, 83)
+
+[node name="Platform2" parent="." instance=ExtResource("5_hgx0w")]
+position = Vector2(311, 145)
+
 [connection signal="body_entered" from="Door" to="." method="_on_door_body_entered"]
 [connection signal="animation_finished" from="Door/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 

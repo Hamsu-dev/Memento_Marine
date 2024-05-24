@@ -1,18 +1,8 @@
 extends Area2D
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
-func _on_body_entered(body):
-	print("body entered")
-	if body.has_method("toMenu"):
-		print("end of credits")
-		body.toMenu()
+func _on_area_entered(area):
+	if area.is_in_group("EndCreds"):
+		print("End credits reached the area. Changing scene to Main Menu.")
+		get_tree().change_scene_to_file("res://Menu/MainMenu.tscn")
+		#SceneManager.change_scene("res://Menu/MainMenu.tscn")

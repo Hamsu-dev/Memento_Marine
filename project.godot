@@ -30,7 +30,6 @@ DoorOpen="*res://Assets/Music/music_scenes/doorOpen.tscn"
 RumblingSFX="*res://Assets/Music/music_scenes/Rumbling.tscn"
 FootSteps="*res://Assets/Music/music_scenes/FootSteps.tscn"
 GongSfx="*res://Assets/Music/music_scenes/Gong_SFX.tscn"
-GameManager="*res://Singleton/GameManager.gd"
 BossBgm="*res://Assets/Music/music_scenes/BossBGM.tscn"
 
 [display]

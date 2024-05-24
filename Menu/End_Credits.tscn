@@ -26,11 +26,10 @@ grow_vertical = 2
 script = ExtResource("1_4h1oe")
 
 [node name="EndOfCreds" type="Area2D" parent="."]
-collision_mask = 8
 script = ExtResource("8_khlld")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EndOfCreds"]
-position = Vector2(724.5, 1137.75)
+position = Vector2(725, 1218)
 shape = SubResource("RectangleShape2D_aqa5i")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -147,7 +146,7 @@ text = "Thank you for playing!"
 [node name="sfx" type="Area2D" parent="Credits" groups=["EndCreds"]]
 script = ExtResource("7_hkjri")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Credits/sfx" groups=["EndCreds"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Credits/sfx"]
 position = Vector2(530, -790)
 shape = SubResource("CircleShape2D_ekyy0")
 
@@ -165,4 +164,4 @@ theme_override_fonts/font = ExtResource("3_8ujok")
 theme_override_font_sizes/font_size = 266
 text = "Shyamal"
 
-[connection signal="body_entered" from="EndOfCreds" to="EndOfCreds" method="_on_body_entered"]
+[connection signal="area_entered" from="EndOfCreds" to="EndOfCreds" method="_on_area_entered"]

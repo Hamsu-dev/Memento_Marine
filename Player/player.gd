@@ -35,6 +35,10 @@ extends CharacterBody2D
 @onready var sprite_2d = $Sprite2D
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var collision_shape_2d = $CollisionShape2D
+@onready var footstep_timer = $footstep_timer
+@onready var footsteps = $footsteps
+@onready var jump = $jump
+@onready var bouncesfx = $bouncesfx
 
 # Variables
 var is_dropping = false
@@ -75,6 +79,7 @@ func _physics_process(delta):
 	# Check if player is dropping and on the floor to bounce
 	if is_on_floor() and is_dropping:
 		bounce()
+		bouncesfx.play()
 
 	# Reset is_dropping and bounce_used variables when landing on the floor
 	if is_on_floor():
@@ -149,12 +154,14 @@ func jump_check():
 	if (is_on_floor() or coyote_jump_timer.time_left > 0.0) and Input.is_action_just_pressed("up"):
 		velocity.y = -jump_force
 		coyote_jump_timer.stop()
+		jump.play()
 	elif on_wall and PowerUps.wall_jump_unlocked and Input.is_action_just_pressed("up"):  # Check global variable
 		velocity.y = -wall_jump_force
 		velocity.x = wall_jump_push_force * wall_direction
 		sprite_2d.flip_h = wall_direction < 0
 		wall_jumping = true
 		wall_sliding = false
+		jump.play()
 	else:
 		wall_jumping = false
 	if Input.is_action_just_pressed("down") and not is_on_floor():
@@ -201,6 +208,7 @@ func update_animations(input_axis):
 	elif wall_sliding and not Input.is_action_pressed("up"): 
 		if animation_player.current_animation != "wall_slide":
 			animation_player.play("wall_slide")
+			
 		sprite_2d.flip_h = wall_direction < 0  
 	elif is_dropping:
 		if animation_player.current_animation != "crouch":
@@ -209,17 +217,21 @@ func update_animations(input_axis):
 	elif not on_ground:
 		if velocity.y < 0:
 			animation_player.play("jump")
-			FootSteps.stop()
+
 		else:
 			animation_player.play("fall")
-			FootSteps.stop()
+
 	else:
 		if is_moving(input_axis):
 			animation_player.play("run")
+			if footstep_timer.time_left <= 0:
+				footsteps.pitch_scale = randf_range(0.8,1.2)
+				footsteps.play()
+				footstep_timer.start(0.4)
 			
 		else:
 			animation_player.play("idle")
-			FootSteps.stop()
+
 
 
 func _on_animated_sprite_2d_animation_finished():

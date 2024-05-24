@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://ctsovcie5ppuq"]
+[gd_scene load_steps=31 format=3 uid="uid://ctsovcie5ppuq"]
 
 [ext_resource type="PackedScene" uid="uid://b2kioq0ibvkx8" path="res://Player/player.tscn" id="1_iihlp"]
 [ext_resource type="Texture2D" uid="uid://dw8gm7hqp7bug" path="res://EnviroSprites/Buildings/ColumnsEtc/Separator.png" id="2_ipswc"]
@@ -27,9 +27,26 @@
 [ext_resource type="PackedScene" path="res://water_shader.tscn" id="25_qpour"]
 [ext_resource type="PackedScene" uid="uid://c8pfinyhx3py8" path="res://World/camera_limits.tscn" id="26_cy4gq"]
 [ext_resource type="Texture2D" uid="uid://dxibw2ta2sr2p" path="res://Assets/Interactables/glow.png" id="27_i6el8"]
+[ext_resource type="Shader" path="res://World/GodRay.gdshader" id="28_55i1i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o3mbq"]
 size = Vector2(98.5585, 4215.46)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vvqli"]
+shader = ExtResource("28_55i1i")
+shader_parameter/angle = -0.3
+shader_parameter/position = -0.2
+shader_parameter/spread = 0.5
+shader_parameter/cutoff = 0.1
+shader_parameter/falloff = 0.2
+shader_parameter/edge_fade = 0.15
+shader_parameter/speed = 1.0
+shader_parameter/ray1_density = 8.0
+shader_parameter/ray2_density = 30.0
+shader_parameter/ray2_intensity = 0.3
+shader_parameter/color = Color(1, 0.9, 0.65, 0.8)
+shader_parameter/hdr = false
+shader_parameter/seed = 5.0
 
 [node name="FinalChallenge" type="Node2D"]
 
@@ -1182,5 +1199,17 @@ position = Vector2(16.0773, -405.328)
 rotation = -0.165386
 scale = Vector2(-0.326, 0.326)
 texture = ExtResource("6_jg8re")
+
+[node name="God Ray" type="Node" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="God Ray"]
+material = SubResource("ShaderMaterial_vvqli")
+offset_left = 142.0
+offset_top = -627.0
+offset_right = 441.0
+offset_bottom = -34.0
+rotation = 0.2662
+scale = Vector2(0.954482, 1.03669)
+metadata/_edit_use_anchors_ = true
 
 [editable path="Water Shader"]

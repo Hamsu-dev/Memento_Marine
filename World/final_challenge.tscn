@@ -24,7 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://lkicqyhl3beh" path="res://EnviroSprites/Buildings/Decorative/buttress.png" id="22_1j3o6"]
 [ext_resource type="Texture2D" uid="uid://bsup3gbeths4c" path="res://EnviroSprites/Buildings/Decorative/lamp 2.png" id="23_k5ne3"]
 [ext_resource type="Texture2D" uid="uid://cj20hjygi2qe1" path="res://Menu/diagrams/run.png" id="24_ip4hv"]
-[ext_resource type="PackedScene" path="res://water_shader.tscn" id="25_qpour"]
+[ext_resource type="PackedScene" uid="uid://cndekko4w8xru" path="res://water_shader.tscn" id="25_qpour"]
 [ext_resource type="PackedScene" uid="uid://c8pfinyhx3py8" path="res://World/camera_limits.tscn" id="26_cy4gq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o3mbq"]

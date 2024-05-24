@@ -35,7 +35,7 @@ func _on_Door_interact():
 		message = "It's locked. There must be a key nearby."
 	else:
 		message = "Door unlocked."
-	show_message(message, player.global_position + Vector2(0, -50)) # Adjust the offset as needed
+	show_message(message, player.global_position + Vector2(-1000, 50)) # Adjust the offset as needed
 
 	
 func _on_animated_sprite_2d_animation_finished():
@@ -59,22 +59,18 @@ func _on_Key_collected():
 
 func show_cutscene():
 	animation_player.play("cutscene")
-	var player = MainInstances.player as Player
 	if player:
 		player.disable()  # This will emit the camera_disabled signal
 
 func _on_camera_disabled():
-	print("Player camera disabled")
 	if world_camera:
 		world_camera.make_current()  # Activate world camera
 
 func _on_animation_player_animation_finished(anim_name):
 	if anim_name == "cutscene":
-		var player = MainInstances.player as Player
 		if player:
 			player.enable()  # This will emit the camera_enabled signal
 
 func _on_camera_enabled():
-	print("Player camera enabled")
 	if player_camera:
 		player_camera.make_current()  # Activate player camera

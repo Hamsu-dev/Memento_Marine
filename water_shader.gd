@@ -8,4 +8,3 @@ extends Node2D
 func _process(delta):
 	water.position.y -= move_speed * delta
 	water_shader.position.y -= move_speed * delta
-	print("Updated Sprite Position: y =", water.position.y)

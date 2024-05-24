@@ -11,7 +11,6 @@ extends Area2D
 @onready var left_cast = $LeftCast
 @onready var bgm_world = $"../../bgm_world"
 
-
 enum DoorState { CLOSED, OPEN }
 
 var has_key = false

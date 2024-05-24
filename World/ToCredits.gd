@@ -18,3 +18,4 @@ func _on_body_entered(body):
 		BossBgm.stop()
 		RumblingSFX.stop()
 		ClockTowerAmbience.stop()
+		GongSfx.stop()

@@ -11,12 +11,6 @@ extends Node
 func _ready():
 	animated_sprite_2d.play("close")
 
-func _on_Button_pressed():
-	godray()
-
-func godray():
-	color_rect.visible = true
-
 func _on_animated_sprite_2d_animation_finished():
 	animated_sprite_2d.play("close")
 	collision_shape_2d.disabled = true

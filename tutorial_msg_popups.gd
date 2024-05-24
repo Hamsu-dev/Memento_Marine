@@ -1,10 +1,17 @@
 extends Area2D
 
+signal tutorial_interact
+
+var player_in_area = false
+
 func _on_body_entered(body):
-	if body is Player:
-		var message = ""
-		message = "Press [E] to interact with the door"
+	if body.is_in_group("Player"):
+		player_in_area = true
+
+func _on_body_exited(body):
+	if body.is_in_group("Player"):
+		player_in_area = false
 		
-		# Show the notification message
-		var ui_manager = get_tree().root.get_node("World/UINode")
-		ui_manager.show_message(message, body.global_position + Vector2(-160, -100))
+func _process(delta):
+	if player_in_area:
+		tutorial_interact.emit()

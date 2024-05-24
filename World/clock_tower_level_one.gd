@@ -35,7 +35,7 @@ func _on_Door_interact():
 		message = "It's locked. There must be a key nearby."
 	else:
 		message = "Door unlocked."
-	show_message(message, player.global_position + Vector2(-1000, 100)) # Adjust the offset as needed
+	show_message(message, player.global_position + Vector2(-750,10)) # Adjust the offset as needed
 
 	
 func _on_animated_sprite_2d_animation_finished():

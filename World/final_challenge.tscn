@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://ctsovcie5ppuq"]
+[gd_scene load_steps=29 format=3 uid="uid://ctsovcie5ppuq"]
 
 [ext_resource type="PackedScene" uid="uid://b2kioq0ibvkx8" path="res://Player/player.tscn" id="1_iihlp"]
 [ext_resource type="Texture2D" uid="uid://dw8gm7hqp7bug" path="res://EnviroSprites/Buildings/ColumnsEtc/Separator.png" id="2_ipswc"]
@@ -24,8 +24,9 @@
 [ext_resource type="Texture2D" uid="uid://lkicqyhl3beh" path="res://EnviroSprites/Buildings/Decorative/buttress.png" id="22_1j3o6"]
 [ext_resource type="Texture2D" uid="uid://bsup3gbeths4c" path="res://EnviroSprites/Buildings/Decorative/lamp 2.png" id="23_k5ne3"]
 [ext_resource type="Texture2D" uid="uid://cj20hjygi2qe1" path="res://Menu/diagrams/run.png" id="24_ip4hv"]
-[ext_resource type="PackedScene" uid="uid://cndekko4w8xru" path="res://water_shader.tscn" id="25_qpour"]
+[ext_resource type="PackedScene" path="res://water_shader.tscn" id="25_qpour"]
 [ext_resource type="PackedScene" uid="uid://c8pfinyhx3py8" path="res://World/camera_limits.tscn" id="26_cy4gq"]
+[ext_resource type="Texture2D" uid="uid://dxibw2ta2sr2p" path="res://Assets/Interactables/glow.png" id="27_i6el8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o3mbq"]
 size = Vector2(98.5585, 4215.46)
@@ -159,10 +160,11 @@ z_index = -1
 [node name="WallPlainTextured" type="Sprite2D" parent="BG/frontwalls"]
 modulate = Color(0.691357, 0.691357, 0.691357, 1)
 self_modulate = Color(0.730751, 0.119225, 0.361779, 1)
-position = Vector2(-67, -173)
+position = Vector2(386, -146)
 rotation = 1.57079
 scale = Vector2(0.564262, 0.564262)
 texture = ExtResource("12_in5lp")
+offset = Vector2(-47.8552, 802.818)
 
 [node name="WallPlainTextured2" type="Sprite2D" parent="BG/frontwalls"]
 modulate = Color(0.691357, 0.691357, 0.691357, 1)
@@ -207,10 +209,11 @@ texture = ExtResource("12_in5lp")
 [node name="WallPlainTextured7" type="Sprite2D" parent="BG/frontwalls"]
 modulate = Color(0.691357, 0.691357, 0.691357, 1)
 self_modulate = Color(0.730751, 0.119225, 0.361779, 1)
-position = Vector2(412.671, -182.141)
+position = Vector2(386, -146)
 rotation = 1.57079
 scale = Vector2(0.564262, 0.564262)
 texture = ExtResource("12_in5lp")
+offset = Vector2(-64.0498, -47.2674)
 
 [node name="WallPlainTextured8" type="Sprite2D" parent="BG/frontwalls"]
 modulate = Color(0.691357, 0.691357, 0.691357, 1)
@@ -259,6 +262,24 @@ position = Vector2(172, 1212)
 rotation = 3.14159
 scale = Vector2(0.724262, 0.564262)
 texture = ExtResource("12_in5lp")
+
+[node name="WallPlainTextured14" type="Sprite2D" parent="BG/frontwalls"]
+modulate = Color(0.691357, 0.691357, 0.691357, 1)
+self_modulate = Color(0.730751, 0.119225, 0.361779, 1)
+position = Vector2(386, -411)
+rotation = 1.57079
+scale = Vector2(0.564262, 0.564262)
+texture = ExtResource("12_in5lp")
+offset = Vector2(-47.8552, 802.818)
+
+[node name="WallPlainTextured15" type="Sprite2D" parent="BG/frontwalls"]
+modulate = Color(0.691357, 0.691357, 0.691357, 1)
+self_modulate = Color(0.730751, 0.119225, 0.361779, 1)
+position = Vector2(386, -411)
+rotation = 1.57079
+scale = Vector2(0.564262, 0.564262)
+texture = ExtResource("12_in5lp")
+offset = Vector2(-64.0498, -47.2674)
 
 [node name="BackWalls" type="Node2D" parent="BG"]
 z_index = -10
@@ -680,21 +701,25 @@ texture = ExtResource("13_smdmh")
 offset = Vector2(-93.6534, 97.5356)
 
 [node name="BigTriangleRoof" type="Sprite2D" parent="BG"]
+z_index = -2
 position = Vector2(176, -425)
 scale = Vector2(0.404484, 0.324481)
 texture = ExtResource("14_2fme6")
 
 [node name="GutterMid" type="Sprite2D" parent="BG"]
+z_index = -2
 position = Vector2(70, -314)
 scale = Vector2(0.611717, 0.611717)
 texture = ExtResource("15_0r4nw")
 
 [node name="GutterMid2" type="Sprite2D" parent="BG"]
+z_index = -2
 position = Vector2(191, -314)
 scale = Vector2(0.611717, 0.611717)
 texture = ExtResource("15_0r4nw")
 
 [node name="GutterMid3" type="Sprite2D" parent="BG"]
+z_index = -2
 position = Vector2(311, -314)
 scale = Vector2(0.611717, 0.611717)
 texture = ExtResource("15_0r4nw")
@@ -1135,5 +1160,27 @@ offset_left = 10.0
 offset_top = -632.0
 offset_right = 330.0
 offset_bottom = 1153.0
+
+[node name="Ceiling2" type="Node2D" parent="."]
+
+[node name="Glow" type="Sprite2D" parent="Ceiling2"]
+position = Vector2(182, -344)
+rotation = -1.57079
+scale = Vector2(0.331627, 0.331627)
+texture = ExtResource("27_i6el8")
+
+[node name="Ceiling" type="Sprite2D" parent="Ceiling2"]
+modulate = Color(0.403922, 0.101961, 0.258824, 1)
+position = Vector2(321.077, -402.328)
+rotation = 0.311228
+scale = Vector2(0.326246, 0.326246)
+texture = ExtResource("6_jg8re")
+
+[node name="Ceiling2" type="Sprite2D" parent="Ceiling2"]
+modulate = Color(0.403922, 0.101961, 0.258824, 1)
+position = Vector2(16.0773, -405.328)
+rotation = -0.165386
+scale = Vector2(-0.326, 0.326)
+texture = ExtResource("6_jg8re")
 
 [editable path="Water Shader"]

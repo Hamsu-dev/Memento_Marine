@@ -26,12 +26,13 @@ extends CharacterBody2D
 
 # Onready variables
 @onready var coyote_jump_timer = $CoyoteJumpTimer
-@onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var top_right = $Raycast/TopRight
 @onready var bottom_right = $Raycast/BottomRight
 @onready var top_left = $Raycast/TopLeft
 @onready var bottom_left = $Raycast/BottomLeft
 @onready var player_camera = $Camera2D
+@onready var animation_player = $AnimationPlayer
+@onready var sprite_2d = $Sprite2D
 
 # Variables
 var is_dropping = false
@@ -149,7 +150,7 @@ func jump_check():
 	elif on_wall and PowerUps.wall_jump_unlocked and Input.is_action_just_pressed("up"):  # Check global variable
 		velocity.y = -wall_jump_force
 		velocity.x = wall_jump_push_force * wall_direction
-		animated_sprite_2d.flip_h = wall_direction < 0
+		sprite_2d.flip_h = wall_direction < 0
 		wall_jumping = true
 		wall_sliding = false
 	else:
@@ -161,11 +162,11 @@ func jump_check():
 
 func start_drop():
 	if is_on_floor():
-		animated_sprite_2d.play("crouch")
+		animation_player.play("crouch")
 	else:
 		velocity.y = drop_force
 		is_dropping = true
-		animated_sprite_2d.play("crouch")  # Assume this is your falling fast animation
+		animation_player.play("crouch")  # Assume this is your falling fast animation
 
 func bounce():
 	if PowerUps.bounce_unlocked and not bounce_used:
@@ -178,35 +179,33 @@ func update_animations(input_axis):
 	var on_ground = is_on_floor()
 
 	if input_axis > 0:
-		animated_sprite_2d.flip_h = false
+		sprite_2d.flip_h = false
 	elif input_axis < 0:
-		animated_sprite_2d.flip_h = true
+		sprite_2d.flip_h = true
 
 	if wall_jumping:  
-		if animated_sprite_2d.animation != "walljump":
-			animated_sprite_2d.play("walljump")
-		animated_sprite_2d.flip_h = wall_direction < 0 
+		if animation_player.animation != "walljump":
+			animation_player.play("walljump")
+		animation_player.flip_h = wall_direction < 0 
 	elif wall_sliding and not Input.is_action_pressed("up"): 
-		if animated_sprite_2d.animation != "wallslide":
-			animated_sprite_2d.play("wallslide")
-		animated_sprite_2d.flip_h = wall_direction < 0  
+		if animation_player.animation != "wallslide":
+			animation_player.play("wallslide")
+		animation_player.flip_h = wall_direction < 0  
 	elif is_dropping:
-		if animated_sprite_2d.animation != "crouch":
-			animated_sprite_2d.play("crouch")
+		if animation_player.animation != "crouch":
+			animation_player.play("crouch")
 
 	elif not on_ground:
 		if velocity.y < 0:
-			animated_sprite_2d.play("jump")
+			animation_player.play("jump")
 			FootSteps.stop()
 		else:
-			animated_sprite_2d.play("fall")
+			animation_player.play("fall")
 			FootSteps.stop()
 	else:
 		if is_moving(input_axis):
-			animated_sprite_2d.play("run")
-
+			animation_player.play("run")
 			
 		else:
-			animated_sprite_2d.play("idle")
-
-			FootSteps.stop()			
+			animation_player.play("idle")
+			FootSteps.stop()

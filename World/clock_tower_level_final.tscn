@@ -2433,7 +2433,6 @@ scale = Vector2(0.28282, 0.28282)
 
 [node name="AnimatableBody2D" parent="MovingPlatformUpDown" index="0"]
 position = Vector2(0, 163.043)
-scale = Vector2(1, 1)
 
 [node name="Path2D" parent="MovingPlatformUpDown" index="2"]
 position = Vector2(0, 163.043)

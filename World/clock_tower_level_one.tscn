@@ -1,6 +1,6 @@
 [gd_scene load_steps=73 format=3 uid="uid://dhwsckm1ag60"]
 
-[ext_resource type="PackedScene" uid="uid://cyhg841lp1wjc" path="res://Assets/Interactables/finaldoor.tscn" id="1_3nmw7"]
+[ext_resource type="PackedScene" path="res://Assets/Interactables/finaldoor.tscn" id="1_3nmw7"]
 [ext_resource type="Script" path="res://World/clock_tower_level_one.gd" id="1_257nd"]
 [ext_resource type="PackedScene" uid="uid://cjyikkfta6ce3" path="res://EnviroSprites/GroundandBG/ground.tscn" id="4_evsy5"]
 [ext_resource type="Texture2D" uid="uid://pdk6rv3xc122" path="res://EnviroSprites/Buildings/Walls/WallStriped.png" id="5_jibu0"]

@@ -1,0 +1,163 @@
+[gd_scene load_steps=11 format=3 uid="uid://h2p8unnao6tq"]
+
+[ext_resource type="Script" path="res://Menu/Move_Creds.gd" id="1_4h1oe"]
+[ext_resource type="Texture2D" uid="uid://mebl30grr3mc" path="res://Assets/MenuAssets/Credit_Assets/Artist.png" id="2_u8aex"]
+[ext_resource type="FontFile" uid="uid://dfpq7q5xymp53" path="res://Assets/MenuAssets/Roman_New_Times.otf" id="3_8ujok"]
+[ext_resource type="Texture2D" uid="uid://dlgyx2o8m3feq" path="res://Assets/MenuAssets/Credit_Assets/Music.png" id="4_y1287"]
+[ext_resource type="Texture2D" uid="uid://c1p5wx7eaxgq1" path="res://Assets/MenuAssets/Credit_Assets/Programmers.png" id="5_fgved"]
+[ext_resource type="Texture2D" uid="uid://cqsa35bhb8kos" path="res://Assets/MenuAssets/Credit_Assets/Writers.png" id="6_y1smh"]
+[ext_resource type="Texture2D" uid="uid://c17kc5g5u0rh0" path="res://Assets/MenuAssets/Credit_Assets/SFX.png" id="7_jiany"]
+[ext_resource type="Script" path="res://Menu/EndOfCreds.gd" id="8_khlld"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ekyy0"]
+radius = 105.019
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aqa5i"]
+size = Vector2(1163, 87)
+
+[node name="EndCredits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4h1oe")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1159.0
+offset_bottom = 652.0
+color = Color(0, 0, 0, 1)
+
+[node name="Credits" type="Control" parent="."]
+anchors_preset = 0
+offset_left = -170.0
+offset_top = -358.0
+offset_right = -130.0
+offset_bottom = -318.0
+
+[node name="Artist" type="Sprite2D" parent="Credits"]
+position = Vector2(516, -68)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("2_u8aex")
+
+[node name="Label" type="Label" parent="Credits/Artist"]
+offset_left = 1275.0
+offset_top = -408.333
+offset_right = 1875.0
+offset_bottom = 668.667
+theme_override_fonts/font = ExtResource("3_8ujok")
+theme_override_font_sizes/font_size = 266
+text = "Zho
+
+Anabel
+
+"
+
+[node name="Label2" type="Label" parent="Credits/Artist"]
+offset_left = 2200.0
+offset_top = -416.667
+offset_right = 2948.0
+offset_bottom = 390.333
+theme_override_fonts/font = ExtResource("3_8ujok")
+theme_override_font_sizes/font_size = 266
+text = "Thesanya
+
+Paige"
+
+[node name="Music" type="Sprite2D" parent="Credits"]
+position = Vector2(513, -427)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("4_y1287")
+
+[node name="Label3" type="Label" parent="Credits/Music"]
+offset_left = 1133.33
+offset_top = -358.333
+offset_right = 1736.33
+offset_bottom = 448.667
+theme_override_fonts/font = ExtResource("3_8ujok")
+theme_override_font_sizes/font_size = 266
+text = "Allyson
+
+Anna"
+
+[node name="Programmers" type="Sprite2D" parent="Credits"]
+position = Vector2(513, -249)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("5_fgved")
+
+[node name="Label2" type="Label" parent="Credits/Programmers"]
+offset_left = 1225.0
+offset_top = -383.333
+offset_right = 1838.0
+offset_bottom = 423.667
+theme_override_fonts/font = ExtResource("3_8ujok")
+theme_override_font_sizes/font_size = 266
+text = "William
+
+Sam"
+
+[node name="Writers" type="Sprite2D" parent="Credits"]
+position = Vector2(519, -601)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("6_y1smh")
+
+[node name="Label5" type="Label" parent="Credits/Writers"]
+offset_left = 1150.0
+offset_top = -400.001
+offset_right = 1792.0
+offset_bottom = 406.999
+theme_override_fonts/font = ExtResource("3_8ujok")
+theme_override_font_sizes/font_size = 266
+text = "Paige
+
+Shyamal"
+
+[node name="Label" type="Label" parent="Credits"]
+layout_mode = 0
+offset_left = 393.0
+offset_top = 187.0
+offset_right = 1127.0
+offset_bottom = 337.0
+theme_override_fonts/font = ExtResource("3_8ujok")
+theme_override_font_sizes/font_size = 150
+text = "You've Escaped!
+"
+
+[node name="Label2" type="Label" parent="Credits"]
+layout_mode = 0
+offset_left = 415.0
+offset_top = 50.0
+offset_right = 1149.0
+offset_bottom = 200.0
+theme_override_fonts/font = ExtResource("3_8ujok")
+theme_override_font_sizes/font_size = 100
+text = "Thank you for playing!"
+
+[node name="sfx" type="Area2D" parent="Credits" groups=["EndCreds"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Credits/sfx"]
+position = Vector2(530, -790)
+shape = SubResource("CircleShape2D_ekyy0")
+
+[node name="Sfx" type="Sprite2D" parent="Credits/sfx"]
+position = Vector2(528, -781)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("7_jiany")
+
+[node name="Label4" type="Label" parent="Credits/sfx/Sfx"]
+offset_left = 1116.67
+offset_top = -74.999
+offset_right = 1758.67
+offset_bottom = 458.001
+theme_override_fonts/font = ExtResource("3_8ujok")
+theme_override_font_sizes/font_size = 266
+text = "Shyamal"
+
+[node name="EndOfCreds" type="Area2D" parent="."]
+script = ExtResource("8_khlld")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndOfCreds"]
+position = Vector2(580, 750)
+shape = SubResource("RectangleShape2D_aqa5i")

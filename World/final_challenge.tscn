@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://ctsovcie5ppuq"]
+[gd_scene load_steps=33 format=3 uid="uid://ctsovcie5ppuq"]
 
 [ext_resource type="PackedScene" uid="uid://b2kioq0ibvkx8" path="res://Player/player.tscn" id="1_iihlp"]
 [ext_resource type="Texture2D" uid="uid://dw8gm7hqp7bug" path="res://EnviroSprites/Buildings/ColumnsEtc/Separator.png" id="2_ipswc"]
@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://c8pfinyhx3py8" path="res://World/camera_limits.tscn" id="26_cy4gq"]
 [ext_resource type="Texture2D" uid="uid://dxibw2ta2sr2p" path="res://Assets/Interactables/glow.png" id="27_i6el8"]
 [ext_resource type="Shader" path="res://World/GodRay.gdshader" id="28_55i1i"]
+[ext_resource type="Script" path="res://World/ToCredits.gd" id="29_ocs63"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o3mbq"]
 size = Vector2(98.5585, 4215.46)
@@ -47,6 +48,9 @@ shader_parameter/ray2_intensity = 0.3
 shader_parameter/color = Color(1, 0.9, 0.65, 0.8)
 shader_parameter/hdr = false
 shader_parameter/seed = 5.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p4nsj"]
+size = Vector2(243.5, 132)
 
 [node name="FinalChallenge" type="Node2D"]
 
@@ -1211,5 +1215,14 @@ offset_bottom = -34.0
 rotation = 0.2662
 scale = Vector2(0.954482, 1.03669)
 metadata/_edit_use_anchors_ = true
+
+[node name="ToCredits" type="Area2D" parent="."]
+script = ExtResource("29_ocs63")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToCredits"]
+position = Vector2(174, -432)
+shape = SubResource("RectangleShape2D_p4nsj")
+
+[connection signal="body_entered" from="ToCredits" to="ToCredits" method="_on_body_entered"]
 
 [editable path="Water Shader"]

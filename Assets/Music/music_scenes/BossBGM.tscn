@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://r7nub3jccsw5"]
+
+[ext_resource type="AudioStream" uid="uid://t1ijv0k6h3ax" path="res://Assets/Music/chase_loopable.wav" id="1_na2wk"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_na2wk")
+volume_db = -10.0
+bus = &"BGM"

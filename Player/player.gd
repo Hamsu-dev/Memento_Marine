@@ -185,7 +185,7 @@ func update_animations(input_axis):
 
 	if wall_jumping:  
 		if animation_player.current_animation != "walljump":
-			animation_player.play("walljump")
+			animation_player.play("wall_jump")
 		sprite_2d.flip_h = wall_direction < 0 
 	elif wall_sliding and not Input.is_action_pressed("up"): 
 		if animation_player.current_animation != "wall_slide":

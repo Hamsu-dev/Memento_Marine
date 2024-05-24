@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://ddj6xpgoad76s"]
+[gd_scene load_steps=74 format=3 uid="uid://ddj6xpgoad76s"]
 
 [ext_resource type="Script" path="res://World/clock_tower_level_final.gd" id="1_mcs3i"]
 [ext_resource type="PackedScene" uid="uid://cjyikkfta6ce3" path="res://EnviroSprites/GroundandBG/ground.tscn" id="4_ll56c"]
@@ -55,6 +55,7 @@
 [ext_resource type="PackedScene" uid="uid://df5fy7orxnlq1" path="res://door_to_challenge.tscn" id="51_r5h4s"]
 [ext_resource type="Texture2D" uid="uid://70m61a1xdwa1" path="res://EnviroSprites/GroundandBG/glow.png" id="52_1pymy"]
 [ext_resource type="Shader" path="res://World/ClockMemento.gdshader" id="52_yv8gd"]
+[ext_resource type="Script" path="res://World/gong_trig.gd" id="56_c03hu"]
 
 [sub_resource type="Gradient" id="Gradient_ilvig"]
 offsets = PackedFloat32Array(0, 0.649351)
@@ -189,6 +190,9 @@ shader_parameter/effectControl = 0.309
 shader_parameter/burnSpeed = 0.076
 shader_parameter/shape = 1.0
 shader_parameter/textureNoise = SubResource("NoiseTexture2D_cypo6")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k01l8"]
+size = Vector2(69, 20)
 
 [node name="ClockTowerLevelfinal" type="Node2D"]
 script = ExtResource("1_mcs3i")
@@ -2433,6 +2437,7 @@ scale = Vector2(0.28282, 0.28282)
 
 [node name="AnimatableBody2D" parent="MovingPlatformUpDown" index="0"]
 position = Vector2(0, 163.043)
+scale = Vector2(1, 1)
 
 [node name="Path2D" parent="MovingPlatformUpDown" index="2"]
 position = Vector2(0, 163.043)
@@ -2454,6 +2459,9 @@ scale = Vector2(1.34912, 1.34912)
 [node name="AnimatableBody2D" parent="MovingPlatform3" index="0"]
 position = Vector2(0, 0)
 scale = Vector2(0.23, 0.23)
+
+[node name="CollisionPolygon2D2" parent="MovingPlatform3/AnimatableBody2D" index="1"]
+one_way_collision = true
 
 [node name="Path2D" parent="MovingPlatform3" index="2"]
 scale = Vector2(0.23, 0.23)
@@ -2555,8 +2563,18 @@ material = SubResource("ShaderMaterial_s6uoo")
 position = Vector2(-9.99984, -50)
 scale = Vector2(3.37171, 3.04276)
 
+[node name="gong_trig" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("56_c03hu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gong_trig"]
+position = Vector2(469.5, 36)
+shape = SubResource("RectangleShape2D_k01l8")
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="animation_finished" from="Door/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="gong_trig" to="gong_trig" method="_on_body_entered"]
 
 [editable path="MovingPlatformUpDown"]
 [editable path="MovingPlatform3"]

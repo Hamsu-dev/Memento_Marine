@@ -129,7 +129,7 @@ scale = Vector2(0.610494, 0.610494)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LevelFloorCollision"]
 position = Vector2(20, 40)
-polygon = PackedVector2Array(-3, -555.976, 4, 648, 396, 836, 681, 837, 678, -372.518, 613.913, -436.4, 613.913, -43, 188.028, -43, 188.028, 284.327, 210.96, 284.327, 210.96, -17.0678, 614, -17.0678, 613.913, 353.124, 554.944, 353.124, 554.944, 479.252, 614, 479.653, 614, 716, 449, 716, 449, 574.257, 181.476, 574.257, 181.476, 390.799, 74.3823, 390.915, 72, -555.976)
+polygon = PackedVector2Array(-3, -555.976, 4, 648, 396, 836, 681, 837, 678, -372.518, 613.913, -436.4, 613.913, -43, 188.028, -43, 192.942, 249.929, 207.684, 249.929, 210.96, -17.0678, 614, -17.0678, 613.913, 353.124, 554.944, 353.124, 554.944, 479.252, 614, 479.653, 614, 716, 449, 716, 449, 574.257, 181.476, 574.257, 181.476, 390.799, 74.3823, 390.915, 72, -555.976)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelFloorCollision"]
 position = Vector2(388.21, 294.024)
@@ -180,6 +180,9 @@ texture = ExtResource("3_3blgw")
 [node name="Platform6" parent="." instance=ExtResource("5_hgx0w")]
 position = Vector2(265, 268)
 
+[node name="Platform7" parent="." instance=ExtResource("5_hgx0w")]
+position = Vector2(214, 277)
+
 [node name="ColumnTextured" type="Sprite2D" parent="."]
 position = Vector2(238, 131)
 scale = Vector2(0.260192, 0.260192)
@@ -201,7 +204,7 @@ scale = Vector2(0.260192, 0.260192)
 texture = ExtResource("6_bxnni")
 
 [node name="ColumnTextured4" type="Sprite2D" parent="."]
-position = Vector2(134.749, 145.827)
+position = Vector2(135, 139)
 scale = Vector2(0.260192, 0.260192)
 texture = ExtResource("6_bxnni")
 
@@ -408,16 +411,17 @@ position = Vector2(-3, 0)
 flip_h = true
 
 [node name="Flesh Wall5" parent="FleshWalls" instance=ExtResource("8_ms4s2")]
-position = Vector2(-254, -294)
+position = Vector2(-253, -304)
 
 [node name="CollisionShape2D" parent="FleshWalls/Flesh Wall5" index="0"]
 position = Vector2(-3, 0)
 
 [node name="FleshWallJump" parent="FleshWalls/Flesh Wall5" index="1"]
+visible = false
 flip_h = true
 
 [node name="Flesh Wall6" parent="FleshWalls" instance=ExtResource("8_ms4s2")]
-position = Vector2(-254, -232)
+position = Vector2(-253, -242)
 
 [node name="CollisionShape2D" parent="FleshWalls/Flesh Wall6" index="0"]
 position = Vector2(-3, 0)

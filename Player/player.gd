@@ -44,6 +44,7 @@ extends CharacterBody2D
 @onready var bounce_sfx = $BounceSFX
 @onready var jump_sfx = $JumpSFX
 @onready var death_sfx = $DeathSFX
+@onready var control = $"../UINode/Control"
 
 # Variables
 var is_dropping = false
@@ -99,11 +100,17 @@ func _physics_process(delta):
 
 	check_wall_collision()
 	apply_wall_slide(delta)
+	pause_menu()
 
 func _exit_tree():
 	MainInstances.player = null
 	MainInstances.player_camera = null
 
+
+func pause_menu():
+	if Input.is_action_just_pressed("esc"):
+		control.visible = true
+	
 func disable():
 	is_disabled = true
 	camera_disabled.emit()

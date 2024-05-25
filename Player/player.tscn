@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://b2kioq0ibvkx8"]
+[gd_scene load_steps=37 format=3 uid="uid://b2kioq0ibvkx8"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_hdvfq"]
 [ext_resource type="Texture2D" uid="uid://s4ro18prieuv" path="res://Assets/Player/Skelly Animation Final/idle spritesheet.png" id="2_sfk62"]
@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://c78ueege2crkj" path="res://Assets/Music/swing-whoosh-110410.mp3" id="11_gagmt"]
 [ext_resource type="Texture2D" uid="uid://cvdg3ug0soml5" path="res://Assets/Player/Skelly Animation Final/fall_anim_skele (1).png" id="11_x4ksp"]
 [ext_resource type="AudioStream" uid="uid://dclmq320nnhn" path="res://Assets/Music/bone-crack-121580.mp3" id="12_wa8ms"]
+[ext_resource type="PackedScene" uid="uid://cau8ulmkwm718" path="res://control.tscn" id="13_aesh4"]
 [ext_resource type="Script" path="res://Player/Camera2D.gd" id="32_7qmes"]
 
 [sub_resource type="Animation" id="Animation_f2vnw"]
@@ -727,6 +728,12 @@ one_shot = true
 [node name="Jump_timer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+
+[node name="Control" parent="." instance=ExtResource("13_aesh4")]
+offset_left = -1.0
+offset_top = -73.0
+offset_right = -1.0
+offset_bottom = -73.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="Death_timer" to="." method="_on_death_timer_timeout"]

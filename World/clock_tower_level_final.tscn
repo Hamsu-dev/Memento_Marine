@@ -2450,7 +2450,7 @@ one_shot = true
 
 [node name="MovingPlatform3" parent="." instance=ExtResource("41_ovoe8")]
 z_index = 2
-position = Vector2(1097, 349)
+position = Vector2(1085, 308)
 scale = Vector2(1.34912, 1.34912)
 
 [node name="AnimatableBody2D" parent="MovingPlatform3" index="0"]
@@ -2529,9 +2529,10 @@ libraries = {
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_top = -929.0
-offset_right = 2238.0
-offset_bottom = 650.0
+offset_left = -12.0
+offset_top = -970.0
+offset_right = 2226.0
+offset_bottom = 609.0
 grow_horizontal = 1
 grow_vertical = 1
 

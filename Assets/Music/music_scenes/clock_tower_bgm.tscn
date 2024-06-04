@@ -4,5 +4,4 @@
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer"]
 stream = ExtResource("1_55sbe")
-volume_db = -20.0
 bus = &"BGM"
